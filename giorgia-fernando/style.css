@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+body {
+    background: #AAC9FF;
+    font-family: sans-serif;
+}
+
+header{
+    background-color: blue;
+}
+
+.barra-topo {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 82px;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#logo {
+    border: 3px solid red;
+    width: 170px;
+    height: 55px;
+}
+
+.login {
+    justify-content: space-around;
+    border: yellow solid 3px;
+}
+
+footer {
+    display: flex;
+    line-height: 1.6;
+    justify-content: space-between;
+}
+
+#conexao {
+    color: #0e385f;
+    font-weight: bold;
+    line-height: 29px;
+}
