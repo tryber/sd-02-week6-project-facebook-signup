@@ -10,3 +10,8 @@ let picker = new Pikaday({
     maxDate: new Date(2022, 12, 31),
     yearRange: [2000, 2020]
 });
+
+let botaoAzul = document.getElementsByClassName('azul')[0];
+botaoAzul.addEventListener('click', function () {
+    alert('ola')
+})

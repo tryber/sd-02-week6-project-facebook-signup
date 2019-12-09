@@ -1,0 +1,56 @@
+    /* * {
+        border: 1px solid red
+    } */
+
+    body {
+        background: linear-gradient(white, #D3D8E8);
+        background-size: cover;
+    }
+
+    header {
+        display: flex;
+        background-color: #3b5998;
+        justify-content: space-between;
+        color: white;
+    }
+
+    .azul {
+        background-color: #4267b2;
+        border-color: #29487d;
+        color: white
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 40%;
+        margin: 5px;
+    }
+
+    #botaologindiv {
+        display: flex;
+        align-items: center;
+    }
+
+    #bigbox {
+        display: flex;
+        justify-content: space-around;
+        height: 520px;
+    }
+
+    #ladoesquerdo {
+        width: 40%;
+        color: #0e385f;
+        margin-top: 40px;
+    }
+
+    #ladodireito {
+        font-size: 20px;
+        margin-top: 40px;
+        width: 30%;
+    }
+
+    #bigbox input {
+        margin: 5px;
+    }

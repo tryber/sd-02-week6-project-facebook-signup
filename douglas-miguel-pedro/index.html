@@ -17,63 +17,68 @@
 <body>
     <div>
         <header>
-            <img src="imagens/logo.png" height="50px" alt="Logo Facebook">
-            <form>
-                <div class="form-row">
-                    <div class="col">
-                        <label>Email ou telefone</label>
-                        <input class="form-control" type="text" required="required">
+            <div id="logo">
+                <img src="imagens/logo.png" height="75px" alt="Logo Facebook">
+            </div>
+            <div>
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Email ou telefone</label>
+                            <input class="form-control" type="text" required="required">
+                        </div>
+                        <div class="col">
+                            <label>Senha</label>
+                            <input class="form-control" type="password" required="required">
+                            <small class="text-muted">Esqueceu a conta?</small>
+                        </div>
+                        <div id="botaologindiv" class="col">
+                            <button class="azul" type="submit">Entrar</button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label>Senha</label>
-                        <input class="form-control" type="password" required="required">
-                        <small class="text-muted">Esqueceu a conta?</small>
-                    </div>
-                    <div class="col">
-                        <button>Entrar</button>
-                    </div>
-                </div>
+                </form>
+            </div>
+        </header>
     </div>
-    </form>
-    </header>
-    </div>
-    <div>
-        <h2>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</h2>
-        <img src="imagens/figura.png" height="200px" alt="Conectando Pessoas">
-    </div>
-    <div>
-        <div>
-            <h1>Abra uma conta</h1>
-            <p>É rápido e fácil.</p>
+    <div id="bigbox">
+        <div id="ladoesquerdo">
+            <h3>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</h3>
+            <img src="imagens/figura.png" height="200px" alt="Conectando Pessoas">
         </div>
-        <div>
-            <form>
-                <div class="form-row">
-                    <div class="col">
-                        <input class="form-control" type="text" required="required" placeholder="Nome">
+        <div id="ladodireito">
+            <div>
+                <h1>Abra uma conta</h1>
+                <p>É rápido e fácil.</p>
+            </div>
+            <div>
+                <form>
+                    <div id='nomecompleto' class="form-row">
+                        <div class="col">
+                            <input class="form-control" type="text" required="required" placeholder="Nome" pattern="(\w)$">
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" required="required" placeholder="Sobrenome" pattern="(\w)$" >
+                        </div>
                     </div>
-                    <div class="col">
-                        <input class="form-control" type="text" required="required" placeholder="Sobrenome">
+                    <div class="form-row">
+                        <input class="form-control" type="text" required="required" placeholder="Celular ou email">
                     </div>
-                </div>
-                <div class="form-row">
-                    <input class="form-control" type="text" required="required" placeholder="Celular ou email">
-                </div>
-                <div class="form-row">
-                    <input class="form-control" type="password" required="required" placeholder="Nova Senha">
-                </div>
-                <label>Data de nascimento</label>
-                <input class="form-control" type="text" id="datepicker">
-                <label>Gênero</label>
-                <div>
-                    <label><input type="radio" name="Gênero"> Feminino</label>
-                    <label><input type="radio" name="Gênero"> Masculino</label>
-                    <label><input type="radio" name="Gênero"> Personalizado</label>
-                </div>
-                <div>
-                    <button type="submit">Cadastre-se</button>
-                </div>
-            </form>
+                    <div class="form-row">
+                        <input class="form-control" type="password" required="required" placeholder="Nova Senha">
+                    </div>
+                    <label>Data de nascimento</label>
+                    <input class="form-control" type="text" id="datepicker">
+                    <label>Gênero</label>
+                    <div>
+                        <label><input type="radio" name="Gênero"> Feminino</label>
+                        <label><input type="radio" name="Gênero"> Masculino</label>
+                        <label><input type="radio" name="Gênero"> Personalizado</label>
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="submit">Cadastre-se</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="js/pikaday.js"></script>
