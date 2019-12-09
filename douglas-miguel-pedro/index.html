@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Facebook-entre ou cadastre-se</title>
-    <link rel="stylesheet" href="style.css" >
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/pikaday.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.png">
+    <script type='text/javascript' src='js/jquery-3.4.1.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
 </head>
+
 <body>
     <div>
         <header>
             <img src="imagens/logo.png" height="50px" alt="Logo Facebook">
             <form>
-                <label>Email ou telefone</label>
-                <input type="text" required="required">
-                <label>Senha</label>
-                <input type="password" required="required">
-                <p>Esqueceu a conta?</p>
-                <button>Entrar</button>
-            </form>
-        </header>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Email ou telefone</label>
+                        <input class="form-control" type="text" required="required">
+                    </div>
+                    <div class="col">
+                        <label>Senha</label>
+                        <input class="form-control" type="password" required="required">
+                        <small class="text-muted">Esqueceu a conta?</small>
+                    </div>
+                    <div class="col">
+                        <button>Entrar</button>
+                    </div>
+                </div>
+    </div>
+    </form>
+    </header>
     </div>
     <div>
         <h2>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</h2>
@@ -33,27 +48,36 @@
         </div>
         <div>
             <form>
-                <input type="text" required="required" placeholder="Nome">
-                <input type="text" required="required" placeholder="Sobrenome">
-                <input type="text" required="required" placeholder="Celular ou email">
-                <input type="password" required="required" placeholder="Nova Senha">
+                <div class="form-row">
+                    <div class="col">
+                        <input class="form-control" type="text" required="required" placeholder="Nome">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" required="required" placeholder="Sobrenome">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <input class="form-control" type="text" required="required" placeholder="Celular ou email">
+                </div>
+                <div class="form-row">
+                    <input class="form-control" type="password" required="required" placeholder="Nova Senha">
+                </div>
                 <label>Data de nascimento</label>
-                <!-- <input Data de nascimento> -->
+                <input class="form-control" type="text" id="datepicker">
                 <label>Gênero</label>
-                <label><input type="radio" name="Gênero"> Feminino</label>
-                <label><input type="radio" name="Gênero"> Masculino</label>
-                <label><input type="radio" name="Gênero"> Personalizado</label>
-                <button>cadastre-se</button>
+                <div>
+                    <label><input type="radio" name="Gênero"> Feminino</label>
+                    <label><input type="radio" name="Gênero"> Masculino</label>
+                    <label><input type="radio" name="Gênero"> Personalizado</label>
+                </div>
+                <div>
+                    <button type="submit">Cadastre-se</button>
+                </div>
             </form>
         </div>
     </div>
-
-
-
-
-
-
-
+    <script src="js/pikaday.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
