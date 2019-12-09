@@ -63,7 +63,7 @@
             <p id="abraumaconta">Abra uma conta</p><br>
             <p id="rapidoefacil">É rápido e fácil.</p>
             <form>
-                <div id="nome-sobrenome">
+                <div id="nome-sobrenome" class='campos'>
                     <div>
                         <input placeholder='Nome' name='nome' class='formulario nomes' required='required' />
                     </div>
@@ -72,11 +72,11 @@
                     </div>
                 </div>
 
-                <div>
+                <div id='celular-email' class='campos'>
                     <input placeholder='Celular ou e-mail' name='contato' class='formulario campoMaior'
                         required='required' />
                 </div>
-                <div>
+                <div id='novaSenha' class='campos'>
                     <input placeholder='Nova senha' name='senha' class='formulario campoMaior' />
                 </div>
                 <div>
@@ -92,7 +92,7 @@
                         <select id="ano-nascimento" name="ano-nascimento">
                         </select>
                     </div>
-                    <div>
+                    <div id="generos">
                         <span class="titulos">Gênero</span>
                         <div>
                             <label for=" feminino">Feminino</label>
@@ -101,7 +101,9 @@
                             <input type="radio" id="masculino" value="2">
                             <label for="personalizado">Personalizado</label>
                             <input type="radio" id="personalizado" value="2">
-                            <button name="cadastrar" id="cadastrar"></button>
+                            <div>
+                                <button name="cadastrar" id="cadastrar">Cadastre-se</button>
+                            </div>
                         </div>
             </form>
     </div>
