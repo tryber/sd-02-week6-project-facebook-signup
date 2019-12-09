@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Rubik|Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link rel='stylesheet' type='text/css' href='style.css'>
-  <link rel="stylesheet" href="lib/dist/css/simplepicker.css">
-  <script src="lib/dist/js/simplepicker.js"></script>
+  <link rel="stylesheet" href="lib/dist/css/datepicker.css">
+
 </head>
 <body>
   <header>
@@ -20,7 +20,7 @@
       </div>
       <div>
         <label>Senha</label>
-        <input type="password" pattern="[0-9a-fA-F]"> 
+        <input type="password" pattern="[0-9a-fA-F]">
         <p>Esqueceu a conta?</p>
       </div>
       <div>
@@ -42,19 +42,44 @@
         <h2>Abra uma conta</h2>
         <p>É rápido é facil.</p>
         <div>
-          <input type="text" placeholder="Nome">
+          <input type="text" placeholder="Nome" required>
           <div></div>
-          <input type="text" placeholder="Sobrenome">
+          <input type="text" placeholder="Sobrenome" required>
         </div>
-        <input type="text" placeholder="Celular ou Email">
-        <input type="password" placeholder="Nova senha">
+        <input type="text" placeholder="Celular ou Email" required>
+        <input type="password" placeholder="Nova senha" required pattern="[0-9a-fA-F]">
         <div id="date">
           <p>Data de nascimento</p>
-          <input type="date">
+
+          <div>
+            <input type="text" class='date-input' required>
+            <div class="wrapper" style='display:none'>
+                <div class="level header is-marginless">
+                  <span class="left-arrow"></span>
+                  <span class="year-month"></span>
+                  <span class="right-arrow">></span>
+                </div>
+
+                <div class="date-wrapper">
+                  <div class="level-left day-nums">
+                    <span class='date-item'>Sun</span>
+                    <span class='date-item'>Mon</span>
+                    <span class='date-item'>Tue</span>
+                    <span class='date-item'>Wen</span>
+                    <span class='date-item'>Thu</span>
+                    <span class='date-item'>Fri</span>
+                    <span class='date-item'>Sat</span>
+                  </div>
+                  <div class="dates">
+                  </div>
+                </div>
+              </div>
+          </div>
+
         </div>
         <div>
           <p>Gênero</p>
-          <form action="">
+          <form action="" aria-required="true">
             <div>
               <input type="radio" name="gender" value="female" id="female">
               <label for="female">Feminino</label>
@@ -75,10 +100,11 @@
             receber notificações por SMS e pode cancelar isso quando<br>
             quiser.
         </p>
-        <button>Cadastre-se</button>
+        <button type="button">Cadastre-se</button>
       </div>
     </section>
   </main>
 </body>
+<script src="lib/dist/js/datepicker.js"></script>
 <script src='script.js'></script>
 </html>
