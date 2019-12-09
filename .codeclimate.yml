@@ -31,7 +31,8 @@ checks:
     config:
       threshold: # language-specific defaults. an override will affect all languages.
 exclude_patterns:
-  - libs/*      
+  - "**/libs/*.css"
+  - "**/libs/*.js"
 plugins:
   editorconfig:
     enabled: true
