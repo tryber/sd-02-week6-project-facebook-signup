@@ -1,3 +1,5 @@
+/* global Pikaday */
+
 const regexNome = new RegExp(/[a-zA-Z]/);
 const regexTelefone = new RegExp(/[1-9]{11}/);
 const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
@@ -33,7 +35,7 @@ cadastro.addEventListener('click', function () {
   const sobrenome = document.getElementById('sobrenome').value;
   const novasenha = document.getElementById('novasenha').value;
   const emailOuPassword = document.getElementById('emailoupassword').value;
-  const data = document.getElementById('datepicker').value;
+  const data = pikaday.toString('YYYY/MM/DD');
   const options = document.querySelectorAll('.option');
   event.preventDefault();
   if (!regexNome.test(nome)) {
