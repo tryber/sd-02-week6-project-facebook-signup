@@ -34,18 +34,21 @@ cadastro.addEventListener('click', function () {
   const novasenha = document.getElementById('novasenha').value;
   const emailOuPassword = document.getElementById('emailoupassword').value;
   const data = document.getElementById('datepicker').value;
+  const options = document.querySelectorAll('.option');
   event.preventDefault();
   if (!regexNome.test(nome)) {
     alert('Nome inválido');
   } else if (!regexNome.test(sobrenome)) {
     alert('Sobrenome inválido');
+  } else if ((!regexTelefone.test(emailOuPassword)) && (!regexEmail.test(emailOuPassword))) {
+    alert('E-mail ou Telefone inválido');
   } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if ((!regexTelefone.test(emailOuPassword)) && (!regexEmail.test(emailOuPassword))) {
-    alert('E-mail ou password inválido');
   } else if (data === '') {
     alert('Selecione a data');
+  } else if (!options[0].checked && !options[1].checked && !options[2].checked){
+    alert('ENTROU NESSA MERDA');
   } else {
-    alert('nome: ' + nome + ' ' + 'sobrenome: ' + sobrenome + 'Nova senha: ' + novasenha + 'E-mail/password: ' + emailOuPassword + 'Nascimento: ' + data);
+    alert('nome: ' + nome + ' ' + 'sobrenome: ' + sobrenome + ' ' + 'Nova senha: ' + novasenha + ' ' + 'E-mail/Telefone: ' +  emailOuPassword + ' ' + 'Nascimento: ' + ' ' + data + ' ' + 'Gênero: ' + document.querySelector('input[name="Gênero"]:checked').value  );
   }
 });
