@@ -9,11 +9,11 @@ function gambiarraData() {
 }
 
 document.getElementById('datepicker').DatePickerX.init({
-  format: 'dd/mm/yyyy'
-}); 
+  format: 'dd/mm/yyyy',
+});
 
 validation.init('#direita', {
-  events: ['change', 'paste', 'keyup',]
+  events: ['change', 'paste', 'keyup']
 });
 
 const botaoCadastro = document.getElementById('botao-envia');
