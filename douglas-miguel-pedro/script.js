@@ -1,6 +1,6 @@
 /* global Pikaday */
 const regexNome = new RegExp(/[a-zA-Z]/);
-const regexTelefone = new RegExp(/[1-9]{11}/);
+const regexTelefone = new RegExp(/[0-9]{11}/);
 const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 const data = new Pikaday({
   field: document.getElementById('datepicker'),
@@ -19,10 +19,12 @@ const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
   const botoesLogin = document.querySelectorAll('.primeirosInputs');
   if (botoesLogin[0].value === '') {
-    alert('Ta vazio');
-  } if (botoesLogin[1].value === '') {
-    alert('o 2 ta vazio');
-  } if (botoesLogin[0].value !== '' && botoesLogin[1].value !== '') {
+    alert('O 1 campo não pode estar vazio');
+  } else if (!regexEmail.test(botoesLogin[0].value) && !regexTelefone.test(botoesLogin[0].value)) {
+    alert('Email ou Telefone Invalido');
+  } else if (botoesLogin[1].value === '') {
+    alert('O 2 campo não pode estar vazio');
+  } else {
     alert('Login realizado com sucesso');
   }
   event.preventDefault();
@@ -47,9 +49,9 @@ cadastro.addEventListener('click', function () {
   } else if (data === '') {
     alert('Selecione a data');
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
-    alert('ENTROU NESSA MERDA');
+    alert('Você deve selecionar o seu gênero');
   } else {
     const genero = (document.querySelector('input[name="Gênero"]:checked').value);
-    alert(`nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
+    alert(` Conta criada com sucesso nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
   }
 });
