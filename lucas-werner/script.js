@@ -24,3 +24,7 @@ botaoEnviar.addEventListener('click', function () {
         alert("Login realizado com sucesso");
     }
 })
+
+$('#datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+})

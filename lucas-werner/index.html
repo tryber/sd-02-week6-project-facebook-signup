@@ -12,25 +12,25 @@
 </head>
 
 <body>
-    <div class="containerGeral">
+    <div class="bluebarHeader">
         <header>
-            <div class="containerBox">
-                <div class="imagemLogoPai">
-                    <img class="imagemLogo" src="./images/facebook-logo-1.jpg" alt="logo_faceboo">
+            <div class="bluebarContent">
+                <div class="fbLogo">
+                    <img class="fbLogoImagem" src="./images/facebook-logo-1.jpg" alt="logo_faceboo">
                 </div>
-                <div class="formulario">
-                    <form id="loginForm">
-                        <div class="item">
+                <div>
+                    <form class="loginForm">
+                        <div class="loginItem">
                             <small><label for="" class="texto">Email ou telefone</label></small> <br>
                             <input type="text" required="required" id="emailTelefone">
                         </div>
-                        <div class="item">
+                        <div class="loginItem">
                             <small><label for="" class="texto">Senha</label></small> <br>
                             <input type="password" maxid="email"><br>
-                            <small><a class="esqueceuConta" href="url">Esqueceu a conta?</a></small>
+                            <small><a class="forgotAccount" href="url">Esqueceu a conta?</a></small>
                         </div>
-                        <div class="botaoEntrar item">
-                            <button class=botaoEnviar>Entrar</button>
+                        <div class="submitButton">
+                            <button class="submitLogin">Entrar</button>
                         </div>
                     </form>
                 </div>
@@ -38,34 +38,72 @@
         </header>
     </div>
     <article>
-        <div class="mainPai">
-            <div class="mainContent">
-                <div class="marketing">
-                    <h2>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.
-                    </h2><br>
-                    <img class="imagemMundo" src="">
+        <div class="articleContainer">
+            <div class="articleContent">
+                <div class="leftContainer">
+                    <div class="leftText">
+                        <h2>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua
+                            vida.
+                        </h2>
+                    </div>
+                    <div class="leftImage">
+                        <img class="imagemMundo" src="images/fundofb.jpg">
+                    </div>
                 </div>
-                <div class="criarConta">
-                    <h1>Abra uma conta</h1>
-                    <p>É rápido e fácil.<p>
-                            <form>
-                                <div class="row">
-                                    <div class="form-group col">
-                                        <input class="form-control col" placeholder="Nome" type="text"
-                                            required="required" name="nome">
-                                    </div>
-                                    <div class="form-group col">
-                                        <input class="form-control col" placeholder="Sobrenome" type="text"
-                                            required="required" name="sobrenome">
-                                    </div>
+                <div class="rightContainer">
+                    <div class="rightText">
+                        <h1>Abra uma conta</h1>
+                        <p>É rápido e fácil.<p>
+                    </div>
+                    <div>
+                        <form class="registerForm">
+                            <div class="row">
+                                <div class="form-group col">
+                                    <input class="form-control col" placeholder="Nome" type="text" required="required"
+                                        name="nome">
                                 </div>
-                            </form>
+                                <div class="form-group col">
+                                    <input class="form-control col" placeholder="Sobrenome" type="text"
+                                        required="required" name="sobrenome">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control emailTelefone" type="text" required="required" maxlength="50"
+                                    name="emailTelefone" placeholder="Celular ou email">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control novaSenha" type="password" required="required" maxlength="50"
+                                    name="novaSenha" placeholder="Nova senha">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Data de nascimento </label>
+
+                                <input id="datepicker" width="276" /> DatePicker Aqui
+                            </div>
+                            <div class="form-group">
+                                <label>Gênero</label><br>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for='genero'><input class="form-check-input"
+                                            name="genero" id="genero" value="f" type="radio">
+                                        Feminino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for='genero'><input class="form-check-input"
+                                            name="genero" id="genero" value="m" type="radio">Masculino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for='genero'><input class="form-check-input"
+                                            name="genero" id="genero" value="p" type="radio">Personalizado</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
 
-        <div class="clear">
+
 
         </div>
         </div>
