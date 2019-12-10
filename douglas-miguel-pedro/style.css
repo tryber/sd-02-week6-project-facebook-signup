@@ -1,56 +1,56 @@
-    /* * {
-        border: 1px solid red
-    } */
+/* * {
+    border: 1px solid red
+} */
 
-    body {
-        background: linear-gradient(white, #D3D8E8);
-        background-size: cover;
-    }
+body {
+  background: linear-gradient( white ,rgb(211,216,232 ));
+  background-size: cover;
+}
 
-    header {
-        display: flex;
-        background-color: #3b5998;
-        justify-content: space-between;
-        color: white;
-    }
+header {
+  display: flex;
+  background-color: rgb(59,89,152);
+  justify-content: space-between;
+  color: white;
+}
 
-    .azul {
-        background-color: #4267b2;
-        border-color: #29487d;
-        color: white
-    }
+.azul {
+  background-color: rgb(66, 103, 178);
+  border-color: rgb(41, 72, 125);
+  color: white;
+}
 
-    #logo {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        width: 40%;
-        margin: 5px;
-    }
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 40%;
+  margin: 5px;
+}
 
-    #botaologindiv {
-        display: flex;
-        align-items: center;
-    }
+#botaologindiv {
+  display: flex;
+  align-items: center;
+}
 
-    #bigbox {
-        display: flex;
-        justify-content: space-around;
-        height: 520px;
-    }
+#bigbox {
+  display: flex;
+  justify-content: space-around;
+  height: 520px;
+}
 
-    #ladoesquerdo {
-        width: 40%;
-        color: #0e385f;
-        margin-top: 40px;
-    }
+#ladoesquerdo {
+  width: 40%;
+  color: rgb(14, 56, 95);
+  margin-top: 40px;
+}
 
-    #ladodireito {
-        font-size: 20px;
-        margin-top: 40px;
-        width: 30%;
-    }
+#ladodireito {
+  font-size: 20px;
+  margin-top: 40px;
+  width: 30%;
+}
 
-    #bigbox input {
-        margin: 5px;
-    }
+#bigbox input {
+  margin: 5px;
+}
