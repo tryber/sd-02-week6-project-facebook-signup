@@ -26,11 +26,11 @@
                     <div id="divSuperior" class="form-row">
                         <div class="col">
                             <label>Email ou telefone</label>
-                            <input class="form-control primeirosInputs" type="text" required="required">
+                            <input class="form-control primeirosInputs" type="text">
                         </div>
                         <div class="col">
                             <label>Senha</label>
-                            <input class="form-control primeirosInputs" type="password" required="required">
+                            <input class="form-control primeirosInputs" type="password">
                             <small id='esqueceu'>Esqueceu a conta?</small>
                         </div>
                         <div id="botaologindiv" class="col">
@@ -55,25 +55,25 @@
                 <form>
                     <div id='nomecompleto' class="form-row">
                         <div class="col">
-                            <input class="form-control" type="text" required="required" placeholder="Nome" pattern="(\w)$">
+                            <input class="form-control" id="nome" type="text" placeholder="Nome" >
                         </div>
                         <div class="col">
-                            <input class="form-control" type="text" required="required" placeholder="Sobrenome" pattern="(\w)$" >
+                            <input class="form-control" id="sobrenome" type="text" placeholder="Sobrenome">
                         </div>
                     </div>
                     <div class="form-row">
-                        <input class="form-control" type="text" required="required" placeholder="Celular ou email">
+                        <input class="form-control" id="emailoupassword" type="text" placeholder="Celular ou email">
                     </div>
                     <div class="form-row">
-                        <input class="form-control" type="password" required="required" placeholder="Nova Senha">
+                        <input class="form-control" id="novasenha" type="password" placeholder="Nova Senha">
                     </div>
                     <label>Data de nascimento</label>
-                    <input class="form-control" type="text" id="datepicker">
+                    <input class="form-control" type="text" id="datepicker" readonly>
                     <label>Gênero</label>
                     <div>
-                        <label><input type="radio" name="Gênero"> Feminino</label>
-                        <label><input type="radio" name="Gênero"> Masculino</label>
-                        <label><input type="radio" name="Gênero"> Personalizado</label>
+                        <label><input clas="option" type="radio" value="female" name="Gênero"> Feminino</label>
+                        <label><input clas="option" type="radio" value="male" name="Gênero"> Masculino</label>
+                        <label><input clas="option" type="radio" value="perso" name="Gênero"> Personalizado</label>
                     </div>
                     <div>
                         <button class="btn btn-success" type="submit">Cadastre-se</button>

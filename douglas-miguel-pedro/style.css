@@ -81,7 +81,7 @@ header {
   margin: 0;
 }
 
-.form-row > .col , .form-row > [ class *= "col-" ] {
+.form-row > .col , .form-row > [ class *= 'col-' ] {
   padding-left: 0;
 }
 
