@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background-color: #385898;
+  background-image: linear-gradient(to bottom, #5573af, #385898);
 }
 
 .barra-topo {
@@ -76,7 +76,7 @@ header {
   width: 142px;
   height: 14px;
   padding: 3px 3px 4px;
-  border: 1px solid;
+  border: 1px solid #264279;
 }
 
 .td-email-senha {
@@ -152,16 +152,20 @@ footer {
 
 #cadastrar {
   background: #578843;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
   font-size: 19px;
   font-weight: bold;
   color: white;
   text-align: center;
+  width: 196px;
+  
   border-radius: 2px;
   padding: 7px 20px;
   border-radius: 3px;
   border-color: #3b6e22;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 #cadastrar:hover {
@@ -169,6 +173,8 @@ footer {
 }
 
 .formulario {
+  border-color: #bdc7d8;
+  
   border-radius: 5px;
   height: 21px;
   padding: 8px 10px;
@@ -232,6 +238,8 @@ footer {
 .titulos {
   font-weight: bolder;
   color: #90949c;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 #generos {
@@ -249,3 +257,5 @@ footer {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+
