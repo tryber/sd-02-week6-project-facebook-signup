@@ -122,12 +122,11 @@ footer {
     line-height: 18px;
 }
 
-#label-entrar{
+#label-entrar {
     padding: 2px 6px;
     border: 1px solid;
     height: 24px;
 }
-
 
 #abraumaconta {
     font-size: 36px;
@@ -227,6 +226,6 @@ footer {
     width: 400px;
 }
 
-.campos{
+.campos {
     margin-bottom: 10px;
 }
