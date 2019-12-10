@@ -1,18 +1,20 @@
-document.getElementById('datepicker').DatePickerX.init({
-  format: "dd/mm/yyyy"
-}); 
-
-validation.init("#direita", {
-  events: ["change", "paste", "keyup"]
-});
-
-let botaoCadastro = document.getElementById("botao-envia");
-botaoCadastro.addEventListener('click', gambiarraData);
+/* global validation */
 
 function gambiarraData() {
-  let datepicker = document.getElementById('datepicker');
-  if(datepicker.value == "") {
+  const datepicker = document.getElementById('datepicker');
+  if (datepicker.value === '') {
     event.preventDefault();
-    alert("Preencha sua data de nascimento");
+    alert('Preencha sua data de nascimento');
   }
 }
+
+document.getElementById('datepicker').DatePickerX.init({
+  format: 'dd/mm/yyyy'
+}); 
+
+validation.init('#direita', {
+  events: ['change', 'paste', 'keyup',]
+});
+
+const botaoCadastro = document.getElementById('botao-envia');
+botaoCadastro.addEventListener('click', gambiarraData);
