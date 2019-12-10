@@ -13,5 +13,5 @@ const pikaday = new Pikaday({
 
 const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
-  alert('ola');
+
 });

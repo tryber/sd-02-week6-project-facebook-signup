@@ -5,6 +5,14 @@
 body {
   background: linear-gradient( white , rgb( 211 , 216 , 232 ) );
   height: 700px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+#esqueceu{
+  font-size: 12px;
+  color: rgb(156, 180, 216);
+  cursor: pointer;
 }
 
 header {
@@ -12,6 +20,18 @@ header {
   background-color: rgb( 59 , 89 , 152 );
   justify-content: space-between;
   color: white;
+}
+
+#login{
+  width: 40%;
+  margin-top: 10px;
+}
+
+.primeirosInputs{
+  height: 23px;
+  width: 150px;
+  border-radius: 0;
+  border: 1px solid black;
 }
 
 .azul {
@@ -53,9 +73,16 @@ header {
 }
 
 #bigbox input {
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
-#divSuperior {
-  margin-right: 0;
+#divSuperior{
+  margin: 0 0;
 }
+
+.form-row>.col, .form-row>[class*=col-] {
+  padding-left: 0;
+}
+
