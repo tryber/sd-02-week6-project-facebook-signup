@@ -1,0 +1,118 @@
+* {
+  outline: 1px solid transparent;
+  margin: 0;
+  padding: 0;
+}
+
+
+.clear {
+  clear: both;
+}
+
+
+.containerGeral {
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  display: flex;
+  justify-content: center;
+  height: 86px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 980px;
+  height: 83px;
+  align-content: flex-end;
+}
+
+.imagemLogo {
+  width: 170px;
+  height: 34px;
+
+}
+
+.imagemLogoPai{
+    display: flex;
+    align-items: center;
+}
+
+.rodape {
+  display: flex;
+  justify-content: center;
+}
+
+
+#loginForm, item, item {
+  display: flex;
+  align-content: space-around;
+  justify-content: left;
+  
+}
+
+.botaoEntrar{
+    display: flex;
+    align-items: center;
+}
+
+.item > input{
+    margin-right: 12px;
+    width: 150px;
+    height: 23px;
+}
+
+button {
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 6px;
+    border: 1px solid black;
+    background-color: rgb(51, 102, 185);
+    font-weight: bold;
+    color: white;
+}
+
+#loginForm > div > input {
+    border: 1px solid black;
+}
+
+.botaoEnviar {
+    width: 50px;
+    height: 24px;
+    border-color: #29487d;
+}
+
+.botaoEnviar:hover{
+  background-color: #3b5998;
+}
+
+
+.texto {
+  color: #fff;
+  font-weight: normal;
+  padding-left: 1px;
+  font-family: inherit;
+}
+
+label {
+    margin: 0;
+    font-size: 12px
+}
+
+.esqueceuConta {
+    color: #9cb4d8;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  width: 980px;
+  
+}
+
+.mainPai {
+  display: flex;
+  justify-content: center;
+  
+  
+}
