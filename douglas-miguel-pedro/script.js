@@ -21,36 +21,31 @@ botaoAzul.addEventListener('click', function () {
     alert('Ta vazio');
   } if (botoesLogin[1].value === '') {
     alert('o 2 ta vazio');
-  } if (botoesLogin[0].value !== '' && botoesLogin[1].value !== '' ) {
+  } if (botoesLogin[0].value !== '' && botoesLogin[1].value !== '') {
     alert('Login realizado com sucesso');
   }
   event.preventDefault();
 });
 
 const cadastro = document.querySelector('.btn');
-cadastro.addEventListener('click', function() {
+cadastro.addEventListener('click', function () {
   const nome = document.getElementById('nome').value;
   const sobrenome = document.getElementById('sobrenome').value;
   const novasenha = document.getElementById('novasenha').value;
   const emailOuPassword = document.getElementById('emailoupassword').value;
-  const options = document.querySelectorAll("option");
-  const data = document.getElementById("datepicker").value;
+  const data = document.getElementById('datepicker').value;
   event.preventDefault();
-  if (! regexNome.test(nome)) {
+  if (!regexNome.test(nome)) {
     alert('Nome inválido');
-  } else if (! regexNome.test(sobrenome)) {
+  } else if (!regexNome.test(sobrenome)) {
     alert('Sobrenome inválido');
-  } else if ( novasenha === '') {
+  } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if ( (! regexTelefone.test(emailOuPassword)) && (! regexEmail.test(emailOuPassword))) {
+  } else if ((!regexTelefone.test(emailOuPassword)) && (!regexEmail.test(emailOuPassword))) {
     alert('E-mail ou password inválido');
-  } else if ( data === '') {
+  } else if (data === '') {
     alert('Selecione a data');
+  } else {
+    alert('nome: ' + nome + 'sobrenome: ' + sobrenome + 'Nova senha: ' + novasenha + 'E-mail/password: ' + emailOuPassword + 'Nascimento: ' + data);
   }
-  // if(  document.querySelector("option").value === 'female') {
-  //   alert('entrou no if do radio');
-  // }
-  else {
-    alert("nome: " + nome + "sobrenome: " + sobrenome + "Nova senha: " + novasenha + "E-mail/password: " + emailOuPassword + "Nascimento: " + data );
-  }
-})
+});
