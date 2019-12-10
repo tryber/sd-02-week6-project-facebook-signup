@@ -86,6 +86,16 @@ button {
   background-color: #3b5998;
 }
 
+a.esqueceuConta{
+  text-decoration: none;
+  color: #9cb4d8;;
+  
+}
+
+a.esqueceuConta:hover{
+  text-decoration: underline;
+}
+
 
 .texto {
   color: #fff;
