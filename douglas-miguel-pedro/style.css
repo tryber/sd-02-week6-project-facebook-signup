@@ -67,7 +67,6 @@ header {
 }
 
 #ladodireito {
-  font-size: 20px;
   margin-top: 40px;
   width: 30%;
 }
@@ -85,3 +84,4 @@ header {
 .form-row > .col , .form-row > [ class *= "col-" ] {
   padding-left: 0;
 }
+
