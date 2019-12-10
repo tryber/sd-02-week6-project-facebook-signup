@@ -50,6 +50,6 @@ cadastro.addEventListener('click', function () {
     alert('ENTROU NESSA MERDA');
   } else {
     const genero = (document.querySelector('input[name="Gênero"]:checked').value);
-    alert('nome: ' + nome + ' sobrenome: ' + sobrenome + ' Nova senha: ' + novasenha + ' E-mail/Telefone: ' + emailOuPassword + ' Nascimento: ' + data + ' Gênero: ' + genero);
+    alert(`nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
   }
 });
