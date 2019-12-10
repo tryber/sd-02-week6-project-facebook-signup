@@ -1,3 +1,5 @@
+/* background: #385898; */  
+
 * {
     margin: 0px;
     padding: 0px;  
@@ -88,7 +90,7 @@ footer {
     height: 136px;
 }
 
-#conteudo-rodape{
+#conteudo-rodape {
     width: 980px;
     margin: 0 auto;
 }
@@ -109,8 +111,8 @@ footer {
     width: 170px;
     padding-top: 15px;
 }
-    /* background: #385898; */  
-#botao-entrar{
+
+#botao-entrar {
     border: none;
     height: 23px;
     width: 35.484px;
@@ -157,6 +159,7 @@ footer {
     padding: 7px 20px 7px 20px;
     border-radius: 3px;
     border-color: #3B6E22;
+    cursor: pointer;
 }
 
 #cadastrar:hover {
@@ -198,7 +201,6 @@ footer {
 
 .campoMaior {
     width: 377px;
-    
 }
 
 .ladoEsquerdo {
@@ -228,7 +230,7 @@ footer {
     color: #90949c;
 }
 
-#generos{
+#generos {
     width: 400px;
 }
 
