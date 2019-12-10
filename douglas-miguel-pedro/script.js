@@ -1,6 +1,6 @@
 const regexNome = new RegExp(/[a-zA-Z]/);
 const regexTelefone = new RegExp(/[1-9]{11}/);
-const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 const pikaday = new Pikaday({
   field: document.getElementById('datepicker'),
   toString(date) {
@@ -46,6 +46,6 @@ cadastro.addEventListener('click', function () {
   } else if (data === '') {
     alert('Selecione a data');
   } else {
-    alert('nome: ' + nome + 'sobrenome: ' + sobrenome + 'Nova senha: ' + novasenha + 'E-mail/password: ' + emailOuPassword + 'Nascimento: ' + data);
+    alert('nome: ' + nome + ' ' + 'sobrenome: ' + sobrenome + 'Nova senha: ' + novasenha + 'E-mail/password: ' + emailOuPassword + 'Nascimento: ' + data);
   }
 });
