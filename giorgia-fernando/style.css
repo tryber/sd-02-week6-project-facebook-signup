@@ -73,18 +73,24 @@ header {
 #email, #senha {
     width:142px;
     height: 14px;
-    padding: 3px 3px 4px 3px;  
+    padding: 3px 3px 4px 3px; 
+    border: 1px solid; 
 }
 
 .td-email-senha {
-    padding: 0 0 4px 14px;
+    padding: 0 0 0px 14px;
+    height: 24px;
 }
 
 footer {
     background-color: white;
     line-height: 1.6;
     height: 136px;
+}
 
+#conteudo-rodape{
+    width: 980px;
+    margin: 0 auto;
 }
 
 #conexao {
@@ -104,22 +110,24 @@ footer {
     padding-top: 15px;
 }
 
+
+
+    /* background: #385898; */
+    
 #botao-entrar{
-    width: 35.484px;
-    height: 18px;
-    padding: 2px 6px 2px 6px;
-    border: 1px 1px 1px 1px;
+    border: none;
+    font-weight: bold;
+    background: none;
+    font-size: 12px;
+    line-height: 18px;
 }
 
-#entrar {
-    background: #385898;
-    height: 18px;
-    width: 35px;
+#label-entrar{
     padding: 2px 6px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
+    border: 1px solid;
+    height: 24px;
 }
+
 
 #abraumaconta {
     font-size: 36px;
@@ -203,7 +211,7 @@ footer {
     color: #9CB4D8;
 }
 
-.corpo {
+#corpo {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
