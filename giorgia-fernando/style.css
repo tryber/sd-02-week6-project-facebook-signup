@@ -109,23 +109,29 @@ footer {
     width: 170px;
     padding-top: 15px;
 }
-
-
-
-    /* background: #385898; */
-    
+    /* background: #385898; */  
 #botao-entrar{
     border: none;
+    height: 23px;
+    width: 35.484px;
+    font-size: 12px;
     font-weight: bold;
     background: none;
-    font-size: 12px;
-    line-height: 18px;
+    color: white;
+    cursor: pointer;
 }
 
 #label-entrar {
-    padding: 2px 6px;
-    border: 1px solid;
+    padding-top: 3px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    border: 1px solid #29487D;
     height: 24px;
+    width: 48.49px;
+    cursor: pointer;
+    background-color: #4267B2;
+    border-radius: 2px;
 }
 
 #abraumaconta {
