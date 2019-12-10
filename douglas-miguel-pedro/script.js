@@ -49,6 +49,7 @@ cadastro.addEventListener('click', function () {
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
     alert('ENTROU NESSA MERDA');
   } else {
-    alert('nome: ' + nome + ' sobrenome: ' + sobrenome + ' Nova senha: ' + novasenha + ' E-mail/Telefone: ' +  emailOuPassword + ' Nascimento: ' + data + ' Gênero: ' + document.querySelector('input[name="Gênero"]:checked').value);
+    const genero = (document.querySelector('input[name="Gênero"]:checked').value);
+    alert('nome: ' + nome + ' sobrenome: ' + sobrenome + ' Nova senha: ' + novasenha + ' E-mail/Telefone: ' + emailOuPassword + ' Nascimento: ' + data + ' Gênero: ' + genero);
   }
 });
