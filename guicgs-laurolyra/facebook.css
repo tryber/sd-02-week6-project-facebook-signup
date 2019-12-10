@@ -1,0 +1,47 @@
+* {
+  /* outline: 1px solid red; */
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3b5998;
+  height: 83px;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+}
+
+.fb-logo {
+  width: 170px;
+  margin-left: 5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#login {
+  display: flex;
+}
+
+#box-botao {
+  display: flex;
+  align-items: center;
+  margin-right: 5rem;
+}
+
+#login-usuario, #login-senha {
+  margin-right: 1rem;
+}
+
+#cadastro {
+  display: flex;
+  padding: 3rem 5rem;
+  background: linear-gradient(white, #D3D8E8);
+}
+
+#esquerda {
+  padding-right: 2rem;
+}
