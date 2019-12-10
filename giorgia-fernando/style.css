@@ -14,7 +14,7 @@ a:hover {
 }
 
 body {
-  background: #E7ECF2;
+  background: #e7ecf2;
   font-family: sans-serif;
 }
 
@@ -72,8 +72,7 @@ header {
   color: white;
 }
 
-#email,
-#senha {
+#email, #senha {
   width: 142px;
   height: 14px;
   padding: 3px 3px 4px 3px;
@@ -98,7 +97,7 @@ footer {
 
 #conexao {
   display: block;
-  color: #0E385F;
+  color: #0e385f;
   font-weight: bold;
   line-height: 29px;
   font-size: 20px;
@@ -129,11 +128,11 @@ footer {
   padding-right: 6px;
   padding-bottom: 3px;
   padding-left: 6px;
-  border: 1px solid #29487D;
+  border: 1px solid #29487d;
   height: 24px;
   width: 48.49px;
   cursor: pointer;
-  background-color: #4267B2;
+  background-color: #4267b2;
   border-radius: 2px;
 }
 
@@ -159,12 +158,12 @@ footer {
   border-radius: 2px;
   padding: 7px 20px 7px 20px;
   border-radius: 3px;
-  border-color: #3B6E22;
+  border-color: #3b6e22;
   cursor: pointer;
 }
 
 #cadastrar:hover {
-  background: #69A74E;
+  background: #69a74e;
 }
 
 .formulario {
