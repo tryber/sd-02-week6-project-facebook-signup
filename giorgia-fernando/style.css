@@ -58,7 +58,7 @@ header {
 }
 
 .links {
-  margin: 0 5px 0 5px;
+  margin: 0 5px;
 }
 
 .login {
@@ -72,15 +72,15 @@ header {
   color: white;
 }
 
-#email, #senha {
+#email #senha {
   width: 142px;
   height: 14px;
-  padding: 3px 3px 4px 3px;
+  padding: 3px 3px 4px;
   border: 1px solid;
 }
 
 .td-email-senha {
-  padding: 0 0 0px 14px;
+  padding-left: 14px;
   height: 24px;
 }
 
@@ -93,6 +93,7 @@ footer {
 #conteudo-rodape {
   width: 980px;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 #conexao {
@@ -139,7 +140,7 @@ footer {
 #abraumaconta {
   font-size: 36px;
   font-weight: bold;
-  line-height: 1.50;
+  line-height: 1.5;
   width: 400px;
   height: 54;
   margin-top: 20px;
@@ -156,10 +157,11 @@ footer {
   color: white;
   text-align: center;
   border-radius: 2px;
-  padding: 7px 20px 7px 20px;
+  padding: 7px 20px;
   border-radius: 3px;
   border-color: #3b6e22;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 #cadastrar:hover {
@@ -182,6 +184,8 @@ footer {
   color: #777;
   font-size: 12px;
   width: 316px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .ladoDireito {
@@ -190,7 +194,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  line-height: 1.50;
+  line-height: 1.5;
 }
 
 #nome-sobrenome {
@@ -236,4 +240,12 @@ footer {
 
 .campos {
   margin-bottom: 10px;
+}
+
+.criarPagina {
+    border-top: 1px solid #dddfe2;
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
