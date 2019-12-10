@@ -2,7 +2,7 @@
 const regexNome = new RegExp(/[a-zA-Z]/);
 const regexTelefone = new RegExp(/[1-9]{11}/);
 const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-const date = new Pikaday({
+const data = new Pikaday({
   field: document.getElementById('datepicker'),
   toString(date) {
     const day = date.getDate();
@@ -44,12 +44,12 @@ cadastro.addEventListener('click', function () {
     alert('E-mail ou Telefone inválido');
   } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if (date === '') {
+  } else if (data === '') {
     alert('Selecione a data');
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
     alert('ENTROU NESSA MERDA');
   } else {
     const genero = (document.querySelector('input[name="Gênero"]:checked').value);
-    alert(`nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${date} Gênero: ${genero}`);
+    alert(`nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
   }
 });
