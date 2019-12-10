@@ -1,4 +1,4 @@
-new Pikaday({
+const pikaday= new Pikaday({
   field: document.getElementById('datepicker'),
   toString(date) {
     const day = date.getDate();
@@ -13,10 +13,5 @@ new Pikaday({
 
 const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
-  customAlert("Something happened!");
-})
-
-function foo() {
-  var alert = myCustomLib.customAlert;
-  alert();
-}
+    alert('ola')
+});

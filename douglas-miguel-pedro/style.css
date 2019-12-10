@@ -3,20 +3,20 @@
 } */
 
 body {
-  background: linear-gradient( white ,rgb(211,216,232 ));
+  background: linear-gradient( white , rgb( 211 , 216 , 232 ));
   background-size: cover;
 }
 
 header {
   display: flex;
-  background-color: rgb(59,89,152);
+  background-color: rgb( 59 , 89 , 152 );
   justify-content: space-between;
   color: white;
 }
 
 .azul {
-  background-color: rgb(66, 103, 178);
-  border-color: rgb(41, 72, 125);
+  background-color: rgb( 66 , 103 , 178 );
+  border-color: rgb( 41 , 72 , 125 );
   color: white;
 }
 
@@ -41,7 +41,7 @@ header {
 
 #ladoesquerdo {
   width: 40%;
-  color: rgb(14, 56, 95);
+  color: rgb( 14 , 56 , 95 );
   margin-top: 40px;
 }
 
