@@ -1,19 +1,21 @@
+/* global Pikaday */
 const regexNome = new RegExp(/[a-zA-Z]/);
 const regexTelefone = new RegExp(/[1-9]{11}/);
 const regexEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-const pikaday = new Pikaday({
-  field: document.getElementById('datepicker'),
-  toString(date) {
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  },
-  firstDay: 1,
-  maxDate: new Date(2019, 11, 31),
-  yearRange: [1905, 2020],
-});
-
+function escolheDia(){
+  const pikaday = new Pikaday({
+    field: document.getElementById('datepicker'),
+    toString(date) {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    },
+    firstDay: 1,
+    maxDate: new Date(2019, 11, 31),
+    yearRange: [1905, 2020],
+  });
+}
 const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
   const botoesLogin = document.querySelectorAll('.primeirosInputs');
@@ -53,3 +55,6 @@ cadastro.addEventListener('click', function () {
     alert(`nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
   }
 });
+window.onload = function(){
+  escolheDia();
+}
