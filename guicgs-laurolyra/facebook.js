@@ -13,7 +13,7 @@ document.getElementById('datepicker').DatePickerX.init({
 });
 
 validation.init('#direita', {
-  events: ['change', 'paste', 'keyup']
+  events: ['change', 'paste', 'keyup'],
 });
 
 const botaoCadastro = document.getElementById('botao-envia');
