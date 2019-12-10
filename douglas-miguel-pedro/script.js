@@ -1,4 +1,4 @@
-const pikaday= new Pikaday({
+const pikaday = new Pikaday({
   field: document.getElementById('datepicker'),
   toString(date) {
     const day = date.getDate();
@@ -13,5 +13,5 @@ const pikaday= new Pikaday({
 
 const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
-    alert('ola')
+  alert('ola');
 });
