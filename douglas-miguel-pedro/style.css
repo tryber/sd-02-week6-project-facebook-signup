@@ -9,9 +9,9 @@ body {
   font-size: 12px;
 }
 
-#esqueceu{
+#esqueceu {
   font-size: 12px;
-  color: rgb(156, 180, 216);
+  color: rgb( 156 , 180 , 216 );
   cursor: pointer;
 }
 
@@ -22,12 +22,12 @@ header {
   color: white;
 }
 
-#login{
+#login {
   width: 40%;
   margin-top: 10px;
 }
 
-.primeirosInputs{
+.primeirosInputs {
   height: 23px;
   width: 150px;
   border-radius: 0;
@@ -78,11 +78,10 @@ header {
   margin-right: 5px;
 }
 
-#divSuperior{
-  margin: 0 0;
+#divSuperior {
+  margin: 0;
 }
 
-.form-row>.col, .form-row>[class*=col-] {
+.form-row > .col , .form-row > [ class *= "col-" ] {
   padding-left: 0;
 }
-
