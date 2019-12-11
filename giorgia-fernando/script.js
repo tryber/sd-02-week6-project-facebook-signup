@@ -2,7 +2,7 @@ const regexEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\
 const regexTelefone = /\d{4,5}-\d{4}/g;
 
 
-const botaoEntrar = document.querySelector('#botaoEntrar');
+let botaoEntrar = document.querySelector('#botaoEntrar');
 let campoInserido = document.getElementsByTagName('input')[0].value;
 
 botaoEntrar.addEventListener('click', function () {

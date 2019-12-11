@@ -1,4 +1,4 @@
-Projeto de recriação da página da mais famosa rede social chamada Facebook. 
+Projeto de recriação da página da mais famosa rede social chamada Facebook.
 
 
 Projeto esse realizado por Fernando Luckesi e Giorgia Leonia.
