@@ -162,6 +162,24 @@ form input {
   color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.34;
+}
+
+#linha-nascimento input {
+  padding: 5px 0;
+  width: 172px;
+  font-size: 13px;
+  border-radius: 0;
+}
+
+#radio {
+  margin-top: 8px;
+}
+
+#radio input {
+  width: 20px;
 }
 
 #radio label {
@@ -176,4 +194,54 @@ form input {
   color: #777;
   font-size: 11px;
   width: 316px;
+}
+
+#envia-dados p {
+  margin: 11px 0;
+}
+
+#envia-dados p a {
+  color: rgb( 56 , 88 , 152 );
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#envia-dados p a:hover {
+  text-decoration: underline;
+}
+
+#botao-envia {
+  background: linear-gradient(#67ae55, #578843);
+  border: 1px solid;
+  box-shadow: inset 0 1px 1px rgb( 164 , 227 , 136 );
+  border-color: rgb( 59 , 110 , 34 ) rgb( 59 , 110 , 34 ) rgb( 44 , 81 , 21 );
+  color: rgb( 255 , 255 , 255 );
+  cursor: pointer;
+  font-family: "Freight Sans Bold", Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  max-width: 194px;
+  padding: 7px 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#botao-envia:hover {
+  background-image: linear-gradient(rgb( 121 , 188 , 100 ), rgb( 87 , 136 , 67 ));
+}
+
+.opcao-empresa {
+  border-top: 1px solid #dddfe2;
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+.opcao-empresa p a {
+  color: rgb( 56 , 88 , 152 );
+  cursor: pointer;
+  text-decoration: none;
 }
