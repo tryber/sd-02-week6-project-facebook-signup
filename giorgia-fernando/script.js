@@ -1,9 +1,19 @@
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexTelefone = /\d{4,5}-\d{4}/g;
 
+function verificandoLogin(){
+  const email = document.getElementById('#email');
+  const senha = document.getElementById('#senha');
+  if (email.value === '') {
+    alert('Não é possível fazer o login se não inserir um e-mail ou telefone válido.')
+  } else if (senha === '') {
+    alert('Não é possível fazer o login se não inserir uma senha válida.')
+  } else {
+    alert('Login realizado com sucesso!')
+  }
+}
 
 let botaoEntrar = document.querySelector('#botaoEntrar');
-let campoInserido = document.getElementsByTagName('input')[0].value;
 
 botaoEntrar.addEventListener('click', function () {
   event.preventDefault();
@@ -14,8 +24,7 @@ botaoEntrar.addEventListener('click', function () {
   }
 });
 
-
-/* Função abaixo insere o datepicker da biblioteca JQuery */
-$(function (){
+// Função abaixo insere o datepicker da biblioteca JQuery
+$(function (dataNascimento){
   $('#calendario').datepicker();
 });
