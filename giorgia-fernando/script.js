@@ -13,3 +13,9 @@ botaoEntrar.addEventListener('click', function () {
     alert('Login realizado com sucesso!');
   }
 });
+
+
+/* Função abaixo insere o datepicker da biblioteca JQuery */
+$(function(){
+  $( "#calendario" ).datepicker();
+})
