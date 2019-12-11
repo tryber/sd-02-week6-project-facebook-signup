@@ -65,15 +65,15 @@
             <form>
                 <div id="nome-sobrenome" class='campos'>
                     <div>
-                        <input placeholder='Nome' name='nome' class='formulario nomes' required='required' />
+                        <input placeholder='Nome' id ='nome' name='nome' class='formulario nomes' required='required' />
                     </div>
                     <div>
-                        <input placeholder='Sobrenome' name='sobrenome' class=' formulario nomes' required='required' />
+                        <input placeholder='Sobrenome' name='sobrenome' id='sobrenome' class='formulario nomes' required='required' />
                     </div>
                 </div>
 
                 <div id='celular-email' class='campos'>
-                    <input placeholder='Celular ou e-mail' name='contato' class='formulario campoMaior'
+                    <input placeholder='Celular ou e-mail' name='contato' class='formulario campoMaior' id='contato'
                         required='required' />
                 </div>
                 <div id='novaSenha' class='campos'>
@@ -82,24 +82,24 @@
                 <div>
                     <h4 class="titulos">Data de nascimento</h4>
                     <div>
-                        <select id="dia-nascimento" name="dia-nascimento">
-                            <option>Dia</option>
-                        </select>
-                        <select id="mes-nascimento" name="mes-nascimento">
-                            <option>Janeiro</option>
-                            <option>Fevereiro</option>
-                        </select>
-                        <select id="ano-nascimento" name="ano-nascimento">
-                        </select>
+ <!-- Data: Diferentemente do Facebook, esse campo deve ser composto de um único input, e você deverá utilizar alguma biblioteca para transformá-lo em um datepicker.-->
                     </div>
                     <div id="generos">
                         <h4 class="titulos">Gênero</h4>
                         <div>
+<<<<<<< Updated upstream
                             <input type="radio" name='genero' id="feminino" value="Feminino" />
                             <label for="feminino">Feminino</label>
                             <input type="radio" name='genero' id="masculino" value="Masculino" />
                             <label for="masculino">Masculino</label>
                             <input type="radio" name='genero' id="personalizado" value="Personalizado" />
+=======
+                            <input type="radio" id="feminino" id='genero' value="1" />
+                            <label for="feminino">Feminino</label>
+                            <input type="radio" id="masculino" id='genero' value="2" />
+                            <label for="masculino">Masculino</label>
+                            <input type="radio" id="personalizado" id='genero' value="2" />
+>>>>>>> Stashed changes
                             <label for="personalizado">Personalizado</label>
                         </div>
             </form>
