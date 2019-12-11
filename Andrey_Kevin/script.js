@@ -1,10 +1,11 @@
 const inputDate = document.getElementById('datepicker');
 
+const form = document.querySelector('form').require = true;
+
 const picker = new Pikaday({
   field: document.getElementById('datepicker'),
   format: 'D/M/YYYY',
   toString(date, format) {
-
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
@@ -46,6 +47,7 @@ cadastrar.addEventListener('click', function () {
   else if (!dateRegex.test(inputDate.value)){s
     alert ("Informe sua data de nascimento");
   }
+
   else {
     alert(` Conta criada com sucesso!
             nome: ${name}

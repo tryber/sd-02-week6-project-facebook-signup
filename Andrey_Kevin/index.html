@@ -43,19 +43,19 @@
         <h2>Abra uma conta</h2>
         <p>É rápido é facil.</p>
         <div>
-          <input type="text" placeholder="Nome" required>
+          <input type="text" placeholder="Nome" id='nome' required>
           <div></div>
-          <input type="text" placeholder="Sobrenome" required>
+          <input type="text" placeholder="Sobrenome" id='sobrenome' required>
         </div>
-        <input type="text" placeholder="Celular ou Email" required>
-        <input type="password" placeholder="Nova senha" required pattern="[0-9a-fA-F]">
+        <input type="text" placeholder="Celular ou Email" id='phonemail' required>
+        <input type="password" placeholder="Nova senha" id='password' required pattern="[0-9a-fA-F]">
         <div id="date">
           <p>Data de nascimento</p>
             <input type="text" id="datepicker" required>
         </div>
         <div>
           <p>Gênero</p>
-          <form action="" aria-required="true">
+          <form>
             <div>
               <input type="radio" name="gender" value="female" id="female">
               <label for="female">Feminino</label>
