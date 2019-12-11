@@ -17,7 +17,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to bottom, #5573AF, #385898);
+  background-image: linear-gradient( to bottom, rgb(85, 115, 175), rgb(56, 88, 152) );
 }
 
 .barra-topo {
@@ -29,23 +29,20 @@ header {
   margin: 0 auto;
 }
 
-.footer-languages {
+#footer-languages {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  flex-flow: wrap;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   list-style-type: none;
   cursor: pointer;
 }
 
-.footer-links {
+#footer-links {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  flex-flow: wrap;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   list-style-type: none;

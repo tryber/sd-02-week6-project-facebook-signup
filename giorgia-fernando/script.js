@@ -1,19 +1,15 @@
 /* global $ */
 /* eslint no-undef: "error" */
 
-let regexEmail = /^(([^<>()[\]\\.,;:\s@“]+(\.[^<>()[\]\\.,;:\s@“]+)*)|(“.+“))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
-let regexTelefone = /\d{4,5}-\d{4}/;
-
-
-
-let email = document.getElementById('email');
-let senha = document.getElementById('senha');
-let entrar = document.getElementById('botaoEntrar');
+let regexEmailTelefone = /^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/;
+const email = document.getElementById('email');
+const senha = document.getElementById('senha');
+const entrar = document.getElementById('botaoEntrar');
 
 entrar.addEventListener('click', function () {
-  if (email.value == '' || regexEmail.test(email.value) /* && email.value != regexTelefone */) {
+  if (email.value == '' || regexEmailTelefone.test(email.value) == false) {
     alert('Não é possível fazer o login se não inserir um e-mail ou telefone válido.');
-  } else if (senha == '') {
+  } else if (/* regexEmailTelefone.test(email.value) == true && */ senha.value === '') {
     alert('Não é possível fazer o login se não inserir uma senha válida.');
   } else {
     alert('Login realizado com sucesso!');
