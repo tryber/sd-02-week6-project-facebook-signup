@@ -1,15 +1,15 @@
 /* global validation */
 
-function verificaDados(){
-	const usuario = document.getElementById('input-user');
-	const senha = document.getElementById('input-password');
-	if (usuario.value === '') {
-		alert ('Digite seu nome de usuário.');
-	} else if (senha === '') {
-		alert ('Digite sua senha.');
-	} else{
-		alert ('Login bem sucedido!');
-	}
+function verificaDados() {
+  const usuario = document.getElementById('input-user');
+  const senha = document.getElementById('input-password');
+  if (usuario.value === '') {
+    alert('Digite seu nome de usuário.');
+  } else if (senha === '') {
+    alert('Digite sua senha.');
+  } else {
+    alert('Login bem sucedido!');
+  }
 }
 
 function gambiarraData() {
