@@ -141,15 +141,6 @@ form {
   margin-top: -4px;
 }
 
-form input {
-  border: 1px solid rgb( 189 , 199 , 216 );
-  border-radius: 5px;
-  padding: 8px 10px;
-  width: 377px;
-  margin: 5px 0;
-  font-size: 18px;
-}
-
 #linha-nome-sobrenome {
   display: flex;
 }
@@ -236,12 +227,6 @@ form input {
   font-weight: 600;
   margin-top: 10px;
   padding-top: 15px;
-}
-
-.opcao-empresa p a {
-  color: rgb( 56 , 88 , 152 );
-  cursor: pointer;
-  text-decoration: none;
 }
 
 #box-botao input:hover {
