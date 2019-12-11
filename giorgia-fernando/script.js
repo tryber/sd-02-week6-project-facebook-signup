@@ -16,6 +16,6 @@ botaoEntrar.addEventListener('click', function () {
 
 
 /* Função abaixo insere o datepicker da biblioteca JQuery */
-$(function(){
-  $( "#calendario" ).datepicker();
-})
+$(function (){
+  $('#calendario').datepicker();
+});
