@@ -5,7 +5,7 @@ function verificaDados() {
   const senha = document.getElementById('input-password');
   if (usuario.value === '') {
     alert('Digite seu nome de usuário.');
-  } else if (senha === '') {
+  } else if (senha.value === '') {
     alert('Digite sua senha.');
   } else {
     alert('Login bem sucedido!');
