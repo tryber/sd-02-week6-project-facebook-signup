@@ -1,7 +1,7 @@
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexTelefone = /\d{4,5}-\d{4}/g;
 
-function verificandoLogin(){
+function verificandoLogin() {
   const email = document.getElementById('#email');
   const senha = document.getElementById('#senha');
   if (email.value === '') {
@@ -25,6 +25,6 @@ botaoEntrar.addEventListener('click', function () {
 });
 
 // Função abaixo insere o datepicker da biblioteca JQuery
-$(function (dataNascimento){
+$(function dataNascimento() {
   $('#calendario').datepicker();
 });
