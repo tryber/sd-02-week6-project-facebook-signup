@@ -17,7 +17,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to bottom , rgb( 85 , 115 , 175 ), rgb( 56 , 88 , 152 ));
+  background-image: linear-gradient( to bottom , rgb( 85 , 115 , 175 ) , rgb( 56 , 88 , 152 ));
 }
 
 .barra-topo {
@@ -92,6 +92,7 @@ footer {
   margin: 0 auto;
   padding-top: 20px;
 }
+
 #conexao {
   display: block;
   color: rgb( 14 , 56 , 95 );
@@ -193,6 +194,7 @@ footer {
   position: relative;
   line-height: 1.5;
 }
+
 #nome-sobrenome {
   width: 400px;
   display: flex;
@@ -248,7 +250,7 @@ footer {
   margin-bottom: 20px;
 }
 
-#calendario{
+#calendario {
   font-size: 1.2em;
   width: 130px;
   text-align: center;
