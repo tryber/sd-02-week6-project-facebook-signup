@@ -13,6 +13,8 @@ function verificandoLogin() {
   }
 }
 
+verificandoLogin();
+
 let botaoEntrar = document.querySelector('#botaoEntrar');
 
 botaoEntrar.addEventListener('click', function () {
