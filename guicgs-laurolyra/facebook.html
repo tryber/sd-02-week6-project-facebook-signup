@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="facebook.css">
@@ -9,57 +10,64 @@
   <script src="libs/validation.min.js"></script>
   <title>Facebook - entre ou cadastre-se</title>
 </head>
+
 <body>
   <header>
     <a href="facebook.html">
-      <img src="facebook.png" class="fb-logo" alt="logo Facebook" />
+      <img src="img/facebook.png" class="fb-logo" alt="logo Facebook" />
     </a>
     <div id="login">
       <div id="login-usuario">
-        <label>e-mail/nome de usuário</label><br>
-        <input type="e-mail" class="input"/>
+        <label>Email ou telefone</label><br>
+        <input type="e-mail" class="input" />
       </div>
       <div id="login-senha">
-        <label>senha</label><br>
-        <input type="password" class="input"/><br>
+        <label>Senha</label><br>
+        <input type="password" class="input" /><br>
         <a href="">Esqueceu a conta?</a>
       </div>
       <div id="box-botao">
-          <input type="submit" value='Entrar' id='botao-login'></input>
+        <input type="submit" value='Entrar' id='botao-login'></input>
       </div>
     </div>
   </header>
   <section id="cadastro">
     <div id="esquerda">
       <p>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
-      <img src="OBaVg52wtTZ.png" alt="conecta mundo" />
+      <img src="img/OBaVg52wtTZ.png" alt="conecta mundo" />
     </div>
     <div id="direita">
-      <h2>Abra uma conta.</h2>
-      <h3>É rápido e fácil.</h3>
+      <div id="cabecalho-direita">
+        <h2>Abra uma conta</h2>
+        <h3>É rápido e fácil.</h3>
+      </div>
       <form>
         <div id="linha-nome-sobrenome">
           <input type="text" placeholder="Nome" required>
           <input type="text" placeholder="Sobrenome" required>
         </div>
         <div id="linha-email">
-          <input type="text" placeholder="Celular ou e-mail" required>
+          <input type="text" placeholder="Celular ou email" required>
         </div>
         <div id="linha-senha">
-          <input type="password" placeholder="Nova senha" required>
+          <input type="password" placeholder="Nova senha" required style="margin-bottom: 10px;">
         </div>
         <div id="linha-nascimento">
-          <label>Data de Nascimento</label><br>
+          <label>Data de nascimento</label><br>
           <input type="text" id="datepicker" name='data-nascimento' class="validate" data-validate="required" required>
         </div>
         <div id="linha-genero">
-          <label>Gênero</label><br>
-          <label for=Gen1><input name='genero' id='Gen1' value='Feminino' type='radio'
-              required='required'>Feminino</label>
-          <label for=Gen2><input name='genero' id='Gen2' value='Masculino' type='radio'
-              required='required'>Masculino</label>
-          <label for=Gen3><input name='genero' id='Gen3' value='Personalizado' type='radio'
-              required='required'>Personalizado</label>
+          <div>
+            <label>Gênero</label>
+          </div>
+          <div id="radio">
+            <label for=Gen1><input name='genero' id='Gen1' value='Feminino' type='radio'
+                required='required'>Feminino</label>
+            <label for=Gen2><input name='genero' id='Gen2' value='Masculino' type='radio'
+                required='required'>Masculino</label>
+            <label for=Gen3><input name='genero' id='Gen3' value='Personalizado' type='radio'
+                required='required'>Personalizado</label>
+          </div>
         </div>
         <div id="envia-dados">
           <p>Ao clicar em Cadastre-se, você concorda com nossos Termos, Política de Dados e Política de Cookies. Você
@@ -123,4 +131,5 @@
 </body>
 <script src="facebook.js"></script>
 <script src="libs/DatePickerX.min.js"></script>
+
 </html>

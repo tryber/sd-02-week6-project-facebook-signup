@@ -10,11 +10,14 @@ header {
   background-color: rgba( 59 , 89 , 152 );
   height: 83px;
   background-image: linear-gradient( rgb( 78 , 105 , 162 ) , rgb( 59 , 89 , 152 ) 50% );
+  border-bottom: 1px solid #133783;
+  max-height: 83px;
 }
 
 .fb-logo {
   width: 170px;
-  margin-left: 5rem;
+  margin-left: 152px;
+  padding-top: 0.7rem;
 }
 
 ul {
@@ -23,24 +26,154 @@ ul {
 
 #login {
   display: flex;
+  padding-top: 0.5rem;
 }
 
 #box-botao {
   display: flex;
   align-items: center;
-  margin-right: 5rem;
+  margin-right: 152px;
+}
+
+#box-botao input {
+  background-color: rgb( 66 , 103 , 178 );
+  border: 1px solid rgb( 41 , 72 , 125 );
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  line-height: 18px;
+  padding: 2px 6px;
+}
+
+#box-botao input:hover {
+  background-color: rgb( 56 , 88 , 152 );
 }
 
 #login-usuario , #login-senha {
-  margin-right: 1rem;
+  margin-right: 14px;
+}
+
+#login-usuario label, #login-senha label {
+  font-size: 12px;
+  color: rgb( 255 , 255 , 255 );
+  padding: 2px;
+}
+
+#login-usuario input, #login-senha input {
+  margin: 0.25rem 0;
+  border: 1px;
+  border-style: solid;
+  border-color: rgb( 29 , 42 , 91 );
+  width: 142px;
+  height: 14px;
+  padding: 3px 3px 4px 3px;
+}
+
+#login-senha a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+  color: rgb( 156 , 180 , 216 );
+}
+
+#login-senha a:hover {
+  text-decoration: underline;
 }
 
 #cadastro {
   display: flex;
-  padding: 3rem 5rem;
+  justify-content: space-between;
   background: linear-gradient( white , rgb( 211 , 216 , 232 ) );
 }
 
 #esquerda {
-  padding-right: 2rem;
+ margin-left: 152px;
+ margin-top: 40px;
+ width: 450px;
+ height: 580px;
+}
+
+#esquerda p {
+  color: rgb( 14 , 56 , 95 );
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 29px;
+  word-spacing: -1px;
+}
+
+#direita {
+  margin-right: 152px;
+  width: 400px;
+  height: 600px;
+}
+
+#cabecalho-direita {
+  padding: 20px 0;
+}
+
+#direita h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48.24px;
+  color: rgb( 51 , 51 , 51 );
+}
+
+#direita h3 {
+  font-size: 19px;
+  color: rgb( 29 , 33 , 41 );
+  line-height: 25.46px;
+  font-weight: 400;
+  padding: 5px 0 0;
+}
+
+form {
+  margin-top: -4px;
+}
+
+form input {
+  border: 1px solid rgb( 189 , 199 , 216 );
+  border-radius: 5px;
+  padding: 8px 10px;
+  width: 377px;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+#linha-nome-sobrenome {
+  display: flex;
+  justify-content: space-between;
+}
+
+#linha-nome-sobrenome input {
+  width: 172px;
+}
+
+#linha-nascimento, #linha-genero {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.34;
+}
+
+#linha-nascimento label, #linha-genero label {
+  color: rgb( 144 , 148 , 156 );
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#radio label {
+  color: rgb(29, 33, 41);
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 0 10px 0 3px;
+}
+
+#envia-dados {
+  color: #777;
+  font-size: 11px;
+  width: 316px;
 }
