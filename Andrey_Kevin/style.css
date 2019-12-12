@@ -36,6 +36,15 @@ header {
   margin-right: 8%;
 }
 
+section > div {
+  margin-left: 13%;
+  margin-right: 14%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .head-container > div {
   display: flex;
   justify-content: flex-start;
@@ -46,6 +55,16 @@ header {
   margin: 2% 0;
   font-size: 1.1em;
   color: white;
+}
+
+.content input {
+  margin-bottom: 2%;
+  width: 100%;
+  padding: 1.6%;
+  border-width: 1px;
+  border: 1px solid rgb( 189 , 199 , 216 );
+  border-radius: 5px;
+  outline-color: rgb( 77 , 144 , 254 );
 }
 
 .head-container > div > input {
@@ -88,15 +107,6 @@ section {
 
 }
 
-section > div {
-  margin-left: 13%;
-  margin-right: 14%;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .image > div > p {
   margin-left: 5%;
   font-family: Oswald, sans-serif;
@@ -121,22 +131,20 @@ section > div {
   justify-content: space-between;
 }
 
+.content > div > div:nth-of-type( 2 ) {
+  margin-top: 2%;
+}
+
+.content > div > div:nth-of-type( 3 ) {
+  height: 10%;
+}
+
 .content > div > div:nth-of-type( 1 ) > div {
   width: 20%;
 }
 
-.content input {
-  margin-bottom: 2%;
-  width: 100%;
-  padding: 1.6%;
-  border-width: 1px;
-  border: 1px solid rgb( 189 , 199 , 216 );
-  border-radius: 5px;
-  outline-color: rgb( 77 , 144 , 254 );
-}
-
-.content > div > div:nth-of-type( 2 ) {
-  margin-top: 2%;
+.content > div > p {
+  color: rgb( 151 , 157 , 185 );
 }
 
 .content > div > div:nth-of-type( 2 ) p {
@@ -144,10 +152,6 @@ section > div {
   color: rgb( 151 , 155 , 163 );
   font-family: Rubik, sans-serif;
   margin-bottom: 2%;
-}
-
-.content > div > div:nth-of-type( 3 ) {
-  height: 10%;
 }
 
 .content > div > div:nth-of-type( 3 ) p {
@@ -166,10 +170,6 @@ section > div {
 
 .content > div > div:nth-of-type( 3 ) input {
   width: 20%;
-}
-
-.content > div > p {
-  color: rgb( 151 , 157 , 185 );
 }
 
 .content > div > p > span {
