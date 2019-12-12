@@ -229,8 +229,8 @@ function arraySenhaGender() {
 
 function validaArrays() {
   const valida = arrayNomeSobrenomeEmail().concat(arrayEmailTelData(), arraySenhaGender());
-  for (let i = 0; i < valida.length; i += 1){
-    if(valida[i] === false){
+  for (let i = 0; i < valida.length; i += 1) {
+    if (valida[i] === false) {
       return false;
     }
   }
