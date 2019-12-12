@@ -147,7 +147,7 @@ function validateNomeTudo() {
     return [true, nomeValue];
   }
   document.querySelectorAll('.form-group')[0].querySelector('.form-control').style.borderColor = 'red';
-  return false;
+  return [false, ''];
 }
 
 // Regex Sobrenome
@@ -159,7 +159,7 @@ function validateNomeSobrenomeTudo() {
     return [true, sobrenomeValue];
   }
   document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0].style.borderColor = 'red';
-  return false;
+  return [false, ''];
 }
 
 function validateEmailTelefoneFormTudo() {
@@ -172,14 +172,14 @@ function validateEmailTelefoneFormTudo() {
     return [true, emailValue];
   }
   document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0].style.borderColor = 'red';
-  return false;
+  return [false, ''];
 }
 
 function validateDataTudo() {
   const Data = document.querySelector('#datePicker').value;
   if (Data === '') {
     document.querySelector('#datePicker').style.borderColor = 'red';
-    return false;
+    return [false, ''];
   }
   return [true, Data];
 }
@@ -190,7 +190,7 @@ function verificaSenhaFormTudo() {
     return [true, senhaValue];
   }
   document.querySelector('.novaSenha').style.borderColor = 'red';
-  return false;
+  return [false, ''];
 }
 
 const verificaGenderTudo = () => {
@@ -212,25 +212,21 @@ const verificaGenderTudo = () => {
   document.querySelectorAll('.form-check-inline')[0].style.borderColor = 'red';
   document.querySelectorAll('.form-check-inline')[1].style.borderColor = 'red';
   document.querySelectorAll('.form-check-inline')[2].style.borderColor = 'red';
-  return false;
+  return [false, ''];
 };
 
 function validaTodosCampos() {
-  const Nome = validateNomeTudo(bordaNome);
-  const Sobrenome = validateNomeSobrenomeTudo(bordaSobrenome);
-  const EmailData = validateEmailTelefoneFormTudo(bordaEmail);
-  const Data = validateDataTudo(bordaData);
-  const Senha = verificaSenhaFormTudo(campoSenhaValue);
-  const Gender = verificaGenderTudo();
-  if (Nome[0] && Sobrenome[0]) {
-    if (EmailData[0] && Data[0]) {
-      if (Senha[0] && Gender[0]) {
-      alert(`Nome: ${Nome[1]}\nSobrenome: ${Sobrenome[1]}\nEmail ou Telefone: ${EmailData[1]}'\nData de Nascimento: ${Data[1]}'\nSenha: ${Senha[1]}'\nSexo: ${Gender[1]}`);
-    }
+  let valida = validateNomeTudo(bordaNome).concat(validateNomeSobrenomeTudo(bordaSobrenome), validateEmailTelefoneFormTudo(bordaEmail));
+  valida = valida.concat(validateDataTudo(bordaData), verificaSenhaFormTudo(campoSenhaValue), verificaGenderTudo());
+  if (valida[0] && valida[2]) {
+    if (valida[4] && valida[6]) {
+      if (valida[8] && valida[10]) {
+        alert(`Nome: ${valida[1]}\nSobrenome: ${valida[3]}\nEmail ou Telefone: ${valida[5]}'\nData de Nascimento: ${valida[7]}'\nSenha: ${valida[9]}'\nSexo: ${valida[11]}`);
+      } else { alert ('Cadastro não foi realizado. Corrija os campos em vermelho!!!')}
+    } else { alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!')}
   } else {
     alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!');
   }
-}
 }
 
 // Verifica Botao
