@@ -215,9 +215,20 @@ const verificaGenderTudo = () => {
   return [false, ''];
 };
 
+function arrayNomeSobrenomeEmail() {
+  return validateNomeTudo(bordaNome).concat(validateNomeSobrenomeTudo(bordaSobrenome));
+}
+
+function arrayEmailTelData() {
+  return validateEmailTelefoneFormTudo(bordaEmail).concat(validateDataTudo(bordaData));
+}
+
+function arraySenhaGender() {
+  return verificaSenhaFormTudo(campoSenhaValue).concat(verificaGenderTudo());
+}
+
 function validaTodosCampos() {
-  let valida = validateNomeTudo(bordaNome).concat(validateNomeSobrenomeTudo(bordaSobrenome), validateEmailTelefoneFormTudo(bordaEmail));
-  valida = valida.concat(validateDataTudo(bordaData), verificaSenhaFormTudo(campoSenhaValue), verificaGenderTudo());
+  const valida = arrayNomeSobrenomeEmail().concat(arrayEmailTelData(), arraySenhaGender());
   if (valida[0] && valida[2]) {
     if (valida[4] && valida[6]) {
       if (valida[8] && valida[10]) {
