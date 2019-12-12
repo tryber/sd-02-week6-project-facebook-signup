@@ -164,10 +164,6 @@ section > div {
   height: 50%;
 }
 
-.content > div > div:nth-of-type( 3 ) > form > div {
-  width: 25%;
-}
-
 .content > div > div:nth-of-type( 3 ) input {
   width: 20%;
 }
