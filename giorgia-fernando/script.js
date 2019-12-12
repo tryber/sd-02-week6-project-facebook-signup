@@ -7,7 +7,7 @@ const senha = document.getElementById('senha');
 const entrar = document.getElementById('botaoEntrar');
 
 entrar.addEventListener('click', function () {
-  if (email.value == '' || regexEmailTelefone.test(email.value) == false) {
+  if (email.value === '' || regexEmailTelefone.test(email.value) === false) {
     alert('Não é possível fazer o login se não inserir um e-mail ou telefone válido.');
   } else if (/* regexEmailTelefone.test(email.value) == true && */ senha.value === '') {
     alert('Não é possível fazer o login se não inserir uma senha válida.');
