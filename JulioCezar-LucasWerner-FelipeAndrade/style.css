@@ -15,12 +15,12 @@ body {
 
 
 .bluebarHeader {
-  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  background-image: linear-gradient(rgb(78 , 105 , 162) , rgb(59 , 89 , 152) 50%);
   display: flex;
   justify-content: center;
   height: 82px;
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: 1px solid #133783;
+  border-bottom: 1px solid rgb(19 , 55 , 131);
 }
 
 .bluebarContent {
@@ -59,7 +59,7 @@ body {
     align-items: center;
 }
 
-.loginItem > input{
+.loginItem > input {
     margin-right: 12px;
     width: 150px;
     height: 23px;
@@ -70,8 +70,8 @@ button {
     margin: 0;
     padding: 2px 6px;
     border: 1px solid black;
-    background-color: rgb(51, 102, 185);
-    font-weight: bold;
+    background-color: rgb(51 , 102 , 185);
+    font-weight: 700;
     color: white;
 }
 
@@ -82,16 +82,16 @@ button {
 .submitLogin {
     width: 50px;
     height: 24px;
-    border-color: #29487d;
+    border-color: rgb(41 , 72 , 125);
 }
 
-.submitLogin:hover{
-  background-color: #3b5998;
+.submitLogin:hover {
+  background-color: rgb(59 , 89 , 152);
 }
 
 a.forgotAccount {
   text-decoration: none;
-  color: #9cb4d8;
+  color: rgb(156 , 180 , 216);
   font-size: 12px;
 }
 
@@ -101,25 +101,25 @@ a.forgotAccount:hover {
 
 
 .texto {
-  color: #fff;
-  font-weight: normal;
+  color: white;
+  font-weight: 400;
   padding-left: 1px;
   font-family: inherit;
 }
 
 label {
     margin: 0;
-    font-size: 12px
+    font-size: 12px;
 }
 
 .esqueceuConta {
-    color: #9cb4d8;
+    color: rgb(156 , 180 , 216);
 }
 
 .articleContainer {
   display: flex;
   justify-content: center;
-  background: linear-gradient(white, #D3D8E8);
+  background: linear-gradient(white , rgb(211 , 216 , 232));
 }
 
 .articleContent {
@@ -139,9 +139,9 @@ label {
 }
 
 .leftText > h2 {
-  color: #0e385f;
+  color: rgb(14 , 56 , 95);
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 29px;
   margin-top: 40px;
   margin-bottom: 0;
@@ -157,15 +157,15 @@ label {
   margin: 0 0 7px 0;
   font-size: 36px;
   font-weight: 600;
-  color:  #333;
+  color: rgb(51 , 51 , 51);
 }
 
 .rightText > p {
   margin: 0;
   padding: 0;
-  color: #1d2129;
+  color: rgb(29 , 33 , 41);
   font-size: 19px;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .form-control {
@@ -173,16 +173,16 @@ label {
 }
 
 .label-text {
-  color: #90949c;
+  color: rgb(144 , 148 , 156);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 10px 0 5px 0;
 }
 
 .label-text-2 {
-  color: #90949c;
+  color: rgb(144 , 148 , 156);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0px 0 5px 0;
 }
 
@@ -191,7 +191,7 @@ label {
   font-size: 13px;
   width: 150px;
   padding: 5px;
-  border: 1px solid #ccd0d5;
+  border: 1px solid rgb(204 , 208 , 213);
 }
 
 .form-group {
@@ -203,9 +203,9 @@ label {
 }
 
 .form-check-label {
-  color: #1d2129;
+  color: rgb(29 , 33 , 41);
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 18px;
   padding-top: 5px;
 }
@@ -213,7 +213,7 @@ label {
 .terms-text > p {
   margin: 11px 0;
   padding: 0;
-  color: #777;
+  color: rgb(119 , 119 , 119);
   font-size: 11px;
   width: 316px;
 }
@@ -223,13 +223,13 @@ a:hover {
 }
 
 a {
-  color: #385898;
+  color: rgb(56 , 88 , 152);
 }
 
 .buttonContent {
   font-size: 19px;
-  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
-  font-weight: bold !important;
+  font-family: Freight Sans Bold, Helvetica, Arial, sans-serif;
+  font-weight: 700;
   letter-spacing: normal;
   text-rendering: optimizelegibility;
   margin-top: 10px;
@@ -237,35 +237,35 @@ a {
   min-width: 194px;
   padding: 7px 20px;
   text-align: center;
-  box-shadow: inset 0 1px 1px #a4e388;
-  border-color: #3b6e22 #3b6e22 #2c5115;
+  box-shadow: inset 0 1px 1px rgb(164 , 227 , 136);
+  border-color: rgb(59 , 110 , 34) rgb(59 , 110 , 34) rgb(44 , 81 , 21);
   border-radius: 5px;
-  color: #fff;
+  color: white;
   cursor: pointer;
-  background: linear-gradient(#67ae55, #578843);
+  background: linear-gradient(rgb(103 , 174 , 85) , rgb(87 , 136 , 67));
 }
 
 .buttonContent:hover {
-  background: linear-gradient(#79bc64, #578843);
+  background: linear-gradient(rgb(121 , 188 , 100) , rgb(87 , 136 , 67));
   text-decoration: none;
 }
 
 .createPage {
-  color: #666;
+  color: rgb(102 , 102 , 102);
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 10px;
   padding-top: 15px;
 }
 
 .infoButton {
-  width:21px;
-  height:21px;
+  width: 21px;
+  height: 21px;
   margin-left: 3px;
   }
 
 .footerContainer {
-  color: #737373;
+  color: rgb(115 , 115 , 115);
   margin: 0 auto;
   width: 980px;
   height: 136px;
@@ -290,26 +290,26 @@ a {
   cursor: pointer;
   height: 18px;
   line-height: 18px;
-  background-color: #f5f6f7;
-  border-color: #ccd0d5;
-  color: #3f4247;
+  background-color: rgb(245 , 246 , 247);
+  border-color: rgb(204 , 208 , 213);
+  color: rgb(63 , 66 , 71);
   border: 1px solid;
   border-radius: 2px;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   justify-content: center;
   padding: 0 10px;
   text-align: center;
 }
 
 .breakLine {
-  border-bottom: 1px solid #dddfe2;
+  border-bottom: 1px solid rgb(221 , 223 , 226);
   font-size: 1px;
   height: 8px;
   margin-bottom: 8px;
 }
 
-.extras{
+.extras {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;

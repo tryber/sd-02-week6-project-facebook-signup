@@ -161,7 +161,7 @@ function validaTodosCampos() {
   const EmailData = validateEmailTelefoneFormTudo(bordaEmail);
   const Data = validateDataTudo(bordaData);
   const Senha = verificaSenhaFormTudo(campoSenhaValue);
-  const Gender = verificaGenderTudo ();
+  const Gender = verificaGenderTudo();
   if (Nome[0] && Sobrenome[0] && EmailData[0] && Data[0] && Senha[0] && Gender[0]){
     alert('Nome: ' + Nome[1] + '\nSobrenome: ' + Sobrenome[1] + '\nEmail ou Telefone: ' + EmailData[1] + '\nData de Nascimento: ' + Data[1] + '\nSenha: ' + Senha[1] + '\nSexo: ' + Gender[1]);
   } else {
@@ -232,7 +232,7 @@ const verificaGenderTudo = () => {
     if (element.checked == true) {
       i += 1;
       value = element.value
-    }         
+    }
   })
   if (i == 1){
     return [true, value];
