@@ -104,7 +104,7 @@ campoSenhaValue.addEventListener('blur', verificaSenhaForm);
 
 // Verifica Gender
 
-const caminhoGender = document.querySelectorAll('.form-group');
+// const caminhoGender = document.querySelectorAll('.form-group');
 
 // Regex E-mail
 
@@ -139,7 +139,7 @@ document.querySelector('#datePicker').DatePickerX.init({
   format: 'dd/mm/yyyy',
 });
 
-/*const verificaGender = () => {
+/* const verificaGender = () => {
   caminhoGender.forEach((element) => {
     if (element.checked !== true) {
       element.style.borderColor = 'red';
@@ -188,7 +188,7 @@ function validateDataTudo() {
   if (Data === '') {
     return false;
   }
-  return [true, Data];  
+  return [true, Data];
 }
 
 function verificaSenhaFormTudo() {
@@ -222,7 +222,7 @@ function validaTodosCampos() {
   const Data = validateDataTudo(bordaData);
   const Senha = verificaSenhaFormTudo(campoSenhaValue);
   const Gender = verificaGenderTudo();
-  if (Nome[0] && Sobrenome[0] && EmailData[0] && Data[0] && Senha[0] && Gender[0]) {
+  if ((Nome[0] && Sobrenome[0]) && (EmailData[0] && Data[0]) && (Senha[0] && Gender[0])) {
     alert(`Nome: ${Nome[1]}\nSobrenome: ${Sobrenome[1]}\nEmail ou Telefone: ${EmailData[1]}'\nData de Nascimento: ${Data[1]}'\nSenha: ${Senha[1]}'\nSexo: ${Gender[1]}`);
   } else {
     alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!');
