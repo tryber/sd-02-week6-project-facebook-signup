@@ -37,6 +37,7 @@ cadastro.addEventListener('click', function () {
   const novasenha = document.getElementById('novasenha').value;
   const emailOuPassword = document.getElementById('emailoupassword').value;
   const options = document.querySelectorAll('.option');
+  const infoData = data._d;
   event.preventDefault();
   if (!regexNome.test(nome)) {
     alert('Nome inválido');
@@ -46,7 +47,7 @@ cadastro.addEventListener('click', function () {
     alert('E-mail ou Telefone inválido');
   } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if (data._d === undefined) {
+  } else if ( infoData === undefined) {
     alert('Selecione a data');
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
     alert('Você deve selecionar o seu gênero');
