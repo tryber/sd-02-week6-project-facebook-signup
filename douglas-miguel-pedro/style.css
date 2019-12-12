@@ -20,7 +20,7 @@ header {
   background-color: rgb( 59 , 89 , 152 );
   justify-content: space-between;
   color: white;
-  background-image: linear-gradient( rgb( 85 , 115 , 175 ) ,rgb( 56 , 88 , 152 ) );
+  background-image: linear-gradient( rgb( 85 , 115 , 175 ) , rgb( 56 , 88 , 152 ) );
   background-position: to bottom;
 }
 
