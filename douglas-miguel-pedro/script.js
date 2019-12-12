@@ -46,7 +46,7 @@ cadastro.addEventListener('click', function () {
     alert('E-mail ou Telefone inválido');
   } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if (data.value === undefined) {
+  } else if (data._d === undefined) {
     alert('Selecione a data');
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
     alert('Você deve selecionar o seu gênero');
