@@ -227,16 +227,22 @@ function arraySenhaGender() {
   return verificaSenhaFormTudo(campoSenhaValue).concat(verificaGenderTudo());
 }
 
+function validaArrays() {
+  const valida = arrayNomeSobrenomeEmail().concat(arrayEmailTelData(), arraySenhaGender());
+  for (let i = 0; i < valida.length; i += 1){
+    if(valida[i] === false){
+      return false;
+    }
+  }
+  return true;
+}
+
 function validaTodosCampos() {
   const valida = arrayNomeSobrenomeEmail().concat(arrayEmailTelData(), arraySenhaGender());
-  if (valida[0] && valida[2]) {
-    if (valida[4] && valida[6]) {
-      if (valida[8] && valida[10]) {
-        alert(`Nome: ${valida[1]}\nSobrenome: ${valida[3]}\nEmail ou Telefone: ${valida[5]}'\nData de Nascimento: ${valida[7]}'\nSenha: ${valida[9]}'\nSexo: ${valida[11]}`);
-      } else { alert ('Cadastro não foi realizado. Corrija os campos em vermelho!!!')}
-    } else { alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!')}
-  } else {
+  if (validaArrays() === false) {
     alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!');
+  } else {
+    alert(`Nome: ${valida[1]}\nSobrenome: ${valida[3]}\nEmail ou Telefone: ${valida[5]}'\nData de Nascimento: ${valida[7]}'\nSenha: ${valida[9]}'\nSexo: ${valida[11]}`);
   }
 }
 
