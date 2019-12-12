@@ -66,9 +66,9 @@ const botaoEnviar = document.getElementsByClassName('submitLogin')[0];
 
 botaoEnviar.addEventListener('click', function campoLogin() {
   event.preventDefault();
-  campoEmailTelefone = document.getElementsByTagName('input')[0].value;
-  campoSenha = document.querySelectorAll('.loginItem')[1].querySelectorAll('input')[0].value;
-  if ((campoSenha !== '' && validateEmail(campoEmailTelefone) == true) || validateTelefone(campoEmailTelefone) == true) {
+  const campoEmailTelefone = document.getElementsByTagName('input')[0].value;
+  const campoSenha = document.querySelectorAll('.loginItem')[1].querySelectorAll('input')[0].value;
+  if ((campoSenha !== '' && validateEmail(campoEmailTelefone) === true) || validateTelefone(campoEmailTelefone) === true) {
     alert('Login realizado com sucesso');
   } else {
     alert('Você não inseriu um e-mail ou número de telefone válido(xxxxx-xxxx) e/ou o campo senha está vazio');
@@ -76,15 +76,15 @@ botaoEnviar.addEventListener('click', function campoLogin() {
 });
 
 document.querySelector('#datePicker').DatePickerX.init({
-  format: 'dd/mm/yyyy'
+  format: 'dd/mm/yyyy',
 });
 
 // Regex Nome
 
-function validateNome(event) {
+function validateNome() {
   const nomeValue = event.target.value.trim();
   const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(nomeValue) == true) {
+  if (resultado.test(nomeValue) === true) {
     event.target.style.borderColor = 'greenyellow';
     event.target.value = nomeValue;
   } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
@@ -94,19 +94,19 @@ function validateNome(event) {
 
 // Regex Sobrenome
 
-function validateNomeSobrenome(event) {
+function validateNomeSobrenome() {
   const nomeValue = event.target.value.trim();
   const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(nomeValue) == true) {
+  if (resultado.test(nomeValue) === true) {
     event.target.value = nomeValue;
     event.target.style.borderColor = 'greenyellow';
-  } else if (resultado.test(nomeValue) !== true || nomeValue == '') {
+  } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
     event.target.value = nomeValue;
     event.target.style.borderColor = 'red';
   }
 }
 
-function validateEmailTelefoneForm(event) {
+function validateEmailTelefoneForm() {
   const emailValue = event.target.value.trim();
   const resultadoEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const resultadoTelefone = /\d{4,5}-\d{4}/;
@@ -121,7 +121,7 @@ function validateEmailTelefoneForm(event) {
   }
 }
 
-function validateData(event) {
+function validateData() {
   const dataValue = event.target.value.trim();
   if (dataValue === '') {
     event.target.style.borderColor = 'red';
@@ -155,7 +155,7 @@ const verificaGender = () => {
 function validateNomeTudo() {
   const bordaNome = document.querySelectorAll('.form-group')[0].querySelector('.form-control').value;
   const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(bordaNome) == true) {
+  if (resultado.test(bordaNome) === true) {
     return [true, bordaNome];
   } else {
     return false;
@@ -165,23 +165,23 @@ function validateNomeTudo() {
 // Regex Sobrenome
 
 function validateNomeSobrenomeTudo() {
-  const bordaSobrenome = document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0].value;
+  const sobrenomeValue = document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0].value;
   const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(bordaSobrenome) == true) {
-    return [true, bordaSobrenome];
+  if (resultado.test(sobrenomeValue) == true) {
+    return [true, sobrenomeValue];
   } else {
     return false;
   }
 }
 
 function validateEmailTelefoneFormTudo() {
-  const bordaEmail = document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0].value;
+  const emailValue = document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0].value;
   const resultadoEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const resultadoTelefone = /\d{4,5}-\d{4}/;
-  const emailValidation = resultadoEmail.test(bordaEmail);
-  const telefoneValidation = resultadoTelefone.test(bordaEmail);
+  const emailValidation = resultadoEmail.test(emailValue);
+  const telefoneValidation = resultadoTelefone.test(emailValue);
   if ((emailValidation || telefoneValidation) === true) {
-    return [true, bordaEmail];
+    return [true, emailValue];
   } else {
     return false;
   }
@@ -210,12 +210,12 @@ const verificaGenderTudo = () => {
   let i = 0;
   let value = '';
   caminhoGenderTudo.forEach((element) => {
-    if (element.checked == true) {
+    if (element.checked === true) {
       i += 1;
       value = element.value;
     }
   })
-  if (i == 1){
+  if (i === 1){
     return [true, value];
   } else {
     return false;
