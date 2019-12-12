@@ -1,3 +1,65 @@
+
+// Regex Nome
+
+function validateNome() {
+  const nomeValue = event.target.value.trim();
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  if (resultado.test(nomeValue) === true) {
+    event.target.style.borderColor = 'greenyellow';
+    event.target.value = nomeValue;
+  } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
+    event.target.style.borderColor = 'red';
+  }
+}
+
+// Regex Sobrenome
+
+function validateNomeSobrenome() {
+  const nomeValue = event.target.value.trim();
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  if (resultado.test(nomeValue) === true) {
+    event.target.value = nomeValue;
+    event.target.style.borderColor = 'greenyellow';
+  } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
+    event.target.value = nomeValue;
+    event.target.style.borderColor = 'red';
+  }
+}
+
+function validateEmailTelefoneForm() {
+  const emailValue = event.target.value.trim();
+  const resultadoEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const resultadoTelefone = /\d{4,5}-\d{4}/;
+  const emailValidation = resultadoEmail.test(emailValue);
+  const telefoneValidation = resultadoTelefone.test(emailValue);
+  if ((emailValidation || telefoneValidation) === true) {
+    event.target.value = emailValue;
+    event.target.style.borderColor = 'greenyellow';
+  } else {
+    event.target.value = emailValue;
+    event.target.style.borderColor = 'red';
+  }
+}
+
+function validateData() {
+  const dataValue = event.target.value.trim();
+  if (dataValue === '') {
+    event.target.style.borderColor = 'red';
+  } else {
+    event.target.style.borderColor = 'greenyellow';
+  }
+}
+
+function verificaSenhaForm() {
+  const evento = event.target;
+  const eventoValue = event.target.value;
+  if (eventoValue !== '') {
+    evento.style.borderColor = 'greenyellow';
+  } else {
+    evento.style.borderColor = 'red';
+  }
+}
+
 // Verifica Nome
 
 const bordaNome = document.querySelectorAll('.form-group')[0].querySelector('.form-control');
@@ -77,68 +139,7 @@ document.querySelector('#datePicker').DatePickerX.init({
   format: 'dd/mm/yyyy',
 });
 
-// Regex Nome
-
-function validateNome() {
-  const nomeValue = event.target.value.trim();
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(nomeValue) === true) {
-    event.target.style.borderColor = 'greenyellow';
-    event.target.value = nomeValue;
-  } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
-    event.target.style.borderColor = 'red';
-  }
-}
-
-// Regex Sobrenome
-
-function validateNomeSobrenome() {
-  const nomeValue = event.target.value.trim();
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
-  if (resultado.test(nomeValue) === true) {
-    event.target.value = nomeValue;
-    event.target.style.borderColor = 'greenyellow';
-  } else if (resultado.test(nomeValue) !== true || nomeValue === '') {
-    event.target.value = nomeValue;
-    event.target.style.borderColor = 'red';
-  }
-}
-
-function validateEmailTelefoneForm() {
-  const emailValue = event.target.value.trim();
-  const resultadoEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const resultadoTelefone = /\d{4,5}-\d{4}/;
-  const emailValidation = resultadoEmail.test(emailValue);
-  const telefoneValidation = resultadoTelefone.test(emailValue);
-  if ((emailValidation || telefoneValidation) === true) {
-    event.target.value = emailValue;
-    event.target.style.borderColor = 'greenyellow';
-  } else {
-    event.target.value = emailValue;
-    event.target.style.borderColor = 'red';
-  }
-}
-
-function validateData() {
-  const dataValue = event.target.value.trim();
-  if (dataValue === '') {
-    event.target.style.borderColor = 'red';
-  } else {
-    event.target.style.borderColor = 'greenyellow';
-  }
-}
-
-function verificaSenhaForm() {
-  const evento = event.target;
-  const eventoValue = event.target.value;
-  if (eventoValue !== '') {
-    evento.style.borderColor = 'greenyellow';
-  } else {
-    evento.style.borderColor = 'red';
-  }
-}
-
-const verificaGender = () => {
+/*const verificaGender = () => {
   caminhoGender.forEach((element) => {
     if (element.checked !== true) {
       element.style.borderColor = 'red';
@@ -146,7 +147,7 @@ const verificaGender = () => {
       element.style.borderColor = 'none';
     }
   });
-};
+};*/
 
 // Regex Nome
 
@@ -184,10 +185,10 @@ function validateEmailTelefoneFormTudo() {
 
 function validateDataTudo() {
   const Data = document.querySelector('#datePicker').value;
-  if (Data !== '') {
-    return [true, Data];
+  if (Data === '') {
+    return false;
   }
-  return false;
+  return [true, Data];  
 }
 
 function verificaSenhaFormTudo() {
