@@ -15,7 +15,7 @@ function validateNome() {
 
 function validateNomeSobrenome() {
   const nomeValue = event.target.value.trim();
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\s]+$/;
   if (resultado.test(nomeValue) === true) {
     event.target.value = nomeValue;
     event.target.style.borderColor = 'greenyellow';
