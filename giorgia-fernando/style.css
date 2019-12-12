@@ -17,8 +17,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient( to bottom , rgb( 85 , 115 , 175 ) , 
-      rgb( 56 , 88 , 152 ) );
+  background-image: linear-gradient( to bottom , rgb( 85 , 115 , 175 ) , rgb( 56 , 88 , 152 ) );
 }
 
 .barra-topo {
