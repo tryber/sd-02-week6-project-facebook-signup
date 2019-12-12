@@ -1,3 +1,4 @@
+/* global Pikaday */
 const dataNasc = new Pikaday({
   field: document.getElementById('datepicker'),
   format: 'D/M/YYYY',
@@ -26,7 +27,7 @@ cadastrar.addEventListener('click', function () {
   const lastName = document.getElementById('sobrenome').value;
   const phoneMail = document.getElementById('phonemail').value;
   const password = document.getElementById('password').value;
-  const dateInput = document.getElementById('datepicker').value
+  const dateInput = document.getElementById('datepicker').value;
   const female = document.getElementById('female');
   const male = document.getElementById('male');
   const personalizado = document.getElementById('personalizado');
