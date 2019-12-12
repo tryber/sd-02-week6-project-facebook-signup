@@ -3,16 +3,19 @@ html , body {
   height: 100%;
   width: 100%;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: rgb( 231 , 236 , 242 );
 
   /* background-color:  color(red alpha(90%));; */
 }
+
 header {
   background-color: rgb( 59 , 90 , 151 );
   height: 13%;
@@ -20,44 +23,52 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 .logo {
   width: 18%;
   height: auto;
   margin-left: 7%;
 }
+
 .head-container {
   display: flex;
   justify-content: flex-start;
   margin-right: 8%;
 }
+
 .head-container > div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 }
+
 .head-container > div > label {
   margin: 2% 0;
   font-size: 1.1em;
   color: white;
 }
+
 .head-container > div > input {
   margin-right: 10%;
   margin-bottom: 3%;
   height: 30%;
 }
+
 .head-container > div > p {
   font-size: 0.8em;
-  color: rgb(139, 164, 204);
+  color: rgb( 139 , 164 , 204 );
 }
+
 .head-container > div:nth-child( 3 ) {
   display: flex;
   justify-content: center;
   width: 30%;
 }
+
 .head-container > div > button {
   height: 30%;
   border-style: none;
-  background-color: rgb(66, 103, 178);
+  background-color: rgb( 66 , 103 , 178 );
   color: white;
   padding: 0 20%;
   box-shadow: -1px 1px 0px 1px rgba( 43 , 73 , 128 , 1 );
@@ -65,15 +76,18 @@ header {
   /* -webkit-box-shadow: -1px 1px 0px 1px rgba( 43 , 73 , 128 , 1 );
   -moz-box-shadow: -1px 1px 0px 1px rgba( 43 , 73 , 128 , 1 ); */
 }
+
 main {
   display: flex;
   justify-content: space-between;
   height: 87%;
 }
+
 section {
   width: 50%;
 
 }
+
 section > div {
   margin-left: 13%;
   margin-right: 14%;
@@ -86,79 +100,91 @@ section.image > div > p {
   margin-left: 5%;
   font-family: Oswald, sans-serif;
   font-weight: 700;
-  color: rgb(23, 63, 101);
+  color: rgb( 23 , 63 , 101 );
   font-size: 1.2em;
 }
+
 section.image > div > img {
   width: 100%;
 }
+
 section.content > div > h2 {
   font-size: 1.8em;
   font-family: Rubik, sans-serif;
   margin-bottom: 2%;
 }
+
 section.content > div > div:nth-of-type( 1 ) {
   margin-top: 5%;
   display: flex;
   justify-content: space-between;
 }
+
 section.content > div > div:nth-of-type( 1 ) > div {
   width: 20%;
 }
+
 section.content input {
   margin-bottom: 2%;
   width: 100%;
   padding: 1.6%;
   border-width: 1px;
   border: 1px solid rgb( 189 , 199 , 216 );
-  
-  /* border-width: 1px;
-  border-color: #cfd6e2; */
   border-radius: 5px;
   outline-color: rgb( 77 , 144 , 254 );
 }
+
 section.content > div > div:nth-of-type( 2 ) {
   margin-top: 2%;
 }
+
 section.content > div > div:nth-of-type( 2 ) p {
   font-weight: 700;
-  color: rgb(151, 155, 163);
+  color: rgb( 151 , 155 , 163 );
   font-family: Rubik, sans-serif;
-  margin-bottom:2%;
+  margin-bottom: 2%;
 }
+
 section.content > div > div:nth-of-type( 3 ) {
   height: 10%;
 }
+
 section.content > div > div:nth-of-type( 3 ) p {
   font-weight: 700;
-  color: rgb(151, 155, 163);
+  color: rgb( 151 , 155 , 163 );
   font-family: Rubik, sans-serif;
   margin-top: 2%;
 }
+
 section.content > div > div:nth-of-type( 3 ) > form {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 50%;
 }
+
 section.content > div > div:nth-of-type( 3 ) > form > div {
   width: 25%;
 }
+
 section.content > div > div:nth-of-type( 3 ) input {
   width: 20%;
 }
+
 section.content > div > p {
   color: rgb( 151 , 157 , 185 );
 }
+
 section.content > div > p > span {
   color: rgb( 78 , 107 , 163 );
 }
+
 section.content > div > button {
   height: 5%;
   width: 40%;
   margin: 5% 0;
-  background-color: rgb(94, 153, 74);
-  border-color: rgb(54, 89, 32);
+  background-color: rgb( 94 , 153 , 74 );
+  border-color: rgb( 54 , 89 , 32 );
   color: white;
   border-style: none;
   border-width: 3px;

@@ -35,17 +35,17 @@ cadastrar.addEventListener('click', function () {
 
   if (!nameRegex.test(name)) {
     alert('O nome informado é inválido');
-  }  else if (!nameRegex.test(lastName)) {
+  } else if (!nameRegex.test(lastName)) {
     alert('O sobrenome informado é inválido');
-  }  else if ((!phoneRegex.test(phoneMail)) && (!emailRegex.test(phoneMail))) {
+  } else if ((!phoneRegex.test(phoneMail)) && (!emailRegex.test(phoneMail))) {
     alert('O telefone/email informado é inválido');
-  }  else if (password === '') {
+  } else if (password === '') {
     alert('Informe sua senha');
-  }  else if (!dateRegex.test(inputDate.value)) {
+  } else if (!dateRegex.test(inputDate.value)) {
     alert('Informe sua data de nascimento');
-  }  else if (!female.checked && !male.checked && !personalizado.checked){
+  } else if (!female.checked && !male.checked && !personalizado.checked) {
     alert('Informe o seu gênero');
-  }  else {
+  } else {
     alert(` Conta criada com sucesso!
             nome: ${name}
             sobrenome: ${lastName}
