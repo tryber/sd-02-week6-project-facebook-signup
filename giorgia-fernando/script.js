@@ -1,7 +1,7 @@
 /* global $ */
 /* eslint no-undef: "error" */
 
-let regexEmailTelefone = /^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/;
+const regexEmailTelefone = /^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/;
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const entrar = document.getElementById('botaoEntrar');
