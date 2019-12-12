@@ -15,7 +15,7 @@ body {
 
 
 .bluebarHeader {
-  background-image: linear-gradient ( rgb( 78 , 105 , 162 ) , rgb( 59 , 89 , 152 ) 50% );
+  background-image: linear-gradient( rgb( 78 , 105 , 162 ) , rgb( 59 , 89 , 152 ) 50% );
   display: flex;
   justify-content: center;
   height: 82px;
@@ -44,7 +44,7 @@ body {
 }
 
 
-.loginForm, loginItem, loginItem {
+.loginForm {
   display: flex;
   align-content: space-around;
   justify-content: left;
@@ -89,13 +89,14 @@ button {
   background-color: rgb( 59 , 89 , 152 );
 }
 
-a.forgotAccount {
+.forgotAccount {
   text-decoration: none;
   color: rgb( 156 , 180 , 216 );
   font-size: 12px;
 }
 
-a.forgotAccount:hover {
+.forgotAccount:hover {
+  color: rgb( 156 , 180 , 216 );
   text-decoration: underline;
 }
 
@@ -183,7 +184,7 @@ label {
   color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: 700;
-  margin: 0px 0 5px 0;
+  margin: 0 0 5px 0;
 }
 
 #datePicker {
@@ -218,12 +219,12 @@ label {
   width: 316px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 a {
   color: rgb( 56 , 88 , 152 );
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .buttonContent {
@@ -262,7 +263,7 @@ a {
   width: 21px;
   height: 21px;
   margin-left: 3px;
-  }
+}
 
 .footerContainer {
   color: rgb( 115 , 115 , 115 );
