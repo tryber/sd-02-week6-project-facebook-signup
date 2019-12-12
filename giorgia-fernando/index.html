@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <title>Facebook – entre ou cadastre-se</title>
+</head>
+
+<body>
+    <header>
+        <div class='barra-topo'>
+            <img src='facebook-logo.png' id='logo'>
+            <div class="login">
+                <form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="td-email-senha">
+                                    <label class='font-label' for="email">Email ou telefone</label>
+                                </td>
+                                <td class="td-email-senha">
+                                    <label class='font-label' for="senha">Senha</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-email-senha">
+                                    <input type="email" name='email' id='email'>
+                                </td>
+                                <td class="td-email-senha">
+                                    <input type="password" name='senha' id='senha'>
+                                </td>
+                                <td class="td-email-senha" id="td-entrar">
+                                    <label for='botaoEntrar' id='label-entrar'>
+                                        <input type="button" value="Entrar" id="botaoEntrar">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="td-email-senha">
+                                    <div>
+                                        <a href="#" id="esqueceu">Esqueceu a conta?</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div id="corpo">
+        <section class="ladoEsquerdo">
+            <span id='conexao'>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua
+                vida.</span>
+            <img src='figura.png' alt="Imagem simbólica que mostra conexões entre pessoas ao redor do mundo"
+                id="people" />
+        </section>
+        <section class='ladoDireito'>
+            <p id="abraumaconta">Abra uma conta</p>
+            <p id="rapidoefacil">É rápido e fácil.</p>
+            <form>
+                <div id="nome-sobrenome" class='campos'>
+                    <div>
+                        <input placeholder='Nome' id='nome' name='nome' class='formulario nomes' required='required' />
+                    </div>
+                    <div>
+                        <input placeholder='Sobrenome' name='sobrenome' id='sobrenome' class='formulario nomes'
+                            required='required' />
+                    </div>
+                </div>
+
+                <div id='celular-email' class='campos'>
+                    <input placeholder='Celular ou e-mail' name='contato' class='formulario campoMaior' id='contato'
+                        required='required' />
+                </div>
+                <div id='novaSenha' class='campos'>
+                    <input placeholder='Nova senha' name='senha' class='formulario campoMaior' type="password" />
+                </div>
+                <div>
+                    <h4 class="titulos">Data de nascimento</h4>
+                    <div>
+                        <input type="text" id="calendario" placeholder="Data">
+                    </div>
+                    <div id="generos">
+                        <h4 class="titulos">Gênero</h4>
+                        <div>
+                            <input type="radio" name='genero' id="feminino" value="Feminino" />
+                            <label for="feminino">Feminino</label>
+                            <input type="radio" name='genero' id="masculino" value="Masculino" />
+                            <label for="masculino">Masculino</label>
+                            <input type="radio" name='genero' id="personalizado" value="Personalizado" />
+                            <label for="personalizado">Personalizado</label>
+                        </div>
+            </form>
+    </div>
+    <p class="termos">Ao clicar em Cadastre-se, você concorda com nossos <a target="_blank"
+            href="https://www.facebook.com/legal/terms/update">Termos</a>, <a target="_blank"
+            href="https://www.facebook.com/about/privacy/update">Política de Dados</a> e <a target="_blank"
+            href="https://www.facebook.com/policies/cookies/">Política de Cookies</a>. Você pode receber notificações
+        por SMS e pode cancelar isso quando quiser.</p>
+    <div>
+        <button name="cadastrar" id="cadastrar">Cadastre-se</button>
+    </div>
+
+    <p class="criarPagina"><a href="https://www.facebook.com/pages/creation/?ref_type=registration_form">Criar uma
+            Página</a> para uma celebridade, banda ou empresa.</p>
+    </section>
+    </div>
+
+    <footer>
+        <div id="conteudo-rodape">
+            <ul id='footer-languages'>
+                <li><a href='#' class='links'>Português (Brasil)</a></li>
+                <li><a href='#' class='links'>English (US)</a></li>
+                <li><a href='#' class='links'>Español</a></li>
+                <li><a href='#' class='links'>Français (France)</a></li>
+                <li><a href='#' class='links'>Italiano</a></li>
+                <li><a href='#' class='links'>Deutsch</a></li>
+                <li><a href='#' class='links'>العربية</a></li>
+                <li><a href='#' class='links'>हिन्दी</a></li>
+                <li><a href='#' class='links'>中文(简体)</a></li>
+                <li><a href='#' class='links'>日本語</a></li>
+            </ul>
+            <ul id='footer-links'>
+                <li><a href='#' class='links'>Cadastre-se</a></li>
+                <li><a href='#' class='links'>Entrar</a></li>
+                <li><a href='#' class='links'>Messenger</a></li>
+                <li><a href='#' class='links'>Facebook Lite</a></li>
+                <li><a href='#' class='links'>Watch</a></li>
+                <li><a href='#' class='links'>Pessoas</a></li>
+                <li><a href='#' class='links'>Páginas</a></li>
+                <li><a href='#' class='links'>Categorias de Página</a></li>
+                <li><a href='#' class='links'>Locais</a></li>
+                <li><a href='#' class='links'>Jogos</a></li>
+                <li><a href='#' class='links'>Locais</a></li>
+                <li><a href='#' class='links'>Marketplace</a></li>
+                <li><a href='#' class='links'>Grupos</a></li>
+                <li><a href='#' class='links'>Instagram </a></li>
+                <li><a href='#' class='links'>Local</a></li>
+                <li><a href='#' class='links'>Campanhas de arrecadação de fundos</a></li>
+                <li><a href='#' class='links'>Serviços</a></li>
+                <li><a href='#' class='links'>Sobre</a></li>
+                <li><a href='#' class='links'>Criar anúncio</a></li>
+                <li><a href='#' class='links'>Criar Página</a></li>
+                <li><a href='#' class='links'>Desenvolvedores</a></li>
+                <li><a href='#' class='links'>Carreiras</a></li>
+                <li><a href='#' class='links'>Privacidade</a></li>
+                <li><a href='#' class='links'>Cookies</a></li>
+                <li><a href='#' class='links'>Opções de anúncio</a></li>
+                <li><a href='#' class='links'>Termos</a></li>
+                <li><a href='#' class='links'>Ajuda</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
