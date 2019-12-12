@@ -1,6 +1,4 @@
-const inputDate = document.getElementById('datepicker');
-
-new Pikaday({
+const dataNasc = new Pikaday({
   field: document.getElementById('datepicker'),
   format: 'D/M/YYYY',
   toString(date) {
@@ -21,7 +19,6 @@ new Pikaday({
 const nameRegex = new RegExp(/[a-zA-Z]/);
 const phoneRegex = new RegExp(/[0-9]{11}/);
 const emailRegex = new RegExp(/^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-const dateRegex = new RegExp(/^\d{1,2}\/\d{1,2}\/\d{4}$/);
 
 const cadastrar = document.getElementById('downBtn');
 cadastrar.addEventListener('click', function () {
@@ -29,6 +26,7 @@ cadastrar.addEventListener('click', function () {
   const lastName = document.getElementById('sobrenome').value;
   const phoneMail = document.getElementById('phonemail').value;
   const password = document.getElementById('password').value;
+  const dateInput = document.getElementById('datepicker').value
   const female = document.getElementById('female');
   const male = document.getElementById('male');
   const personalizado = document.getElementById('personalizado');
@@ -41,16 +39,18 @@ cadastrar.addEventListener('click', function () {
     alert('O telefone/email informado é inválido');
   } else if (password === '') {
     alert('Informe sua senha');
-  } else if (!dateRegex.test(inputDate.value)) {
+  } else if (dateInput === '') {
     alert('Informe sua data de nascimento');
   } else if (!female.checked && !male.checked && !personalizado.checked) {
     alert('Informe o seu gênero');
   } else {
+    const genero = (document.querySelector('input[name="gender"]:checked').value);
     alert(` Conta criada com sucesso!
             nome: ${name}
             sobrenome: ${lastName}
             Nova senha: ${password}
             E-mail/Telefone: ${phoneMail}
-            Data de nascimento: ${inputDate.input}`);
+            Data de nascimento: ${dataNasc}
+            Gênero: ${genero}`);
   }
 });
