@@ -43,14 +43,10 @@ body {
   align-items: center;
 }
 
-
 .loginForm {
   display: flex;
   align-content: space-around;
   justify-content: left;
-}
-
-.loginForm {
   margin-bottom: 3px;
 }
 
@@ -155,7 +151,7 @@ label {
 }
 
 .rightText > h1 {
-  margin: 0 0 7px 0;
+  margin: 0 0 7px;
   font-size: 36px;
   font-weight: 600;
   color: rgb( 51 , 51 , 51 );
@@ -177,14 +173,14 @@ label {
   color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: 700;
-  margin: 10px 0 5px 0;
+  margin: 10px 0 5px;
 }
 
 .label-text-2 {
   color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: 700;
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
 }
 
 #datePicker {
@@ -232,7 +228,7 @@ a:hover {
   font-family: Freight Sans Bold, Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: normal;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
   margin-top: 10px;
   margin-bottom: 10px;
   min-width: 194px;

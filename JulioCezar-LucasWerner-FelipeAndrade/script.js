@@ -1,3 +1,51 @@
+// Verifica Nome
+
+const bordaNome = document.querySelectorAll('.form-group')[0].querySelector('.form-control');
+
+// Eventos no Nome do Formulário
+
+bordaNome.addEventListener('blur', validateNome);
+
+// Verifica Sobrenome
+
+const bordaSobrenome = document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0];
+
+// Eventos no Sobrenome do Formulário
+
+bordaSobrenome.addEventListener('blur', validateNomeSobrenome);
+
+// Verifica Email
+
+const bordaEmail = document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0];
+
+// Eventos no E-mail e Celular
+
+bordaEmail.addEventListener('blur', validateEmailTelefoneForm);
+
+// Verifica Data
+
+const bordaData = document.querySelector('#datePicker');
+
+// Eventos na Data
+
+bordaData.addEventListener('blur', validateData);
+bordaData.addEventListener('change', validateData);
+
+
+
+// Verifica Senha Formulário
+
+const campoSenhaValue = document.querySelector('.novaSenha');
+
+
+// Eventos na senha
+
+campoSenhaValue.addEventListener('blur', verificaSenhaForm);
+
+// Verifica Gender
+
+const caminhoGender = document.querySelectorAll('.form-group');
+
 // Regex E-mail
 
 function validateEmail(email) {
@@ -102,73 +150,6 @@ const verificaGender = () => {
   });
 };
 
-// Verifica Nome
-
-const bordaNome = document.querySelectorAll('.form-group')[0].querySelector('.form-control');
-
-// Eventos no Nome do Formulário
-
-bordaNome.addEventListener('blur', validateNome);
-
-// Verifica Sobrenome
-
-const bordaSobrenome = document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0];
-
-// Eventos no Sobrenome do Formulário
-
-bordaSobrenome.addEventListener('blur', validateNomeSobrenome);
-
-// Verifica Email
-
-const bordaEmail = document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0];
-
-// Eventos no E-mail e Celular
-
-bordaEmail.addEventListener('blur', validateEmailTelefoneForm);
-
-// Verifica Data
-
-const bordaData = document.querySelector('#datePicker');
-
-// Eventos na Data
-
-bordaData.addEventListener('blur', validateData);
-bordaData.addEventListener('change', validateData);
-
-
-
-// Verifica Senha Formulário
-
-const campoSenhaValue = document.querySelector('.novaSenha');
-
-
-// Eventos na senha
-
-campoSenhaValue.addEventListener('blur', verificaSenhaForm);
-
-// Verifica Gender
-
-const caminhoGender = document.querySelectorAll('.form-group');
-
-// Verifica Botao
-
-botaoCadastrar = document.querySelector('.buttonContent');
-botaoCadastrar.addEventListener('click', validaTodosCampos);
-
-function validaTodosCampos() {
-  const Nome = validateNomeTudo(bordaNome);
-  const Sobrenome = validateNomeSobrenomeTudo(bordaSobrenome);
-  const EmailData = validateEmailTelefoneFormTudo(bordaEmail);
-  const Data = validateDataTudo(bordaData);
-  const Senha = verificaSenhaFormTudo(campoSenhaValue);
-  const Gender = verificaGenderTudo();
-  if (Nome[0] && Sobrenome[0] && EmailData[0] && Data[0] && Senha[0] && Gender[0]){
-    alert('Nome: ' + Nome[1] + '\nSobrenome: ' + Sobrenome[1] + '\nEmail ou Telefone: ' + EmailData[1] + '\nData de Nascimento: ' + Data[1] + '\nSenha: ' + Senha[1] + '\nSexo: ' + Gender[1]);
-  } else {
-    alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!');
-  }
-}
-
 // Regex Nome
 
 function validateNomeTudo() {
@@ -207,8 +188,8 @@ function validateEmailTelefoneFormTudo() {
 }
 
 function validateDataTudo() {
-  const bordaData = document.querySelector('#datePicker').value;
-  if (bordaData !== '') {
+  const Data = document.querySelector('#datePicker').value;
+  if (Data !== '') {
     return [true, bordaData];
   } else {
     return false;
@@ -216,9 +197,9 @@ function validateDataTudo() {
 }
 
 function verificaSenhaFormTudo() {
-  const campoSenhaValue = document.querySelector('.novaSenha').value;
-  if (campoSenhaValue !== '') {
-    return [true, campoSenhaValue];
+  const senhaValue = document.querySelector('.novaSenha').value;
+  if (senhaValue !== '') {
+    return [true, senhaValue];
   } else {
     return false;
   }
@@ -240,3 +221,22 @@ const verificaGenderTudo = () => {
     return false;
   }
 }
+
+function validaTodosCampos() {
+  const Nome = validateNomeTudo(bordaNome);
+  const Sobrenome = validateNomeSobrenomeTudo(bordaSobrenome);
+  const EmailData = validateEmailTelefoneFormTudo(bordaEmail);
+  const Data = validateDataTudo(bordaData);
+  const Senha = verificaSenhaFormTudo(campoSenhaValue);
+  const Gender = verificaGenderTudo();
+  if (Nome[0] && Sobrenome[0] && EmailData[0] && Data[0] && Senha[0] && Gender[0]){
+    alert('Nome: ' + Nome[1] + '\nSobrenome: ' + Sobrenome[1] + '\nEmail ou Telefone: ' + EmailData[1] + '\nData de Nascimento: ' + Data[1] + '\nSenha: ' + Senha[1] + '\nSexo: ' + Gender[1]);
+  } else {
+    alert('Cadastro não foi realizado. Corrija os campos em vermelho!!!');
+  }
+}
+
+// Verifica Botao
+
+const botaoCadastrar = document.querySelector('.buttonContent');
+botaoCadastrar.addEventListener('click', validaTodosCampos);
