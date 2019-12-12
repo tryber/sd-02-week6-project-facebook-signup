@@ -19,11 +19,11 @@ const botaoAzul = document.getElementsByClassName('azul')[0];
 botaoAzul.addEventListener('click', function () {
   const botoesLogin = document.querySelectorAll('.primeirosInputs');
   if (botoesLogin[0].value === '') {
-    alert('O 1 campo não pode estar vazio');
+    alert('O campo Email ou telefone não pode estar vazio');
   } else if (!regexEmail.test(botoesLogin[0].value) && !regexTelefone.test(botoesLogin[0].value)) {
     alert('Email ou Telefone Invalido');
   } else if (botoesLogin[1].value === '') {
-    alert('O 2 campo não pode estar vazio');
+    alert('O campo Senha não pode estar vazio');
   } else {
     alert('Login realizado com sucesso');
   }
@@ -46,12 +46,18 @@ cadastro.addEventListener('click', function () {
     alert('E-mail ou Telefone inválido');
   } else if (novasenha === '') {
     alert('Nova senha inválida');
-  } else if (data === '') {
+  } else if (data.value === undefined) {
     alert('Selecione a data');
   } else if (!options[0].checked && !options[1].checked && !options[2].checked) {
     alert('Você deve selecionar o seu gênero');
   } else {
     const genero = (document.querySelector('input[name="Gênero"]:checked').value);
-    alert(` Conta criada com sucesso nome: ${nome} sobrenome: ${sobrenome} Nova senha: ${novasenha} E-mail/Telefone: ${emailOuPassword} Nascimento: ${data} Gênero: ${genero}`);
+    alert(` Conta criada com sucesso!
+    Nome: ${nome}
+    Sobrenome: ${sobrenome}
+    Nova senha: ${novasenha}
+    E-mail/Telefone: ${emailOuPassword}
+    Nascimento: ${data}
+    Gênero: ${genero}`);
   }
 });
