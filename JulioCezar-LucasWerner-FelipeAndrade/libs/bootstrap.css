@@ -2227,6 +2227,7 @@ textarea.form-control {
   align-items: center;
   padding-left: 0;
   margin-right: 0.75rem;
+  border: 1px solid transparent;
 }
 
 .form-check-inline .form-check-input {

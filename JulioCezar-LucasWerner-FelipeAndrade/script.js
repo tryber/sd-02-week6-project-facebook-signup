@@ -1,4 +1,3 @@
-
 // Regex Nome
 
 function validateNome() {
@@ -139,15 +138,6 @@ document.querySelector('#datePicker').DatePickerX.init({
   format: 'dd/mm/yyyy',
 });
 
-/* const verificaGender = () => {
-  caminhoGender.forEach((element) => {
-    if (element.checked !== true) {
-      element.style.borderColor = 'red';
-    } else {
-      element.style.borderColor = 'none';
-    }
-  });
-};*/
 
 // Regex Nome
 
@@ -157,6 +147,7 @@ function validateNomeTudo() {
   if (resultado.test(nomeValue) === true) {
     return [true, nomeValue];
   }
+  document.querySelectorAll('.form-group')[0].querySelector('.form-control').style.borderColor = 'red';
   return false;
 }
 
@@ -168,6 +159,7 @@ function validateNomeSobrenomeTudo() {
   if (resultado.test(sobrenomeValue) === true) {
     return [true, sobrenomeValue];
   }
+  document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0].style.borderColor = 'red';
   return false;
 }
 
@@ -180,12 +172,14 @@ function validateEmailTelefoneFormTudo() {
   if ((emailValidation || telefoneValidation) === true) {
     return [true, emailValue];
   }
+  document.querySelectorAll('.form-group')[2].querySelectorAll('.form-control')[0].style.borderColor = 'red';
   return false;
 }
 
 function validateDataTudo() {
   const Data = document.querySelector('#datePicker').value;
   if (Data === '') {
+    document.querySelector('#datePicker').style.borderColor = 'red';
     return false;
   }
   return [true, Data];
@@ -196,6 +190,7 @@ function verificaSenhaFormTudo() {
   if (senhaValue !== '') {
     return [true, senhaValue];
   }
+  document.querySelector('.novaSenha').style.borderColor = 'red';
   return false;
 }
 
@@ -210,8 +205,14 @@ const verificaGenderTudo = () => {
     }
   });
   if (i === 1) {
+    document.querySelectorAll('.form-check-inline')[0].style.border = 'none';
+    document.querySelectorAll('.form-check-inline')[1].style.border = 'none';
+    document.querySelectorAll('.form-check-inline')[2].style.border = 'none';
     return [true, value];
   }
+  document.querySelectorAll('.form-check-inline')[0].style.borderColor = 'red';
+  document.querySelectorAll('.form-check-inline')[1].style.borderColor = 'red';
+  document.querySelectorAll('.form-check-inline')[2].style.borderColor = 'red';
   return false;
 };
 
