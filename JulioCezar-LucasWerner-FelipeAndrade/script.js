@@ -27,7 +27,7 @@ function validateNomeSobrenome() {
 
 function validateEmailTelefoneForm() {
   const emailValue = event.target.value.trim();
-  const resultadoEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const resultadoEmail = (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   const resultadoTelefone = /\d{4,5}-\d{4}/;
   const emailValidation = resultadoEmail.test(emailValue);
   const telefoneValidation = resultadoTelefone.test(emailValue);
