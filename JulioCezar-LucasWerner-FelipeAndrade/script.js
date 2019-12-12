@@ -2,7 +2,7 @@
 
 function validateNome() {
   const nomeValue = event.target.value.trim();
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\s]+$/;
   if (resultado.test(nomeValue) === true) {
     event.target.style.borderColor = 'greenyellow';
     event.target.value = nomeValue;
@@ -103,7 +103,6 @@ campoSenhaValue.addEventListener('blur', verificaSenhaForm);
 
 // Verifica Gender
 
-// const caminhoGender = document.querySelectorAll('.form-group');
 
 // Regex E-mail
 
@@ -143,7 +142,7 @@ document.querySelector('#datePicker').DatePickerX.init({
 
 function validateNomeTudo() {
   const nomeValue = document.querySelectorAll('.form-group')[0].querySelector('.form-control').value;
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\s]+$/;
   if (resultado.test(nomeValue) === true) {
     return [true, nomeValue];
   }
@@ -155,7 +154,7 @@ function validateNomeTudo() {
 
 function validateNomeSobrenomeTudo() {
   const sobrenomeValue = document.querySelectorAll('.form-group')[1].querySelectorAll('.form-control')[0].value;
-  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\-\ \s]+$/;
+  const resultado = /^[a-zA-ZéúíóáÉÚÍÓÁèùìòàçÇÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\s]+$/;
   if (resultado.test(sobrenomeValue) === true) {
     return [true, sobrenomeValue];
   }
