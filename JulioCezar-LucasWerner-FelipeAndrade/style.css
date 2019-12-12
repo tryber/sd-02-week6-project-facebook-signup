@@ -10,7 +10,7 @@ body {
 }
 
 .clear {
-  clear: both;  
+  clear: both;
 }
 
 
@@ -48,7 +48,6 @@ body {
   display: flex;
   align-content: space-around;
   justify-content: left;
-  
 }
 
 .loginForm {
@@ -94,7 +93,6 @@ a.forgotAccount {
   text-decoration: none;
   color: #9cb4d8;
   font-size: 12px;
-  
 }
 
 a.forgotAccount:hover {
@@ -122,13 +120,12 @@ label {
   display: flex;
   justify-content: center;
   background: linear-gradient(white, #D3D8E8);
- 
 }
 
 .articleContent {
   display: flex;
   width: 980px;
-  height: 630px;  
+  height: 630px;
 }
 
 .leftContainer {
@@ -139,9 +136,9 @@ label {
 .rightContainer {
   width: 400px;
   height: 629px;
-} 
+}
 
-.leftText > h2 {  
+.leftText > h2 {
   color: #0e385f;
   font-size: 20px;
   font-weight: bold;
@@ -160,7 +157,7 @@ label {
   margin: 0 0 7px 0;
   font-size: 36px;
   font-weight: 600;
-  color:  #333;   
+  color:  #333;
 }
 
 .rightText > p {
@@ -172,7 +169,7 @@ label {
 }
 
 .form-control {
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .label-text {
@@ -267,12 +264,12 @@ a {
   margin-left: 3px;
   }
 
-  .footerContainer {
-    color: #737373;
-    margin: 0 auto;
-    width: 980px;
-    height: 136px;       
-  }
+.footerContainer {
+  color: #737373;
+  margin: 0 auto;
+  width: 980px;
+  height: 136px;
+}
  
 .languages {
   display: flex;
@@ -290,19 +287,19 @@ a {
 }
 
 .moreInfoButton {
-    cursor: pointer;
-    height: 18px;
-    line-height: 18px;
-    background-color: #f5f6f7;
-    border-color: #ccd0d5;
-    color: #3f4247;
-    border: 1px solid;
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: bold;
-    justify-content: center;
-    padding: 0 10px;
-    text-align: center;    
+  cursor: pointer;
+  height: 18px;
+  line-height: 18px;
+  background-color: #f5f6f7;
+  border-color: #ccd0d5;
+  color: #3f4247;
+  border: 1px solid;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
 }
 
 .breakLine {
@@ -310,7 +307,6 @@ a {
   font-size: 1px;
   height: 8px;
   margin-bottom: 8px;
- 
 }
 
 .extras{
@@ -326,7 +322,6 @@ a {
 .extraItem {
   margin-right: 20px;
   font-size: 12px;
-
 }
 
 .copyright {
