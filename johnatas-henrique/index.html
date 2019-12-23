@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/pikaday.css">
     <title>Facebook - entre ou cadastre-se</title>
 </head>
 
@@ -87,6 +88,13 @@
                                     </label>
                                     <input type="password" class="register-input tam-inteira" id="senha" name="senha">
                                 </div>
+                                <div class="texto-data-nasc">Data de nascimento</div>
+                                <div class="register-div tam-inteira mb-10">
+                                    <label class="placeholder" for="dtnasc">
+                                        <div>Data de nascimento</div>
+                                    </label>
+                                    <input type="text" class="register-input tam-inteira" id="dtnasc" name="dtnasc" maxlength="10">
+                                </div>
                         </div>
                         </form>
                     </div>
@@ -95,6 +103,9 @@
         </div>
         </div>
     </main>
+    <script src="js/moment.min.js"></script>
+    <script src="js/pikaday.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
