@@ -88,12 +88,63 @@
                                     </label>
                                     <input type="password" class="register-input tam-inteira" id="senha" name="senha">
                                 </div>
-                                <div class="texto-data-nasc">Data de nascimento</div>
-                                <div class="register-div tam-inteira mb-10">
-                                    <label class="placeholder" for="dtnasc">
-                                        <div>Data de nascimento</div>
+                                <div class="texto-form-subtitle">Data de nascimento</div>
+                                <div>
+                                    <div class="register-div tam-dtnasc">
+                                        <label class="placeholder padding-dtnasc" for="dtnasc">
+                                            <div>Data nascimento</div>
+                                        </label>
+                                        <input type="text" class="register-input tam-dtnasc" id="dtnasc" name="dtnasc" maxlength="10">
+                                    </div>
+                                    <a href="#" title="Clique para obter mais informações" id="dtnasc-help" class="button-helper ml-7">
+                                        <span class="button-img"></span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="texto-form-subtitle">Gênero</div>
+                                    <span class="gender-block">
+                                        <span class="gender-option mr-4">
+                                            <input type="radio" class="gender-input" name="genero" value="1" id="feminino">
+                                            <label class="gender-label" for="feminino">Feminino</label>
+                                        </span>
+                                        <span class="gender-option ml-m4">
+                                            <input type="radio" class="gender-input" name="genero" value="2" id="masculino">
+                                            <label class="gender-label" for="masculino">Masculino</label>
+                                        </span>
+                                        <span class="gender-option ml-m4">
+                                            <input type="radio" class="gender-input" name="genero" value="3" id="personalizado">
+                                            <label class="gender-label" for="personalizado">Personalizado</label>
+                                        </span>
+                                    </span>
+                                    <a href="#" title="Clique para obter mais informações" id="gender-help" class="button-helper ml-10">
+                                        <span class="button-img"></span>
+                                    </a>
+                                </div>
+                                <div class="mt-10">
+                                    <select class="select-pronome">
+                                        <option selected="1" value="" disabled="1">Selecione seu pronome</option>
+                                        <option value="1">Feminino: "Deseje a ela um feliz aniversário!"</option>
+                                        <option value="2">Masculino: "Deseje a ele um feliz aniversário!"</option>
+                                        <option value="3">Neutro: "Deseje a ele(a) um feliz aniversário!"</option>
+                                    </select>
+                                </div>
+                                <div class="texto-select-pronome">O seu pronome fica visível para todos.</div>
+                                <div class="register-div tam-inteira mt-8">
+                                    <label class="placeholder" for="gender-opt">
+                                        <div>Gênero (opcional)</div>
                                     </label>
-                                    <input type="text" class="register-input tam-inteira" id="dtnasc" name="dtnasc" maxlength="10">
+                                    <input type="text" class="register-input tam-inteira" id="gender-opt" name="gender-opt">
+                                </div>
+                                <div>
+                                    <p class="docs-terms">
+                                        Ao clicar em Cadastre-se, você concorda com nossos 
+                                        <a href="#">Termos</a>
+                                        , 
+                                        <a href="#">Política de Dados</a>
+                                         e 
+                                        <a href="#">Política de Cookies</a>
+                                        . Você pode receber notificações por SMS e pode cancelar isso quando quiser.
+                                    </p>
                                 </div>
                         </div>
                         </form>
