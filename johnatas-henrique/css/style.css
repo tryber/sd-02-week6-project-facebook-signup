@@ -42,6 +42,14 @@ main {
     white-space: nowrap;
   }
 
+  .mr-11 {
+      margin-right: 11px;
+  }
+
+  .mb-10 {
+      margin-bottom: 10px;
+  }
+
 .fundo-azul {
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
@@ -184,4 +192,70 @@ main {
 .mapa-aside{
     height: 195px;
     width: 537px;
+}
+
+.textos-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.texto-maior {
+    color: #333;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.texto-menor {
+    color: #1d2129;
+    font-size: 19px;
+}
+
+.padding-registration {
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.register {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register-div {
+    background: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.placeholder {
+    color: #999;
+    cursor: text;
+    font-size: 18px;
+    padding: 8px 10px;
+    position: absolute;
+    top: 0;
+}
+
+.placeholder-show {
+    color: #999;
+}
+
+.placeholder-hide {
+    color: transparent;
+}
+
+.register-input {
+    border: 1px solid #bdc7d8;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 18px;
+    padding: 8px 10px;
+}
+
+.tam-inteira{
+    width: 399px;
+}
+
+.tam-meia {
+    width: 194px;
 }
