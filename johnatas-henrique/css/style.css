@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,6 +12,18 @@ body {
   overflow-y: scroll;
 }
 
+label {
+    vertical-align: middle;
+    padding-left: 1px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.box-sizing-off {
+    box-sizing: unset;
+}
 .para-cego-ver {
     border: 0; 
     clip: rect(0 0 0 0); 
@@ -31,8 +43,7 @@ body {
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
   border-bottom: 1px solid #133783;
   min-height: 42px;
-  height: 82px;
-  min-width: 980px;
+  height: 83px;
 }
 
 .navbar-container {
@@ -61,5 +72,79 @@ body {
 
 .menu-login-container {
   color: white;
-  font-size: 14px;
+  font-size: 12px;
+  width: 392px;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.padding-label{
+    padding: 0 0 4px 14px;
+    width: 164px;
+}
+
+.padding-input{
+    padding: 0 0 0 14px;
+    width: 164px;
+}
+
+.padding-button-login{
+    padding: 0 0 0 14px;
+    width: 64px;
+}
+
+.padding-link{
+    padding: 4px 0 0 14px;
+    width: 164px;
+}
+
+.padding-link a {
+    color: #9cb4d8;
+    text-decoration: none;
+}
+
+.padding-link a:hover {
+    text-decoration: underline;
+}
+
+.login-label {
+    height: 21px;
+}
+
+.flex-row-fix{
+    margin-top: -8px;
+}
+
+.menu-login-caixa{
+    border: 1px solid #1d2a5b;
+    margin: 0;
+    width: 142px;
+    height: 14px;
+    padding: 3px 3px 4px 3px;
+}
+
+.label-submit{
+    background-color: #4267b2;
+    border: 1px solid #29487d;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    padding: 2px 6px;
+}
+
+.label-submit:hover{
+    background-color: #3b5998;
+}
+
+.menu-login-botao{
+    background: none;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+

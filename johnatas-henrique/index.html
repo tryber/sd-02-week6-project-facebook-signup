@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Facebook - entre ou cadastre-se</title>
 </head>
+
 <body>
     <nav class="fundo-azul">
         <div class="navbar-container">
@@ -14,8 +16,31 @@
                 <a href="https://www.facebook.com/" title="Ir para a página inicial do Facebook">
                     <span class="logo-img"></span><u class="para-cego-ver">Facebook</u></a>
             </div>
-            <div class="menu-login">Menu de Login</div>
+            <div class="menu-login-container">
+                <div class="padding-label login-label">
+                    <label for="user">Email ou telefone</label>
+                </div>
+                <div class="padding-label login-label">
+                    <label for="password">Senha</label>
+                </div>
+                <div class="padding-input">
+                    <input type="text" name="email" id="user" class="menu-login-caixa box-sizing-off">
+                </div>
+                <div class="padding-input">
+                    <input type="password" name="password" id="password" class="menu-login-caixa box-sizing-off">
+                </div>
+                <div class="padding-button-login">
+                    <label for="entrar" class="label-submit">
+                        <input type="submit" name="entrar" id="entrar" value="Entrar" class="menu-login-botao box-sizing-off">
+                    </label>
+                </div>
+                <div class="padding-link"></div>
+                <div class="padding-link">
+                    <a href="#">Esqueceu a conta?</a>
+                </div>
+            </div>
         </div>
     </nav>
 </body>
+
 </html>
