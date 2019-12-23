@@ -21,6 +21,10 @@ a {
     cursor: pointer;
 }
 
+main {
+    min-height: 640px;
+}
+
 .box-sizing-off {
     box-sizing: unset;
 }
@@ -147,4 +151,37 @@ a {
     line-height: 18px;
 }
 
+.gradient {
+    background: linear-gradient(white, #D3D8E8);
+    height: 630px;
+}
 
+.gradient-container{
+    display: flex;
+    margin: 0 auto;
+    width: 980px;
+}
+
+.gradient-container aside {
+    margin-right: 15px;
+    width: 565px;
+}
+
+.gradient-container section {
+    width: 400px;
+}
+
+.texto-aside {
+    color: #0e385f;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 29px;
+    margin-top: 40px;
+    width: 450px;
+    word-spacing: -1px;
+}
+
+.mapa-aside{
+    height: 195px;
+    width: 537px;
+}
