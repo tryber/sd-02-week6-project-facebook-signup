@@ -10,7 +10,7 @@
 }
 
 body {
-  color: #1c1e21;
+  color: rgb( 28 , 30 , 33 );
   font-family: Helvetica , Arial , sans-serif;
   font-size: 12px;
   line-height: 1.34;
@@ -23,7 +23,7 @@ label {
 }
 
 a {
-  color: #385898;
+  color: rgb( 56 , 88 , 152 );
   cursor: pointer;
   text-decoration: none;
 }
@@ -102,9 +102,9 @@ main {
 }
 
 .fundo-azul {
-  background-color: #3b5998;
-  background-image: linear-gradient( #4e69a2 , #3b5998 50% );
-  border-bottom: 1px solid #133783;
+  background-color: rgb( 59 , 89 , 152 );
+  background-image: linear-gradient( rgb( 78 , 105 , 162 ) , rgb( 59 , 89 , 152 ) 50% );
+  border-bottom: 1px solid rgb( 19 , 55 , 131 );
   height: 83px;
   min-height: 42px;
   min-width: 980px;
@@ -163,7 +163,7 @@ main {
 }
 
 .padding-link a {
-  color: #9cb4d8;
+  color: rgb( 156 , 180 , 216 );
   text-decoration: none;
 }
 
@@ -172,7 +172,7 @@ main {
 }
 
 .menu-login-caixa {
-  border: 1px solid #1d2a5b;
+  border: 1px solid rgb( 29 , 42 , 91 );
   height: 14px;
   margin: 0;
   padding: 3px 3px 4px;
@@ -180,8 +180,8 @@ main {
 }
 
 .label-submit {
-  background-color: #4267b2;
-  border: 1px solid #29487d;
+  background-color: rgb( 66 , 103 , 178 );
+  border: 1px solid rgb( 41 , 72 , 125 );
   border-radius: 2px;
   cursor: pointer;
   display: inline-block;
@@ -190,7 +190,7 @@ main {
 }
 
 .label-submit:hover {
-  background-color: #3b5998;
+  background-color: rgb( 59 , 89 , 152 );
 }
 
 .menu-login-botao {
@@ -204,7 +204,7 @@ main {
 }
 
 .gradient {
-  background: linear-gradient( white , #d3d8e8 );
+  background: linear-gradient( white , rgb( 211 , 216 , 232 ) );
   min-height: 630px;
   min-width: 980px;
 }
@@ -225,7 +225,7 @@ main {
 }
 
 .texto-aside {
-  color: #0e385f;
+  color: rgb( 14 , 56 , 95 );
   font-size: 20px;
   font-weight: 700;
   line-height: 29px;
@@ -245,14 +245,14 @@ main {
 }
 
 .texto-maior {
-  color: #333;
+  color: rgb( 51 , 51 , 51 );
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .texto-menor {
-  color: #1d2129;
+  color: rgb( 29 , 33 , 41 );
   font-size: 19px;
 }
 
@@ -273,7 +273,7 @@ main {
 }
 
 .placeholder {
-  color: #999;
+  color: rgb( 153 , 153 , 153 );
   cursor: text;
   font-size: 18px;
   padding: 8px 10px;
@@ -281,16 +281,12 @@ main {
   top: 0;
 }
 
-.placeholder-show {
-  color: #999;
-}
-
 .placeholder-hide {
   color: transparent;
 }
 
 .register-input {
-  border: 1px solid #bdc7d8;
+  border: 1px solid rgb( 189 , 199 , 216 );
   border-radius: 5px;
   font-size: 18px;
   margin: 0;
@@ -312,7 +308,7 @@ main {
 }
 
 .texto-form-subtitle {
-  color: #90949c;
+  color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: 700;
   margin: 10px 0 5px;
@@ -354,7 +350,7 @@ main {
 }
 
 .gender-label {
-  color: #1d2129;
+  color: rgb( 29 , 33 , 41 );
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -363,8 +359,8 @@ main {
 
 .select-pronome {
   background-color: white;
-  border: 1px solid #ccd0d5;
-  color: #1c1e21;
+  border: 1px solid rgb( 204 , 208 , 213 );
+  color: rgb( 28 , 30 , 33 );
   font-size: 12px;
   height: 30px;
   margin: 4px 0;
@@ -373,22 +369,22 @@ main {
 }
 
 .texto-select-pronome {
-  color: #606770;
+  color: rgb( 96 , 103 , 112 );
 }
 
 .docs-terms {
-  color: #777;
+  color: rgb( 119 , 119 , 119 );
   font-size: 11px;
   margin: 1em 0;
   width: 316px;
 }
 
 .button-submit {
-  background: linear-gradient( #67ae55 , #578843 );
+  background: linear-gradient( rgb( 103 , 174 , 85 ) , rgb( 87 , 136 , 67 ) );
   border: 1px solid;
   border-radius: 5px;
-  box-shadow: inset 0 1px 1px #a4e388;
-  border-color: #3b6e22 #3b6e22 #2c5115;
+  box-shadow: inset 0 1px 1px rgb( 164 , 227 , 136 );
+  border-color: rgb( 59 , 110 , 34 ) rgb( 59 , 110 , 34 ) rgb( 44 , 81 , 21 );
   color: white;
   cursor: pointer;
   font-family: Freight , Helvetica , Arial , sans-serif;
@@ -401,8 +397,8 @@ main {
 }
 
 .texto-criar-pg {
-  border-top: 1px solid #dddfe2;
-  color: #666;
+  border-top: 1px solid rgb( 221 , 223 , 226 );
+  color: rgb( 102 , 102 , 102 );
   font-size: 13px;
   font-weight: 700;
   margin-top: 10px;
@@ -414,7 +410,7 @@ main {
 }
 
 .align-footer {
-  color: #737373;
+  color: rgb( 115 , 115 , 115 );
   margin: 0 auto;
   width: 980px;
 }
@@ -434,17 +430,17 @@ main {
 }
 
 .link-plus {
-  background-color: #f5f6f7;
-  border: 1px solid #ccd0d5;
+  background-color: rgb( 245 , 246 , 247 );
+  border: 1px solid rgb( 204 , 208 , 213 );
   border-radius: 2px;
-  color: #4b4f56;
+  color: rgb( 75 , 79 , 86 );
   display: inline-block;
   height: 18px;
   padding: 0 8px;
 }
 
 .link-plus:hover {
-  background-color: #ebedf0;
+  background-color: rgb( 235 , 237 , 240 );
 }
 
 .link-plus-img {
@@ -461,7 +457,7 @@ main {
 }
 
 .spacing-line {
-  border-bottom: 1px solid #dddfe2;
+  border-bottom: 1px solid rgb( 221 , 223 , 226 );
   font-size: 1px;
   height: 8px;
   margin-bottom: 8px;

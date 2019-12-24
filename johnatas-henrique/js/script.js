@@ -1,6 +1,6 @@
 /* Pikaday JS - Requisito 17 */
 
-new Pikaday({
+const picker = new Pikaday({
   field: document.getElementById('dtnasc'),
   firstDay: 1,
   minDate: new Date(1899, 12, 1),
