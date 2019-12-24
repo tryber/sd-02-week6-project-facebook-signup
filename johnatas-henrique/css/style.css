@@ -89,6 +89,10 @@ main {
   margin-top: 5px;
 }
 
+.mt-7 {
+  margin-top: 7px;
+}
+
 .mt-8 {
   margin-top: 8px;
 }
@@ -311,7 +315,7 @@ main {
   color: rgb( 144 , 148 , 156 );
   font-size: 16px;
   font-weight: 700;
-  margin: 10px 0 5px;
+  margin: 9.5px 0 5px;
   width: 400px;
 }
 
