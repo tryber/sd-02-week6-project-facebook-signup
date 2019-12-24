@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: 'Freight Sans Bold';
-  src: url( ../fonts/Freight-Sans-Semibold.otf );
+  font-family: Freight;
+  src: url( '../fonts/Freight-Sans-Semibold.otf' );
 }
 
 body {
@@ -45,10 +45,9 @@ main {
 }
 
 .para-cego-ver {
-  -webkit-clip-path: polygon( 0px 0px , 0px 0px , 0px 0px );
   border: 0;
   clip: rect( 0 0 0 0 );
-  clip-path: polygon( 0px 0px , 0px 0px , 0px 0px );
+  clip-path: polygon( 0 0 , 0 0 , 0 0 );
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -60,6 +59,10 @@ main {
 
 .mb-10 {
   margin-bottom: 10px;
+}
+
+.ml-fix {
+  margin-left: 3.35px;
 }
 
 .ml-7 {
@@ -121,7 +124,7 @@ main {
 }
 
 .logo-img {
-  background-image: url( ../imagens/logoandbuttons.png );
+  background-image: url( '../imagens/logoandbuttons.png' );
   background-position: 0 -245px;
   background-repeat: no-repeat;
   background-size: auto;
@@ -196,12 +199,12 @@ main {
   color: white;
   cursor: pointer;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 18px;
 }
 
 .gradient {
-  background: linear-gradient( white , #D3D8E8 );
+  background: linear-gradient( white , #d3d8e8 );
   min-height: 630px;
   min-width: 980px;
 }
@@ -224,7 +227,7 @@ main {
 .texto-aside {
   color: #0e385f;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 29px;
   margin-top: 40px;
   width: 450px;
@@ -311,13 +314,13 @@ main {
 .texto-form-subtitle {
   color: #90949c;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 10px 0 5px;
   width: 400px;
 }
 
 .padding-dtnasc {
-  padding: 3px 0 3px 10px !important;
+  padding: 3px 0 3px 10px;
 }
 
 .button-helper {
@@ -326,7 +329,7 @@ main {
 }
 
 .button-img {
-  background-image: url( ../imagens/button-helpers.png );
+  background-image: url( '../imagens/button-helpers.png' );
   background-position: 0 -44px;
   background-size: auto;
   background-repeat: no-repeat;
@@ -353,13 +356,13 @@ main {
 .gender-label {
   color: #1d2129;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 18px;
   padding: 0 10px 0 3px;
 }
 
 .select-pronome {
-  background-color: #fff;
+  background-color: white;
   border: 1px solid #ccd0d5;
   color: #1c1e21;
   font-size: 12px;
@@ -386,23 +389,22 @@ main {
   border-radius: 5px;
   box-shadow: inset 0 1px 1px #a4e388;
   border-color: #3b6e22 #3b6e22 #2c5115;
-  color: #fff;
+  color: white;
   cursor: pointer;
-  font-family: 'Freight Sans Bold' , Helvetica , Arial , sans-serif !important;
+  font-family: Freight , Helvetica , Arial , sans-serif;
   font-size: 19px;
-  font-weight: bold !important;
   line-height: 126%;
   min-width: 194px;
   padding: 7px 20px;
   text-align: center;
-  text-shadow: 0 1px 2px rgba( 0 , 0 , 0 , .5 );
+  text-shadow: 0 1px 2px rgba( 0 , 0 , 0 , 0.5 );
 }
 
 .texto-criar-pg {
   border-top: 1px solid #dddfe2;
   color: #666;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 10px;
   padding-top: 15px;
 }
@@ -425,14 +427,10 @@ main {
   padding-bottom: 2px;
 }
 
-.lang-list>li {
+.lang-list > li {
   display: inline-block;
   list-style: none;
   padding-left: 10px;
-}
-
-.lang-list>li:first-child {
-  padding-left: 0;
 }
 
 .link-plus {
@@ -450,7 +448,7 @@ main {
 }
 
 .link-plus-img {
-  background-image: url( ../imagens/button-plus.png );
+  background-image: url( '../imagens/button-plus.png' );
   background-position: -13px -326px;
   background-repeat: no-repeat;
   background-size: auto;
@@ -474,14 +472,14 @@ main {
   margin-left: -20px;
 }
 
-.links-list>li {
+.links-list > li {
   display: inline-block;
   list-style: none;
   padding-left: 16.65px;
 }
 
-.links-list-imp {
-  padding-left: 20px !important;
+.lang-list > li:first-child {
+  padding-left: 0;
 }
 
 .link-opt-anuncio {
@@ -491,7 +489,7 @@ main {
 }
 
 .opt-anuncio-img {
-  background-image: url( ../imagens/logoandbuttons.png );
+  background-image: url( '../imagens/logoandbuttons.png' );
   background-position: -221px -280px;
   background-size: auto;
   background-repeat: no-repeat;
