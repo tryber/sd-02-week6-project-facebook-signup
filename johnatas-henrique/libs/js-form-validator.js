@@ -203,7 +203,7 @@
 		        },
 		        email: {
 		            empty: 'Please, enter your email address',
-		            incorrect: 'Incorrect email address'
+		            incorrect: 'E-mail inválido'
 		        },
 		        length: {
 		            empty: 'Please, Enter a minimum of {0} characters and a maximum of {1}',
@@ -211,7 +211,7 @@
 		        },
 		        minlength: {
 		            empty: 'Please, enter at least {0} characters',
-		            incorrect: 'You have entered less than {0} characters'
+		            incorrect: 'Por favor, digite pelo menos {0} caracteres'
 		        },
 		        maxlength: {
 		            empty: 'Please, enter at maximum {0} characters',
