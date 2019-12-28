@@ -18,8 +18,16 @@ const dataNasc = new Pikaday({
 
 /* Validações com a Lib js-form-validator */
 const formRegister = document.querySelector('#form-register');
-
+let res;
 const validaCampos = new Validator(formRegister, function (err, res) {
+  if (contadorGenero == 1) {
+    res = false;
+  };
+  console.log(res);
+  if (valorGenero == 3 && selectPronome.value == '') {
+    res = false;
+  };
+  console.log(res);
   return res;
 }, {
   rules: {
@@ -101,39 +109,39 @@ function funcaoEmailEFone() {
   emailErro = '';
   const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
   const foneReg = /^^[0-9]{2}9?[0-9]{8}$/;
-  if (inputFoneOuEmail.value != ''){
+  if (inputFoneOuEmail.value != '') {
     if (inputFoneOuEmail.value.match(emailReg) || inputFoneOuEmail.value.match(foneReg)) {
       divEmail.classList.add('esconder');
       contadorEmail = 0;
       return true;
-    }
-    else {
+    } else {
       emailErro = '\nO campo Celular ou email é inválido';
       contadorEmail = 1;
       divEmail.classList.remove('esconder');
     }
   }
 }
-  inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
+inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
 
 /* Validação de senha (acima de 6 caracteres) */
 
 let contadorSenha = 0;
 let senhaErro = '';
+
 function senhaMaisCaracteres() {
   contadorSenha = 0;
-  
-  if (inputSenha.value.length > 5){
-    SenhaErro = '';
-    contadorSenha = 0;
+  if (inputSenha.value != '') {
+    if (inputSenha.value.length > 5) {
+      senhaErro = '';
+      contadorSenha = 0;
       return true;
-    }
-    else {
+    } else {
       senhaErro = '\nO campo Senha é inválido';
       contadorSenha = 1;
     }
   }
-  inputSenha.addEventListener('keyup', senhaMaisCaracteres);
+}
+inputSenha.addEventListener('keyup', senhaMaisCaracteres);
 
 /* Escondendo/Mostrando Div dependendo do gênero escolhido */
 
@@ -191,52 +199,52 @@ const camposObrigInputName = [
 function verificaCamposInputVazios() {
   alertaErro = 'Falhas no cadastro, por favor confira os erros abaixo:';
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
+  contadorValida = 0;
   for (let i = 0; i < camposObrigInputForm.length; i += 1) {
     if (camposObrigInputForm[i].value == '') {
       let nomeCampo = camposObrigInputForm[i].name;
       labelCampo = document.querySelector(`label[for=${nomeCampo}]`);
-      contadorValida +=1;
+      contadorValida += 1;
       alertaErro += `\nO campo ${labelCampo.innerText} está vazio.`;
-    }
-    else {
-      alertaOk +=`\n${camposObrigInputName[i]}: ${camposObrigInputForm[i].value}`;
+    } else {
+      alertaOk += `\n${camposObrigInputName[i]}: ${camposObrigInputForm[i].value}`;
     }
   }
 }
 
 botaoEnviar.addEventListener('click', verificaCamposInputVazios);
 
-function verificaSelectVazia(){
+function verificaSelectVazia() {
   if (selectPronome.value == '') {
-    contadorValida +=1;
+    contadorValida += 1;
     alertaErro += '\nO campo Selecione seu pronome está vazio.';
   }
 }
 
+let contadorGenero = 1;
+
 function verificaRadiosVazias() {
-  let contar = 0;
+  contadorGenero = 1;
   for (let i = 0; i < arrRadios.length; i += 1) {
     if (arrRadios[i].checked) {
-      contar = 1;
+      contadorGenero = 0;
       valorGenero = arrRadios[i].value;
       if (valorGenero == 3) {
         verificaSelectVazia()
       }
     }
   }
-  if (contar == 0) {
-    contadorValida +=1;
+  if (contadorGenero == 1) {
     alertaErro += '\nO campo Gênero está vazio.';
   }
 }
 
 botaoEnviar.addEventListener('click', verificaRadiosVazias);
 
-function mostraAlerta(){
-  if (contadorValida === 0 && contadorEmail === 0 && contadorSenha === 0) {
+function mostraAlerta() {
+  if (contadorValida === 0 && contadorEmail === 0 && contadorSenha === 0 && contadorGenero === 0) {
     alert(alertaOk);
-  }
-  else {
+  } else {
     alertaErro += `${emailErro}`
     alertaErro += `${senhaErro}`
     alert(alertaErro);
