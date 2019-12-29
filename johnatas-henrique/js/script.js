@@ -17,13 +17,13 @@ const inputGeneroOpt = document.querySelector('#gender-opt');
 const formRegister = document.querySelector('#form-register');
 
 const camposInputForm = [
-  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, inputGeneroOpt
+  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, inputGeneroOpt,
 ];
 const camposObrigInputForm = [
-  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc
+  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc,
 ];
 const camposObrigInputName = [
-  'Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'
+  'Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento',
 ];
 
 let emailErro = '';
@@ -73,7 +73,7 @@ new Validator(formRegister, function (err, res) {
         return true;
       }
       return false;
-    }
+    },
   },
   messages: {
     pt: {
@@ -126,12 +126,13 @@ function funcaoEmailEFone() {
       divEmail.classList.add('esconder');
       contadorEmail = 0;
       return true;
-    } 
-      emailErro = '\nO campo Celular ou email é inválido';
-      contadorEmail = 1;
-      divEmail.classList.remove('esconder');
-      return false;
+    }
+    emailErro = '\nO campo Celular ou email é inválido';
+    contadorEmail = 1;
+    divEmail.classList.remove('esconder');
+    return false;
   }
+  return false;
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
 
@@ -139,16 +140,17 @@ inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
 
 function senhaMaisCaracteres() {
   contadorSenha = 0;
-  if (inputSenha.value != '') {
+  if (inputSenha.value !== '') {
     if (inputSenha.value.length > 5) {
       senhaErro = '';
       contadorSenha = 0;
       return true;
-    } 
-      senhaErro = '\nO campo Senha é inválido';
-      contadorSenha = 1;
-      return false;
+    }
+    senhaErro = '\nO campo Senha é inválido';
+    contadorSenha = 1;
+    return false;
   }
+  return false;
 }
 inputSenha.addEventListener('keyup', senhaMaisCaracteres);
 
@@ -174,7 +176,7 @@ arrRadios.forEach(changeRadio);
 
 function verificaVazioLimpaPlaceholder(event) {
   const nomeCampo = event.target.name;
-  let escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
+  const escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
   if (event.target.value === '') {
     escondeLabel.classList.remove('esconder');
   } else {
