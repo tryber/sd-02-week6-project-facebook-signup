@@ -211,12 +211,6 @@ function verificaCamposInputVazios() {
 
 botaoEnviar.addEventListener('click', verificaCamposInputVazios);
 
-function verificaSelectVazia() {
-  if (selectPronome.value === '') {
-    contadorValida += 1;
-    alertaErro += '\nO campo Selecione seu pronome está vazio.';
-  }
-}
 
 function verificaRadiosVazias() {
   contadorGenero = 1;
@@ -225,9 +219,6 @@ function verificaRadiosVazias() {
       contadorGenero = 0;
       valorGenero = arrRadios[i].value;
       valorGenero = parseInt(valorGenero, 10);
-      if (valorGenero === 3) {
-        verificaSelectVazia();
-      }
     }
   }
   if (contadorGenero === 1) {
@@ -236,6 +227,15 @@ function verificaRadiosVazias() {
 }
 
 botaoEnviar.addEventListener('click', verificaRadiosVazias);
+
+function verificaSelectVazia() {
+  if (valorGenero === 3 && selectPronome.value === '') {
+    contadorValida += 1;
+    alertaErro += '\nO campo Selecione seu pronome está vazio.';
+  }
+}
+
+botaoEnviar.addEventListener('click', verificaSelectVazia);
 
 function mostraAlerta() {
   if (contadorValida === 0 && contadorEmail === 0 && contadorSenha === 0 && contadorGenero === 0) {
