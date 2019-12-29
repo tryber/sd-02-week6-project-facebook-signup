@@ -11,13 +11,20 @@ const inputSobrenome = document.querySelector('#sobrenome');
 const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
+const containerEmailEFone = document.querySelector('#fone-email');
 const selectPronome = document.querySelector('.select-pronome');
 const inputGeneroOpt = document.querySelector('#gender-opt');
 const formRegister = document.querySelector('#form-register');
 
-const camposInputForm = [ inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, inputGeneroOpt, ]
-const camposObrigInputForm = [ inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, ]
-const camposObrigInputName = [ 'Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento', ]
+const camposInputForm = [
+  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, inputGeneroOpt
+];
+const camposObrigInputForm = [
+  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc
+];
+const camposObrigInputName = [
+  'Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'
+];
 
 let emailErro = '';
 let contadorEmail = 0;
@@ -50,13 +57,14 @@ new Pikaday({
 /* Validações com a Lib js-form-validator */
 
 new Validator(formRegister, function (err, res) {
-  if (contadorGenero == 1) {
-    res = false;
+  let answer = res;
+  if (contadorGenero === 1) {
+    answer = false;
   }
-  if (valorGenero === 3 && selectPronome.value == '') {
-    res = false;
+  if (valorGenero === 3 && selectPronome.value === '') {
+    answer = false;
   }
-  return res;
+  return answer;
 }, {
   rules: {
     dtval(value) {
@@ -64,9 +72,7 @@ new Validator(formRegister, function (err, res) {
       if (value.match(dataReg)) {
         return true;
       }
-      else {
-        return false;
-      }
+      return false;
     }
   },
   messages: {
@@ -109,23 +115,22 @@ botaoEnviar.addEventListener('click', checkGenero);
 divEmail.className = 'error esconder';
 divEmail.setAttribute('data-type', 'validator-email');
 divEmail.innerHTML = 'Insira um número de celular ou email válido.<br>Exemplos válidos: 11987876565 ou contato@provedor.com';
-containerEmailEFone = document.querySelector('#fone-email');
 containerEmailEFone.appendChild(divEmail);
 
 function funcaoEmailEFone() {
   emailErro = '';
-  const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+  const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
   const foneReg = /^[0-9]{2}9?[0-9]{8}$/;
-  if (inputFoneOuEmail.value != '') {
+  if (inputFoneOuEmail.value !== '') {
     if (inputFoneOuEmail.value.match(emailReg) || inputFoneOuEmail.value.match(foneReg)) {
       divEmail.classList.add('esconder');
       contadorEmail = 0;
       return true;
-    } else {
+    } 
       emailErro = '\nO campo Celular ou email é inválido';
       contadorEmail = 1;
       divEmail.classList.remove('esconder');
-    }
+      return false;
   }
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
@@ -139,10 +144,10 @@ function senhaMaisCaracteres() {
       senhaErro = '';
       contadorSenha = 0;
       return true;
-    } else {
+    } 
       senhaErro = '\nO campo Senha é inválido';
       contadorSenha = 1;
-    }
+      return false;
   }
 }
 inputSenha.addEventListener('keyup', senhaMaisCaracteres);
@@ -150,8 +155,8 @@ inputSenha.addEventListener('keyup', senhaMaisCaracteres);
 /* Escondendo/Mostrando Div dependendo do gênero escolhido */
 
 function mostraChildUndefined() {
-  let valorRadio = document.querySelector('input[name=genero]:checked');
-  let valor = parseInt(valorRadio.value, 10);
+  const valorRadio = document.querySelector('input[name=genero]:checked');
+  const valor = parseInt(valorRadio.value, 10);
   if (valor === 3) {
     divUndefined.classList.remove('esconder');
   } else {
@@ -168,9 +173,9 @@ arrRadios.forEach(changeRadio);
 /* Verificar campos vazios e remover placeholder personalizado */
 
 function verificaVazioLimpaPlaceholder(event) {
-  let nomeCampo = event.target.name;
-  escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
-  if (event.target.value == '') {
+  const nomeCampo = event.target.name;
+  let escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
+  if (event.target.value === '') {
     escondeLabel.classList.remove('esconder');
   } else {
     escondeLabel.classList.add('esconder');
@@ -191,9 +196,9 @@ function verificaCamposInputVazios() {
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
   contadorValida = 0;
   for (let i = 0; i < camposObrigInputForm.length; i += 1) {
-    if (camposObrigInputForm[i].value == '') {
-      let nomeCampo = camposObrigInputForm[i].name;
-      labelCampo = document.querySelector(`label[for=${nomeCampo}]`);
+    if (camposObrigInputForm[i].value === '') {
+      const nomeCampo = camposObrigInputForm[i].name;
+      const labelCampo = document.querySelector(`label[for=${nomeCampo}]`);
       contadorValida += 1;
       alertaErro += `\nO campo ${labelCampo.innerText} está vazio.`;
     } else {
@@ -205,7 +210,7 @@ function verificaCamposInputVazios() {
 botaoEnviar.addEventListener('click', verificaCamposInputVazios);
 
 function verificaSelectVazia() {
-  if (selectPronome.value == '') {
+  if (selectPronome.value === '') {
     contadorValida += 1;
     alertaErro += '\nO campo Selecione seu pronome está vazio.';
   }
@@ -217,13 +222,13 @@ function verificaRadiosVazias() {
     if (arrRadios[i].checked) {
       contadorGenero = 0;
       valorGenero = arrRadios[i].value;
-      valorGenero = parseInt(valorGenero);
+      valorGenero = parseInt(valorGenero, 10);
       if (valorGenero === 3) {
-        verificaSelectVazia()
+        verificaSelectVazia();
       }
     }
   }
-  if (contadorGenero == 1) {
+  if (contadorGenero === 1) {
     alertaErro += '\nO campo Gênero está vazio.';
   }
 }
@@ -234,8 +239,8 @@ function mostraAlerta() {
   if (contadorValida === 0 && contadorEmail === 0 && contadorSenha === 0 && contadorGenero === 0) {
     alert(alertaOk);
   } else {
-    alertaErro += `${emailErro}`
-    alertaErro += `${senhaErro}`
+    alertaErro += `${emailErro}`;
+    alertaErro += `${senhaErro}`;
     alert(alertaErro);
   }
 }
