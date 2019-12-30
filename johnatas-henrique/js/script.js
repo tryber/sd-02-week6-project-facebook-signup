@@ -8,6 +8,8 @@ const containerRadios = document.querySelector('.gender-block');
 const arrRadios = document.querySelectorAll('.gender-input');
 const divErro = document.createElement('div');
 const divEmail = document.createElement('div');
+const divNome = document.createElement('div');
+const divSobrenome = document.createElement('div');
 const divPikaday = document.createElement('div');
 const divUndefined = document.querySelector('#show-undefined');
 const inputNome = document.querySelector('#nome');
@@ -15,6 +17,8 @@ const inputSobrenome = document.querySelector('#sobrenome');
 const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
+const containerNome = document.querySelector('#container-nome');
+const containerSobrenome = document.querySelector('#container-sobrenome');
 const containerEmailEFone = document.querySelector('#fone-email');
 const containerPikaday = document.querySelector('#pikaday');
 const selectPronome = document.querySelector('.select-pronome');
@@ -35,6 +39,10 @@ let emailErro = '';
 let contadorEmail = 0;
 let pikadayErro = '';
 let contadorPikaday = 0;
+let nomeErro = '';
+let contadorNome = 0;
+let sobrenomeErro = '';
+let contadorSobrenome = 0;
 let contadorGenero = 1;
 let valorGenero = 0;
 let senhaErro = '';
@@ -65,7 +73,8 @@ const pikadayCC = new Pikaday({
 
 const validatorCC = new Validator(formRegister, function (err, res) {
   let answer = res;
-  if (contadorGenero === 1) {
+  if (contadorGenero === 1 || contadorPikaday === 1 ||
+    contadorNome === 1 || contadorSobrenome === 1) {
     answer = false;
   }
   if (valorGenero === 3 && selectPronome.value === '') {
@@ -116,6 +125,58 @@ function alterGenero(item) {
 
 arrRadios.forEach(alterGenero);
 botaoEnviar.addEventListener('click', checkGenero);
+
+/* Validação nome sem números */
+
+divNome.className = 'error esconder';
+divNome.setAttribute('data-type', 'validator-css');
+divNome.innerHTML = 'Insira um nome válido, números não são aceitos.';
+containerNome.appendChild(divNome);
+
+function validaNome(event) {
+  nomeErro = '';
+  const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  if (event.target.value !== '') {
+    if (event.target.value.match(nomeReg)) {
+      divNome.classList.add('esconder');
+      contadorNome = 0;
+      return true;
+    }
+    nomeErro = '\nO campo Nome é inválido';
+    contadorNome = 1;
+    divNome.classList.remove('esconder');
+    return false;
+  }
+  return false;
+}
+
+inputNome.addEventListener('keyup', validaNome);
+
+/* Validação sobrenome sem números */
+
+divSobrenome.className = 'error esconder';
+divSobrenome.setAttribute('data-type', 'validator-css');
+divSobrenome.innerHTML = 'Insira um sobrenome válido, números não são aceitos.';
+containerSobrenome.appendChild(divSobrenome);
+
+function validaSobrenome(event) {
+  sobrenomeErro = '';
+  const sobrenomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  if (event.target.value !== '') {
+    if (event.target.value.match(sobrenomeReg)) {
+      divSobrenome.classList.add('esconder');
+      contadorSobrenome = 0;
+      return true;
+    }
+    sobrenomeErro = '\nO campo Sobrenome é inválido';
+    contadorSobrenome = 1;
+    divSobrenome.classList.remove('esconder');
+    return false;
+  }
+  return false;
+}
+
+inputSobrenome.addEventListener('keyup', validaSobrenome);
 
 /* Validação fone e email na caixa */
 
@@ -271,10 +332,13 @@ function verificaSelectVazia() {
 botaoEnviar.addEventListener('click', verificaSelectVazia);
 
 function mostraAlerta() {
-  if (contadorValida === 0 && contadorEmail === 0 &&
-    contadorSenha === 0 && contadorGenero === 0 && contadorPikaday === 0) {
+  if (validatorCC.validate() === true && contadorValida === 0 && contadorEmail === 0 &&
+    contadorSenha === 0 && contadorGenero === 0 && contadorPikaday === 0 &&
+    contadorNome === 0 && contadorSobrenome === 0) {
     alert(alertaOk);
   } else {
+    alertaErro += `${nomeErro}`;
+    alertaErro += `${sobrenomeErro}`;
     alertaErro += `${emailErro}`;
     alertaErro += `${pikadayErro}`;
     alertaErro += `${senhaErro}`;
