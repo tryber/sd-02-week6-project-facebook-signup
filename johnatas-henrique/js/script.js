@@ -1,8 +1,5 @@
-/* global Pikaday */
-/* global Validator */
-
+/* global Pikaday Validator*/
 /* Variáveis globais */
-
 const botaoEnviar = document.querySelector('#enviar');
 const containerRadios = document.querySelector('.gender-block');
 const arrRadios = document.querySelectorAll('.gender-input');
@@ -24,17 +21,13 @@ const containerPikaday = document.querySelector('#pikaday');
 const selectPronome = document.querySelector('.select-pronome');
 const inputGeneroOpt = document.querySelector('#gender-opt');
 const formRegister = document.querySelector('#form-register');
-
+const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
 const camposInputForm = [
   inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, inputGeneroOpt,
-];
-const camposObrigInputForm = [
-  inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc,
 ];
 const camposObrigInputName = [
   'Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento',
 ];
-
 let emailErro = '';
 let contadorEmail = 0;
 let pikadayErro = '';
@@ -50,9 +43,7 @@ let contadorSenha = 0;
 let contadorValida = 0;
 let alertaErro = '';
 let alertaOk = '';
-
 /* Pikaday JS - Requisito 17 */
-
 const pikadayCC = new Pikaday({
   field: document.getElementById('dtnasc'),
   firstDay: 1,
@@ -68,40 +59,20 @@ const pikadayCC = new Pikaday({
     weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
   },
 });
-
 /* Validações com a Lib js-form-validator */
+
+let respostaGeral = 0;
 
 const validatorCC = new Validator(formRegister, function (err, res) {
   let answer = res;
-  if (contadorGenero === 1 || contadorPikaday === 1 ||
-    contadorNome === 1 || contadorSobrenome === 1) {
+  if (respostaGeral !== 0) {
     answer = false;
-  }
-  if (valorGenero === 3 && selectPronome.value === '') {
+  } else if (valorGenero === 3 && selectPronome.value === '') {
     answer = false;
   }
   return answer;
-}, {
-  rules: {
-    dtval(value) {
-      const dataReg = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/([1|2][9|0][0-9][0-9])/;
-      if (value.match(dataReg)) {
-        return true;
-      }
-      return false;
-    },
-  },
-  messages: {
-    pt: {
-      dtval: {
-        incorrect: 'Por favor, digite uma data válida no estilo "DD/MM/AAAA"',
-      },
-    },
-  },
 });
-
 /* Validando radio button */
-
 divErro.className = 'error esconder';
 divErro.setAttribute('data-type', 'validator-error');
 divErro.innerHTML = 'Escolha um gênero. Você poderá alterar quem pode ver isso posteriormente.';
@@ -122,12 +93,9 @@ function alterGenero(item) {
   item.addEventListener('blur', checkGenero);
   item.addEventListener('change', checkGenero);
 }
-
 arrRadios.forEach(alterGenero);
 botaoEnviar.addEventListener('click', checkGenero);
-
 /* Validação nome sem números */
-
 divNome.className = 'error esconder';
 divNome.setAttribute('data-type', 'validator-css');
 divNome.innerHTML = 'Insira um nome válido, números não são aceitos.';
@@ -135,7 +103,6 @@ containerNome.appendChild(divNome);
 
 function validaNome(event) {
   nomeErro = '';
-  const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
   if (event.target.value !== '') {
     if (event.target.value.match(nomeReg)) {
       divNome.classList.add('esconder');
@@ -149,11 +116,8 @@ function validaNome(event) {
   }
   return false;
 }
-
 inputNome.addEventListener('keyup', validaNome);
-
 /* Validação sobrenome sem números */
-
 divSobrenome.className = 'error esconder';
 divSobrenome.setAttribute('data-type', 'validator-css');
 divSobrenome.innerHTML = 'Insira um sobrenome válido, números não são aceitos.';
@@ -161,9 +125,8 @@ containerSobrenome.appendChild(divSobrenome);
 
 function validaSobrenome(event) {
   sobrenomeErro = '';
-  const sobrenomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
   if (event.target.value !== '') {
-    if (event.target.value.match(sobrenomeReg)) {
+    if (event.target.value.match(nomeReg)) {
       divSobrenome.classList.add('esconder');
       contadorSobrenome = 0;
       return true;
@@ -175,11 +138,8 @@ function validaSobrenome(event) {
   }
   return false;
 }
-
 inputSobrenome.addEventListener('keyup', validaSobrenome);
-
 /* Validação fone e email na caixa */
-
 divEmail.className = 'error esconder';
 divEmail.setAttribute('data-type', 'validator-css');
 divEmail.innerHTML = 'Insira um número de celular ou email válido.<br>Exemplos válidos: 11987876565 ou contato@provedor.com';
@@ -203,9 +163,7 @@ function funcaoEmailEFone() {
   return false;
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
-
 /* Validação data maior que o dia de hoje */
-
 divPikaday.className = 'error esconder';
 divPikaday.setAttribute('data-type', 'validator-css');
 divPikaday.innerHTML = 'Parece que você inseriu informações incorretas. Use sua data de nascimento verdadeira.';
@@ -226,9 +184,7 @@ function funcaoPikadayMaior() {
   return false;
 }
 inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
-
 /* Validação de senha (acima de 6 caracteres) */
-
 function senhaMaisCaracteres() {
   contadorSenha = 0;
   if (inputSenha.value !== '') {
@@ -244,9 +200,7 @@ function senhaMaisCaracteres() {
   return false;
 }
 inputSenha.addEventListener('keyup', senhaMaisCaracteres);
-
 /* Escondendo/Mostrando Div dependendo do gênero escolhido */
-
 function mostraChildUndefined() {
   const valorRadio = document.querySelector('input[name=genero]:checked');
   const valor = parseInt(valorRadio.value, 10);
@@ -260,11 +214,8 @@ function mostraChildUndefined() {
 function changeRadio(item) {
   item.addEventListener('change', mostraChildUndefined);
 }
-
 arrRadios.forEach(changeRadio);
-
 /* Verificar campos vazios e remover placeholder personalizado */
-
 function verificaVazioLimpaPlaceholder(event) {
   const nomeCampo = event.target.name;
   const escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
@@ -279,29 +230,24 @@ function escutaCampos(item) {
   item.addEventListener('keyup', verificaVazioLimpaPlaceholder);
   item.addEventListener('change', verificaVazioLimpaPlaceholder);
 }
-
 camposInputForm.forEach(escutaCampos);
-
 /* Criar Alerts */
-
 function verificaCamposInputVazios() {
   alertaErro = 'Falhas no cadastro, por favor confira os erros abaixo:';
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
   contadorValida = 0;
-  for (let i = 0; i < camposObrigInputForm.length; i += 1) {
-    if (camposObrigInputForm[i].value === '') {
-      const nomeCampo = camposObrigInputForm[i].name;
+  for (let i = 0; i < camposInputForm.length-1; i += 1) {
+    if (camposInputForm[i].value === '') {
+      const nomeCampo = camposInputForm[i].name;
       const labelCampo = document.querySelector(`label[for=${nomeCampo}]`);
       contadorValida += 1;
       alertaErro += `\nO campo ${labelCampo.innerText} está vazio.`;
     } else {
-      alertaOk += `\n${camposObrigInputName[i]}: ${camposObrigInputForm[i].value}`;
+      alertaOk += `\n${camposObrigInputName[i]}: ${camposInputForm[i].value}`;
     }
   }
 }
-
 botaoEnviar.addEventListener('click', verificaCamposInputVazios);
-
 
 function verificaRadiosVazias() {
   contadorGenero = 1;
@@ -319,7 +265,6 @@ function verificaRadiosVazias() {
     alertaErro += '\nO campo Gênero está vazio.';
   }
 }
-
 botaoEnviar.addEventListener('click', verificaRadiosVazias);
 
 function verificaSelectVazia() {
@@ -328,22 +273,26 @@ function verificaSelectVazia() {
     alertaErro += '\nO campo Selecione seu pronome está vazio.';
   }
 }
-
 botaoEnviar.addEventListener('click', verificaSelectVazia);
 
-function mostraAlerta() {
-  if (validatorCC.validate() === true && contadorValida === 0 && contadorEmail === 0 &&
-    contadorSenha === 0 && contadorGenero === 0 && contadorPikaday === 0 &&
-    contadorNome === 0 && contadorSobrenome === 0) {
-    alert(alertaOk);
-  } else {
-    alertaErro += `${nomeErro}`;
-    alertaErro += `${sobrenomeErro}`;
-    alertaErro += `${emailErro}`;
-    alertaErro += `${pikadayErro}`;
-    alertaErro += `${senhaErro}`;
-    alert(alertaErro);
+function verificaRespostaGeral() {
+  let arrResposta = [ contadorEmail, contadorGenero, contadorNome, contadorPikaday, contadorSenha, contadorSobrenome, contadorValida]
+  respostaGeral = 0;
+  for (i = 0; i < arrResposta.length; i += 1) {
+    if (arrResposta[i] === 1) {
+      respostaGeral += 1;
+    }
   }
 }
 
+botaoEnviar.addEventListener('click', verificaRespostaGeral);
+
+function mostraAlerta() {
+  if (validatorCC.validate() === true && respostaGeral === 0) {
+    alert(alertaOk);
+  } else {
+    alertaErro += `${nomeErro}${sobrenomeErro}${emailErro}${pikadayErro}${senhaErro}`;
+    alert(alertaErro);
+  }
+}
 botaoEnviar.addEventListener('click', mostraAlerta);
