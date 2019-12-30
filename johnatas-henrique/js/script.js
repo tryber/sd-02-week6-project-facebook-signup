@@ -153,16 +153,16 @@ containerPikaday.appendChild(divPikaday);
 function funcaoPikadayMaior() {
   pikadayErro = '';
   const dtAtual = Date.now();
-  const dtCaixa = Date.parse(pikadayCC.toString('MM/DD/YYYY'))
-    if (dtCaixa < dtAtual) {
-      divPikaday.classList.add('esconder');
-      contadorPikaday = 0;
-      return true;
-    }
-    pikadayErro = '\nO campo Data de Nascimento é inválido';
-    contadorPikaday = 1;
-    divPikaday.classList.remove('esconder');
-    return false;
+  const dtCaixa = Date.parse(pikadayCC.toString('MM/DD/YYYY'));
+  if (dtCaixa < dtAtual) {
+    divPikaday.classList.add('esconder');
+    contadorPikaday = 0;
+    return true;
+  }
+  pikadayErro = '\nO campo Data de Nascimento é inválido';
+  contadorPikaday = 1;
+  divPikaday.classList.remove('esconder');
+  return false;
 }
 inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
 
@@ -246,8 +246,8 @@ function verificaRadiosVazias() {
   contadorGenero = 1;
   for (let i = 0; i < arrRadios.length; i += 1) {
     if (arrRadios[i].checked) {
-      escolhidoIdRadio = arrRadios[i].id;
-      escolhidoGenero = document.querySelector(`label[for=${escolhidoIdRadio}]`);
+      const escolhidoIdRadio = arrRadios[i].id;
+      const escolhidoGenero = document.querySelector(`label[for=${escolhidoIdRadio}]`);
       contadorGenero = 0;
       valorGenero = arrRadios[i].value;
       valorGenero = parseInt(valorGenero, 10);
@@ -271,7 +271,7 @@ function verificaSelectVazia() {
 botaoEnviar.addEventListener('click', verificaSelectVazia);
 
 function mostraAlerta() {
-  if (contadorValida === 0 && contadorEmail === 0 && 
+  if (contadorValida === 0 && contadorEmail === 0 &&
     contadorSenha === 0 && contadorGenero === 0 && contadorPikaday === 0) {
     alert(alertaOk);
   } else {
