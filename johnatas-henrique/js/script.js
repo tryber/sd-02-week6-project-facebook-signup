@@ -1,3 +1,6 @@
+/* global Pikaday */
+/* global Validator */
+
 /* Variáveis globais */
 
 const botaoEnviar = document.querySelector('#enviar');
@@ -5,6 +8,7 @@ const containerRadios = document.querySelector('.gender-block');
 const arrRadios = document.querySelectorAll('.gender-input');
 const divErro = document.createElement('div');
 const divEmail = document.createElement('div');
+const divPikaday = document.createElement('div');
 const divUndefined = document.querySelector('#show-undefined');
 const inputNome = document.querySelector('#nome');
 const inputSobrenome = document.querySelector('#sobrenome');
@@ -12,6 +16,7 @@ const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
 const containerEmailEFone = document.querySelector('#fone-email');
+const containerPikaday = document.querySelector('#pikaday');
 const selectPronome = document.querySelector('.select-pronome');
 const inputGeneroOpt = document.querySelector('#gender-opt');
 const formRegister = document.querySelector('#form-register');
@@ -28,6 +33,8 @@ const camposObrigInputName = [
 
 let emailErro = '';
 let contadorEmail = 0;
+let pikadayErro = '';
+let contadorPikaday = 0;
 let contadorGenero = 1;
 let valorGenero = 0;
 let senhaErro = '';
@@ -38,7 +45,7 @@ let alertaOk = '';
 
 /* Pikaday JS - Requisito 17 */
 
-new Pikaday({
+const pikadayCC = new Pikaday({
   field: document.getElementById('dtnasc'),
   firstDay: 1,
   minDate: new Date(1899, 12, 1),
@@ -56,7 +63,7 @@ new Pikaday({
 
 /* Validações com a Lib js-form-validator */
 
-new Validator(formRegister, function (err, res) {
+const validatorCC = new Validator(formRegister, function (err, res) {
   let answer = res;
   if (contadorGenero === 1) {
     answer = false;
@@ -113,7 +120,7 @@ botaoEnviar.addEventListener('click', checkGenero);
 /* Validação fone e email na caixa */
 
 divEmail.className = 'error esconder';
-divEmail.setAttribute('data-type', 'validator-email');
+divEmail.setAttribute('data-type', 'validator-css');
 divEmail.innerHTML = 'Insira um número de celular ou email válido.<br>Exemplos válidos: 11987876565 ou contato@provedor.com';
 containerEmailEFone.appendChild(divEmail);
 
@@ -135,6 +142,29 @@ function funcaoEmailEFone() {
   return false;
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
+
+/* Validação data maior que o dia de hoje */
+
+divPikaday.className = 'error esconder';
+divPikaday.setAttribute('data-type', 'validator-css');
+divPikaday.innerHTML = 'Parece que você inseriu informações incorretas. Use sua data de nascimento verdadeira.';
+containerPikaday.appendChild(divPikaday);
+
+function funcaoPikadayMaior() {
+  pikadayErro = '';
+  const dtAtual = Date.now();
+  const dtCaixa = Date.parse(pikadayCC.toString('MM/DD/YYYY'))
+    if (dtCaixa < dtAtual) {
+      divPikaday.classList.add('esconder');
+      contadorPikaday = 0;
+      return true;
+    }
+    pikadayErro = '\nO campo Data de Nascimento é inválido';
+    contadorPikaday = 1;
+    divPikaday.classList.remove('esconder');
+    return false;
+}
+inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
 
 /* Validação de senha (acima de 6 caracteres) */
 
@@ -216,9 +246,12 @@ function verificaRadiosVazias() {
   contadorGenero = 1;
   for (let i = 0; i < arrRadios.length; i += 1) {
     if (arrRadios[i].checked) {
+      escolhidoIdRadio = arrRadios[i].id;
+      escolhidoGenero = document.querySelector(`label[for=${escolhidoIdRadio}]`);
       contadorGenero = 0;
       valorGenero = arrRadios[i].value;
       valorGenero = parseInt(valorGenero, 10);
+      alertaOk += `\nGênero: ${escolhidoGenero.innerText}`;
     }
   }
   if (contadorGenero === 1) {
@@ -238,10 +271,12 @@ function verificaSelectVazia() {
 botaoEnviar.addEventListener('click', verificaSelectVazia);
 
 function mostraAlerta() {
-  if (contadorValida === 0 && contadorEmail === 0 && contadorSenha === 0 && contadorGenero === 0) {
+  if (contadorValida === 0 && contadorEmail === 0 && 
+    contadorSenha === 0 && contadorGenero === 0 && contadorPikaday === 0) {
     alert(alertaOk);
   } else {
     alertaErro += `${emailErro}`;
+    alertaErro += `${pikadayErro}`;
     alertaErro += `${senhaErro}`;
     alert(alertaErro);
   }
