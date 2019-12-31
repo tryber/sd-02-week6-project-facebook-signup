@@ -55,3 +55,19 @@ cadastrar.addEventListener('click', function () {
             Gênero: ${genero}`);
   }
 });
+
+function login() {
+  const phoneMail = document.getElementById('phonemailLogin').value;
+  const password = document.getElementById('passwordLogin').value;
+
+  if ((!phoneRegex.test(phoneMail)) && (!emailRegex.test(phoneMail))) {
+    alert('O telefone/email informado é inválido');
+  } else if (password === '') {
+    alert('A senha informada é inválida');
+  }
+  else {
+    alert(` Login efetuad com sucesso!
+            telefone/email: ${phoneMail}
+            senha: ${password}`);
+  }
+}

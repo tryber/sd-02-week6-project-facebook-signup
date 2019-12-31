@@ -17,15 +17,15 @@
     <div class='head-container'>
       <div>
         <label>Email ou telefone</label>
-        <input type='text'>
+        <input type='text' id='phonemailLogin'>
       </div>
       <div>
         <label>Senha</label>
-        <input type='password' pattern='[0-9a-fA-F]'>
+        <input type='password' id='passwordLogin' pattern='[0-9a-fA-F]'>
         <p>Esqueceu a conta?</p>
       </div>
       <div>
-        <button>Entrar</button>
+        <button onclick='login()'>Entrar</button>
       </div>
     </div>
   </header>
@@ -41,7 +41,7 @@
     <section class='content'>
       <div>
         <h2>Abra uma conta</h2>
-        <p>É rápido é facil.</p>
+        <p>É rápido e facil.</p>
         <div>
           <input type='text' placeholder='Nome' id='nome' required>
           <div></div>
@@ -55,19 +55,16 @@
         </div>
         <div>
           <p>Gênero</p>
-            <div>
-              <input type='radio' name='gender' value='Feminino' id='female'>
-              <label for='female'>Feminino</label>
-            </div>
-            <div>
-              <input type='radio' name='gender' value='Masculino' id='male'>
-              <label for='male'>Masculino</label>
-            </div>
-            <div>
-              <input type='radio' name='gender' value='Personalizado' id='personalizado'>
-              <label for='personalizado'>Personalizado</label>
-            </div>
-        </div><br>
+          <label>
+            <input type='radio' name='gender' value='Feminino' id='female'>Feminino
+          </label>
+          <label>
+            <input type='radio' name='gender' value='Masculino' id='male'>Masculino
+          </label>
+          <label>
+            <input type='radio' name='gender' value='Personalizado' id='personalizado'>Personalizado
+          </label>
+        </div>
         <br><p>
             Ao clicar em Cadastre-se, você concorda com nossos <br>
             <span>Termos, Polica de Dados e Política de Cookies.</span> Você pode<br>
