@@ -57,7 +57,7 @@ cadastrar.addEventListener('click', function () {
 });
 
 const loginBtn = document.querySelector('#login');
-loginBtn.addEventListener('click',() => {
+loginBtn.addEventListener('click', () => {
   const phoneMail = document.getElementById('phonemailLogin').value;
   const password = document.getElementById('passwordLogin').value;
 
@@ -65,8 +65,7 @@ loginBtn.addEventListener('click',() => {
     alert('O telefone/email informado é inválido');
   } else if (password === '') {
     alert('A senha informada é inválida');
-  }
-  else {
+  } else {
     alert(` Login efetuad com sucesso!
             telefone/email: ${phoneMail}
             senha: ${password}`);
