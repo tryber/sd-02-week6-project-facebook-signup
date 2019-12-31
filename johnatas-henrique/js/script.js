@@ -35,9 +35,7 @@ let ctValida = 0;
 let respostaGeral = 0;
 let alertaErro = '';
 let alertaOk = '';
-for (let i = 0; i < arrDivErros.length; i += 1) {
 
-}
 /* Pikaday JS - Requisito 17 */
 const pikadayCC = new Pikaday({
   field: document.getElementById('dtnasc'),
@@ -88,37 +86,30 @@ botaoEnviar.addEventListener('click', checkGenero);
 /* Validação nome sem números */
 
 function validaNome(event) {
-  nomeErro = '';
-  if (event.target.value !== '') {
-    if (event.target.value.match(nomeReg)) {
-      divNome.classList.add('esconder');
-      ctNome = 0;
-      return true;
-    }
+  if (event.target.value == '' || event.target.value !== '' && event.target.value.match(nomeReg)) {
+    nomeErro = '';
+    divNome.classList.add('esconder');
+    ctNome = 0;
+  } else {
     nomeErro = '\nO campo Nome é inválido';
     ctNome = 1;
     divNome.classList.remove('esconder');
-    return false;
   }
-  return false;
 }
+
 inputNome.addEventListener('keyup', validaNome);
 /* Validação sobrenome sem números */
 
 function validaSobrenome(event) {
-  sobrenomeErro = '';
-  if (event.target.value !== '') {
-    if (event.target.value.match(nomeReg)) {
-      divSobrenome.classList.add('esconder');
-      ctSobrenome = 0;
-      return true;
-    }
+  if (event.target.value == '' || event.target.value !== '' && event.target.value.match(nomeReg)) {
+    sobrenomeErro = '';
+    divSobrenome.classList.add('esconder');
+    ctSobrenome = 0;
+  } else {
     sobrenomeErro = '\nO campo Sobrenome é inválido';
     ctSobrenome = 1;
     divSobrenome.classList.remove('esconder');
-    return false;
   }
-  return false;
 }
 inputSobrenome.addEventListener('keyup', validaSobrenome);
 /* Validação fone e email na caixa */
