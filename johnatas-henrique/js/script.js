@@ -1,4 +1,7 @@
 /* global Pikaday Validator*/
+
+/* Variáveis globais */
+
 const botaoEnviar = document.querySelector('#enviar');
 const arrRadios = document.querySelectorAll('.gender-input');
 const divGenero = document.querySelector('#show-genero');
@@ -12,15 +15,17 @@ const inputSobrenome = document.querySelector('#sobrenome');
 const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
-const formRegister = document.querySelector('#form-register');
 const inputUser = document.querySelector('#user');
 const inputPassword = document.querySelector('#password');
 const botaoEntrar = document.querySelector('#entrar');
+
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
 const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
 const foneReg = /^[0-9]{2}9?[0-9]{8}$/;
+
 const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc];
 const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'];
+
 let contaErros = 0;
 let entrarOk = 'Alerta quando a validação estiver Ok';
 let entrarErro = 'Alerta quando a validação acusar erro';
@@ -41,6 +46,8 @@ let respostaGeral = 0;
 let alertaErro = '';
 let alertaOk = '';
 
+/* Pikaday JS - Requisito 17 */
+
 const pikadayCC = new Pikaday({
   field: document.getElementById('dtnasc'),
   firstDay: 1,
@@ -50,14 +57,17 @@ const pikadayCC = new Pikaday({
   format: 'DD/MM/YYYY',
 });
 
+/* Validações com a Lib js-form-validator */
 
-const validatorCC = new Validator(formRegister, function (err, res) {
+const validatorCC = new Validator(document.querySelector('#form-register'), function (err, res) {
   let answer = res;
   if (respostaGeral !== 0) {
     answer = false;
   }
   return answer;
 });
+
+/* Validando radio button */
 
 function checkGenero() {
   for (let i = 0; i < arrRadios.length; i += 1) {
@@ -72,10 +82,12 @@ function checkGenero() {
 
 function alterGenero(item) {
   item.addEventListener('blur', checkGenero);
-  item.addEventListener('change', checkGenero);
 }
 arrRadios.forEach(alterGenero);
+
 botaoEnviar.addEventListener('click', checkGenero);
+
+/* Validação nome sem números */
 
 function validaNome() {
   if ((inputNome.value === '') || (inputNome.value !== '' && inputNome.value.match(nomeReg))) {
@@ -91,6 +103,8 @@ function validaNome() {
 
 inputNome.addEventListener('keyup', validaNome);
 
+/* Validação sobrenome sem números */
+
 function validaSobrenome() {
   const valorSobrenome = inputSobrenome.value;
   if ((valorSobrenome !== '' && valorSobrenome.match(nomeReg)) || (valorSobrenome === '')) {
@@ -104,6 +118,8 @@ function validaSobrenome() {
   }
 }
 inputSobrenome.addEventListener('keyup', validaSobrenome);
+
+/* Validação fone e email na caixa */
 
 function funcaoEmailEFone() {
   emailErro = '';
@@ -122,6 +138,8 @@ function funcaoEmailEFone() {
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
 
+/* Validação data maior que o dia de hoje */
+
 function funcaoPikadayMaior() {
   pikadayErro = '';
   ctPikaday = 0;
@@ -137,6 +155,9 @@ function funcaoPikadayMaior() {
   return false;
 }
 inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
+
+/* Validação de senha (acima de 6 caracteres) */
+
 function senhaMaisCaracteres() {
   ctSenha = 0;
   if (inputSenha.value !== '') {
@@ -152,6 +173,9 @@ function senhaMaisCaracteres() {
   return false;
 }
 inputSenha.addEventListener('keyup', senhaMaisCaracteres);
+
+/* Escondendo/Mostrando Div dependendo do gênero escolhido */
+
 function mostraChildUndefined() {
   const valorRadio = document.querySelector('input[name=genero]:checked');
   const valor = parseInt(valorRadio.value, 10);
@@ -166,6 +190,9 @@ function changeRadio(item) {
   item.addEventListener('change', mostraChildUndefined);
 }
 arrRadios.forEach(changeRadio);
+
+/* Verificar campos vazios e remover placeholder personalizado */
+
 function verificaVazioLimpaPlaceholder(event) {
   const nomeCampo = event.target.name;
   const escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
@@ -181,6 +208,9 @@ function escutaCampos(item) {
   item.addEventListener('change', verificaVazioLimpaPlaceholder);
 }
 cpInputForm.forEach(escutaCampos);
+
+/* Criar Alerts */
+
 function verificaCamposInputVazios() {
   alertaErro = 'Falhas no cadastro, por favor confira os erros abaixo:';
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
@@ -238,6 +268,7 @@ function mostraAlerta() {
 }
 botaoEnviar.addEventListener('click', mostraAlerta);
 
+/* Alerta do botão enviar - Requisito 7 */
 
 function entrarAlerta() {
   if (contaErros === 0) {
