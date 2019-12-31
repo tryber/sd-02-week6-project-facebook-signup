@@ -1,7 +1,6 @@
 /* global Pikaday Validator*/
 /* Variáveis globais */
 const botaoEnviar = document.querySelector('#enviar');
-const containerRadios = document.querySelector('.gender-block');
 const arrRadios = document.querySelectorAll('.gender-input');
 const divGenero = document.querySelector('#show-genero');
 const divEmail = document.querySelector('#show-email');
@@ -14,16 +13,12 @@ const inputSobrenome = document.querySelector('#sobrenome');
 const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
-const containerNome = document.querySelector('#container-nome');
-const containerSobrenome = document.querySelector('#container-sobrenome');
-const containerEmailEFone = document.querySelector('#fone-email');
-const containerPikaday = document.querySelector('#pikaday');
 const selectPronome = document.querySelector('.select-pronome');
 const formRegister = document.querySelector('#form-register');
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-const arrDivErros = [divGenero, divNome, divSobrenome, divPikaday, divEmail,];
-const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc,];
-const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento',];
+const arrDivErros = [divGenero, divNome, divSobrenome, divPikaday, divEmail, ];
+const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, ];
+const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento', ];
 let emailErro = '';
 let contadorEmail = 0;
 let pikadayErro = '';
@@ -40,8 +35,7 @@ let contadorValida = 0;
 let respostaGeral = 0;
 let alertaErro = '';
 let alertaOk = '';
-for (let i = 0; i < arrDivErros.length; i += 1)
-{
+for (let i = 0; i < arrDivErros.length; i += 1) {
 
 }
 /* Pikaday JS - Requisito 17 */
@@ -249,7 +243,8 @@ botaoEnviar.addEventListener('click', verificaRadiosVazias);
 
 function verificaRespostaGeral() {
   const arrResposta = [contadorEmail, contadorGenero, contadorNome, contadorPikaday,
-    contadorSenha, contadorSobrenome, contadorValida,];
+    contadorSenha, contadorSobrenome, contadorValida,
+  ];
   respostaGeral = 0;
   for (let i = 0; i < arrResposta.length; i += 1) {
     if (arrResposta[i] === 1) {
