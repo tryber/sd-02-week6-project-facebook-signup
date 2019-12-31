@@ -56,7 +56,8 @@ cadastrar.addEventListener('click', function () {
   }
 });
 
-function login() {
+const loginBtn = document.querySelector('#login');
+loginBtn.addEventListener('click',() => {
   const phoneMail = document.getElementById('phonemailLogin').value;
   const password = document.getElementById('passwordLogin').value;
 
@@ -70,4 +71,4 @@ function login() {
             telefone/email: ${phoneMail}
             senha: ${password}`);
   }
-}
+});
