@@ -99,16 +99,16 @@ function validaNome() {
 inputNome.addEventListener('keyup', validaNome);
 /* Validação sobrenome sem números */
 
-function validaSobrenome(event) {
-  if ((inputSobrenome.value === '') ||
-  (inputSobrenome.value !== '' && inputSobrenome.value.match(nomeReg))) {
-    sobrenomeErro = '';
+function validaSobrenome() {
+  let valorSobrenome = inputSobrenome.value
+  if ((valorSobrenome !== '' && valorSobrenome.match(nomeReg)) || (valorSobrenome === '')) {
     divSobrenome.classList.add('esconder');
     ctSobrenome = 0;
+    sobrenomeErro = '';
   } else {
-    sobrenomeErro = '\nO campo Sobrenome é inválido';
     ctSobrenome = 1;
     divSobrenome.classList.remove('esconder');
+    sobrenomeErro = '\nO campo Sobrenome é inválido';
   }
 }
 inputSobrenome.addEventListener('keyup', validaSobrenome);
