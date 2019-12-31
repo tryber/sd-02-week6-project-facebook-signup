@@ -73,6 +73,8 @@
                                         </label>
                                         <input data-rule="required" type="text" class="register-input tam-meia"
                                             id="nome" name="nome">
+                                        <div class="error esconder" data-type="validator-css" id="show-nome">Números e
+                                            caracteres especiais não são aceitos.</div>
                                     </div>
                                     <div class="register-div tam-meia mb-10" id="container-sobrenome">
                                         <label class="placeholder" for="sobrenome">
@@ -80,6 +82,8 @@
                                         </label>
                                         <input data-rule="required" type="text" class="register-input tam-meia"
                                             id="sobrenome" name="sobrenome">
+                                        <div class="error esconder" data-type="validator-css" id="show-sobrenome">
+                                            Números e caracteres especiais não são aceitos.</div>
                                     </div>
                                     <div class="register-div tam-inteira mb-10" id="fone-email">
                                         <label class="placeholder" for="fone-ou-email">
@@ -87,6 +91,9 @@
                                         </label>
                                         <input data-rule="required" type="text" class="register-input tam-inteira"
                                             id="fone-ou-email" name="fone-ou-email">
+                                        <div class="error esconder" data-type="validator-css" id="show-email">Parece que
+                                            você inseriu
+                                            informações incorretas. Use sua data de nascimento verdadeira.</div>
                                     </div>
                                     <div class="register-div tam-inteira mb-10">
                                         <label class="placeholder" for="senha">
@@ -102,6 +109,9 @@
                                         </label>
                                         <input data-rule="required|dtval" type="text" class="register-input tam-dtnasc"
                                             id="dtnasc" name="dtnasc" maxlength="10" readonly>
+                                        <div class="error esconder" data-type="validator-css" id="show-pikaday">Parece
+                                            que você
+                                            inseriu informações incorretas. Use sua data de nascimento verdadeira.</div>
                                     </div>
                                     <a href="#" title="Clique para obter mais informações" id="dtnasc-help"
                                         class="button-helper mt-7 ml-10">
@@ -125,6 +135,9 @@
                                                     id="personalizado">
                                                 <label class="gender-label" for="personalizado">Personalizado</label>
                                             </span>
+                                            <div class="error esconder" data-type="validator-css" id="show-genero">
+                                                Escolha um gênero. Você poderá alterar quem pode ver isso
+                                                posteriormente.</div>
                                         </span>
                                         <a href="#" title="Clique para obter mais informações" id="gender-help"
                                             class="button-helper ml-10">
