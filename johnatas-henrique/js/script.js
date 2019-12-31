@@ -16,22 +16,22 @@ const inputDtNasc = document.querySelector('#dtnasc');
 const selectPronome = document.querySelector('.select-pronome');
 const formRegister = document.querySelector('#form-register');
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-const arrDivErros = [divGenero, divNome, divSobrenome, divPikaday, divEmail, ];
-const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc, ];
-const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento', ];
+const arrDivErros = [divGenero, divNome, divSobrenome, divPikaday, divEmail];
+const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc];
+const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'];
 let emailErro = '';
-let contadorEmail = 0;
+let ctEmail = 0;
 let pikadayErro = '';
-let contadorPikaday = 0;
+let ctPikaday = 0;
 let nomeErro = '';
-let contadorNome = 0;
+let ctNome = 0;
 let sobrenomeErro = '';
-let contadorSobrenome = 0;
-let contadorGenero = 1;
+let ctSobrenome = 0;
+let ctGenero = 1;
 let valorGenero = 0;
 let senhaErro = '';
-let contadorSenha = 0;
-let contadorValida = 0;
+let ctSenha = 0;
+let ctValida = 0;
 let respostaGeral = 0;
 let alertaErro = '';
 let alertaOk = '';
@@ -92,11 +92,11 @@ function validaNome(event) {
   if (event.target.value !== '') {
     if (event.target.value.match(nomeReg)) {
       divNome.classList.add('esconder');
-      contadorNome = 0;
+      ctNome = 0;
       return true;
     }
     nomeErro = '\nO campo Nome é inválido';
-    contadorNome = 1;
+    ctNome = 1;
     divNome.classList.remove('esconder');
     return false;
   }
@@ -110,11 +110,11 @@ function validaSobrenome(event) {
   if (event.target.value !== '') {
     if (event.target.value.match(nomeReg)) {
       divSobrenome.classList.add('esconder');
-      contadorSobrenome = 0;
+      ctSobrenome = 0;
       return true;
     }
     sobrenomeErro = '\nO campo Sobrenome é inválido';
-    contadorSobrenome = 1;
+    ctSobrenome = 1;
     divSobrenome.classList.remove('esconder');
     return false;
   }
@@ -130,11 +130,11 @@ function funcaoEmailEFone() {
   if (inputFoneOuEmail.value !== '') {
     if (inputFoneOuEmail.value.match(emailReg) || inputFoneOuEmail.value.match(foneReg)) {
       divEmail.classList.add('esconder');
-      contadorEmail = 0;
+      ctEmail = 0;
       return true;
     }
     emailErro = '\nO campo Celular ou email é inválido';
-    contadorEmail = 1;
+    ctEmail = 1;
     divEmail.classList.remove('esconder');
     return false;
   }
@@ -145,30 +145,30 @@ inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
 
 function funcaoPikadayMaior() {
   pikadayErro = '';
+  ctPikaday = 0;
   const dtAtual = Date.now();
   const dtCaixa = Date.parse(pikadayCC.toString('MM/DD/YYYY'));
   if (dtCaixa < dtAtual) {
     divPikaday.classList.add('esconder');
-    contadorPikaday = 0;
     return true;
   }
   pikadayErro = '\nO campo Data Nascimento é inválido';
-  contadorPikaday = 1;
+  ctPikaday = 1;
   divPikaday.classList.remove('esconder');
   return false;
 }
 inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
 /* Validação de senha (acima de 6 caracteres) */
 function senhaMaisCaracteres() {
-  contadorSenha = 0;
+  ctSenha = 0;
   if (inputSenha.value !== '') {
     if (inputSenha.value.length > 5) {
       senhaErro = '';
-      contadorSenha = 0;
+      ctSenha = 0;
       return true;
     }
     senhaErro = '\nO campo Senha é inválido';
-    contadorSenha = 1;
+    ctSenha = 1;
     return false;
   }
   return false;
@@ -209,12 +209,12 @@ cpInputForm.forEach(escutaCampos);
 function verificaCamposInputVazios() {
   alertaErro = 'Falhas no cadastro, por favor confira os erros abaixo:';
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
-  contadorValida = 0;
+  ctValida = 0;
   for (let i = 0; i < cpInputForm.length; i += 1) {
     if (cpInputForm[i].value === '') {
       const nomeCampo = cpInputForm[i].name;
       const labelCampo = document.querySelector(`label[for=${nomeCampo}]`);
-      contadorValida += 1;
+      ctValida += 1;
       alertaErro += `\nO campo ${labelCampo.innerText} está vazio.`;
     } else {
       alertaOk += `\n${cpInputName[i]}: ${cpInputForm[i].value}`;
@@ -224,27 +224,25 @@ function verificaCamposInputVazios() {
 botaoEnviar.addEventListener('click', verificaCamposInputVazios);
 
 function verificaRadiosVazias() {
-  contadorGenero = 1;
+  ctGenero = 1;
   for (let i = 0; i < arrRadios.length; i += 1) {
     if (arrRadios[i].checked) {
       const escolhidoIdRadio = arrRadios[i].id;
       const escolhidoGenero = document.querySelector(`label[for=${escolhidoIdRadio}]`);
-      contadorGenero = 0;
+      ctGenero = 0;
       valorGenero = arrRadios[i].value;
       valorGenero = parseInt(valorGenero, 10);
       alertaOk += `\nGênero: ${escolhidoGenero.innerText}`;
     }
   }
-  if (contadorGenero === 1) {
+  if (ctGenero === 1) {
     alertaErro += '\nO campo Gênero está vazio.';
   }
 }
 botaoEnviar.addEventListener('click', verificaRadiosVazias);
 
 function verificaRespostaGeral() {
-  const arrResposta = [contadorEmail, contadorGenero, contadorNome, contadorPikaday,
-    contadorSenha, contadorSobrenome, contadorValida,
-  ];
+  const arrResposta = [ctEmail, ctGenero, ctNome, ctPikaday, ctSenha, ctSobrenome, ctValida];
   respostaGeral = 0;
   for (let i = 0; i < arrResposta.length; i += 1) {
     if (arrResposta[i] === 1) {
