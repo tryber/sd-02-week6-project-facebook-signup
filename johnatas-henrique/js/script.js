@@ -13,13 +13,18 @@ const inputSobrenome = document.querySelector('#sobrenome');
 const inputFoneOuEmail = document.querySelector('#fone-ou-email');
 const inputSenha = document.querySelector('#senha');
 const inputDtNasc = document.querySelector('#dtnasc');
-const selectPronome = document.querySelector('.select-pronome');
 const formRegister = document.querySelector('#form-register');
+const inputUser = document.querySelector('#user');
+const inputPassword = document.querySelector('#password');
+const botaoEntrar = document.querySelector('#entrar');
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
 const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
 const foneReg = /^[0-9]{2}9?[0-9]{8}$/;
 const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc];
 const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'];
+let contaErros = 0;
+let entrarOk = 'Alerta quando a validação estiver Ok';
+let entrarErro = 'Alerta quando a validação acusar erro';
 let emailErro = '';
 let ctEmail = 0;
 let pikadayErro = '';
@@ -45,13 +50,6 @@ const pikadayCC = new Pikaday({
   maxDate: new Date(2020, 12, 31),
   yearRange: [1900, 2020],
   format: 'DD/MM/YYYY',
-  i18n: {
-    previousMonth: 'Mês anterior',
-    nextMonth: 'Novo mês',
-    months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-    weekdays: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
-    weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-  },
 });
 /* Validações com a Lib js-form-validator */
 
@@ -254,13 +252,6 @@ botaoEnviar.addEventListener('click', mostraAlerta);
 
 /* Alerta do botão enviar - Requisito 7 */
 
-const inputUser = document.querySelector('#user');
-const inputPassword = document.querySelector('#password');
-const botaoEntrar = document.querySelector('#entrar');
-let contaErros = 0;
-let entrarOk = 'Alerta quando a validação = true';
-let entrarErro = 'Alerta quando a validação = false';
-
 function entrarAlerta() {
   if (contaErros === 0) {
     alert(entrarOk);
@@ -273,7 +264,7 @@ function entrarPassword() {
   if (inputPassword.value !== '') {
     entrarOk += `\nSenha: ${inputPassword.value}`;
   } else {
-    entrarErro += `\nCampo Senha está vazio`;
+    entrarErro += '\nCampo Senha está vazio.';
     contaErros += 1;
   }
   entrarAlerta();
@@ -286,7 +277,7 @@ function entrarUser() {
   if (inputUser.value.match(emailReg) || inputUser.value.match(foneReg)) {
     entrarOk += `\nEmail ou telefone: ${inputUser.value}`;
   } else {
-    entrarErro += `\nCampo Email ou telefone está vazio.`;
+    entrarErro += '\nCampo Email ou telefone está vazio ou a informação não confere.';
     contaErros += 1;
   }
   entrarPassword();
