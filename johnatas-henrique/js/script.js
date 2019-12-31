@@ -16,7 +16,6 @@ const inputDtNasc = document.querySelector('#dtnasc');
 const selectPronome = document.querySelector('.select-pronome');
 const formRegister = document.querySelector('#form-register');
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-const arrDivErros = [divGenero, divNome, divSobrenome, divPikaday, divEmail];
 const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc];
 const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'];
 let emailErro = '';
@@ -85,8 +84,8 @@ arrRadios.forEach(alterGenero);
 botaoEnviar.addEventListener('click', checkGenero);
 /* Validação nome sem números */
 
-function validaNome(event) {
-  if (event.target.value == '' || event.target.value !== '' && event.target.value.match(nomeReg)) {
+function validaNome() {
+  if ((inputNome.value === '') || (inputNome.value !== '' && inputNome.value.match(nomeReg))) {
     nomeErro = '';
     divNome.classList.add('esconder');
     ctNome = 0;
@@ -101,7 +100,8 @@ inputNome.addEventListener('keyup', validaNome);
 /* Validação sobrenome sem números */
 
 function validaSobrenome(event) {
-  if (event.target.value == '' || event.target.value !== '' && event.target.value.match(nomeReg)) {
+  if ((inputSobrenome.value === '') ||
+  (inputSobrenome.value !== '' && inputSobrenome.value.match(nomeReg))) {
     sobrenomeErro = '';
     divSobrenome.classList.add('esconder');
     ctSobrenome = 0;
