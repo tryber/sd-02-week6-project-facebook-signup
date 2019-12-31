@@ -16,6 +16,8 @@ const inputDtNasc = document.querySelector('#dtnasc');
 const selectPronome = document.querySelector('.select-pronome');
 const formRegister = document.querySelector('#form-register');
 const nomeReg = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+const foneReg = /^[0-9]{2}9?[0-9]{8}$/;
 const cpInputForm = [inputNome, inputSobrenome, inputFoneOuEmail, inputSenha, inputDtNasc];
 const cpInputName = ['Nome', 'Sobrenome', 'Celular ou email', 'Nova senha', 'Data nascimento'];
 let emailErro = '';
@@ -58,8 +60,6 @@ const validatorCC = new Validator(formRegister, function (err, res) {
   let answer = res;
   if (respostaGeral !== 0) {
     answer = false;
-  } else if (valorGenero === 3 && selectPronome.value === '') {
-    answer = false;
   }
   return answer;
 });
@@ -100,7 +100,7 @@ inputNome.addEventListener('keyup', validaNome);
 /* Validação sobrenome sem números */
 
 function validaSobrenome() {
-  let valorSobrenome = inputSobrenome.value
+  const valorSobrenome = inputSobrenome.value;
   if ((valorSobrenome !== '' && valorSobrenome.match(nomeReg)) || (valorSobrenome === '')) {
     divSobrenome.classList.add('esconder');
     ctSobrenome = 0;
@@ -116,8 +116,6 @@ inputSobrenome.addEventListener('keyup', validaSobrenome);
 
 function funcaoEmailEFone() {
   emailErro = '';
-  const emailReg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
-  const foneReg = /^[0-9]{2}9?[0-9]{8}$/;
   if (inputFoneOuEmail.value !== '') {
     if (inputFoneOuEmail.value.match(emailReg) || inputFoneOuEmail.value.match(foneReg)) {
       divEmail.classList.add('esconder');
@@ -253,3 +251,45 @@ function mostraAlerta() {
   }
 }
 botaoEnviar.addEventListener('click', mostraAlerta);
+
+/* Alerta do botão enviar - Requisito 7 */
+
+const inputUser = document.querySelector('#user');
+const inputPassword = document.querySelector('#password');
+const botaoEntrar = document.querySelector('#entrar');
+let contaErros = 0;
+let entrarOk = 'Alerta quando a validação = true';
+let entrarErro = 'Alerta quando a validação = false';
+
+function entrarAlerta() {
+  if (contaErros === 0) {
+    alert(entrarOk);
+  } else {
+    alert(entrarErro);
+  }
+}
+
+function entrarPassword() {
+  if (inputPassword.value !== '') {
+    entrarOk += `\nSenha: ${inputPassword.value}`;
+  } else {
+    entrarErro += `\nCampo Senha está vazio`;
+    contaErros += 1;
+  }
+  entrarAlerta();
+}
+
+function entrarUser() {
+  contaErros = 0;
+  entrarOk = 'Alerta quando a validação = true';
+  entrarErro = 'Alerta quando a validação = false';
+  if (inputUser.value.match(emailReg) || inputUser.value.match(foneReg)) {
+    entrarOk += `\nEmail ou telefone: ${inputUser.value}`;
+  } else {
+    entrarErro += `\nCampo Email ou telefone está vazio.`;
+    contaErros += 1;
+  }
+  entrarPassword();
+}
+
+botaoEntrar.addEventListener('click', entrarUser);
