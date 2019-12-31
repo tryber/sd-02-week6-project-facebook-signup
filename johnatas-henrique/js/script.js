@@ -1,5 +1,4 @@
 /* global Pikaday Validator*/
-/* Variáveis globais */
 const botaoEnviar = document.querySelector('#enviar');
 const arrRadios = document.querySelectorAll('.gender-input');
 const divGenero = document.querySelector('#show-genero');
@@ -42,7 +41,6 @@ let respostaGeral = 0;
 let alertaErro = '';
 let alertaOk = '';
 
-/* Pikaday JS - Requisito 17 */
 const pikadayCC = new Pikaday({
   field: document.getElementById('dtnasc'),
   firstDay: 1,
@@ -51,7 +49,6 @@ const pikadayCC = new Pikaday({
   yearRange: [1900, 2020],
   format: 'DD/MM/YYYY',
 });
-/* Validações com a Lib js-form-validator */
 
 
 const validatorCC = new Validator(formRegister, function (err, res) {
@@ -61,7 +58,6 @@ const validatorCC = new Validator(formRegister, function (err, res) {
   }
   return answer;
 });
-/* Validando radio button */
 
 function checkGenero() {
   for (let i = 0; i < arrRadios.length; i += 1) {
@@ -80,7 +76,6 @@ function alterGenero(item) {
 }
 arrRadios.forEach(alterGenero);
 botaoEnviar.addEventListener('click', checkGenero);
-/* Validação nome sem números */
 
 function validaNome() {
   if ((inputNome.value === '') || (inputNome.value !== '' && inputNome.value.match(nomeReg))) {
@@ -95,7 +90,6 @@ function validaNome() {
 }
 
 inputNome.addEventListener('keyup', validaNome);
-/* Validação sobrenome sem números */
 
 function validaSobrenome() {
   const valorSobrenome = inputSobrenome.value;
@@ -110,7 +104,6 @@ function validaSobrenome() {
   }
 }
 inputSobrenome.addEventListener('keyup', validaSobrenome);
-/* Validação fone e email na caixa */
 
 function funcaoEmailEFone() {
   emailErro = '';
@@ -128,7 +121,6 @@ function funcaoEmailEFone() {
   return false;
 }
 inputFoneOuEmail.addEventListener('keyup', funcaoEmailEFone);
-/* Validação data maior que o dia de hoje */
 
 function funcaoPikadayMaior() {
   pikadayErro = '';
@@ -145,7 +137,6 @@ function funcaoPikadayMaior() {
   return false;
 }
 inputDtNasc.addEventListener('blur', funcaoPikadayMaior);
-/* Validação de senha (acima de 6 caracteres) */
 function senhaMaisCaracteres() {
   ctSenha = 0;
   if (inputSenha.value !== '') {
@@ -161,7 +152,6 @@ function senhaMaisCaracteres() {
   return false;
 }
 inputSenha.addEventListener('keyup', senhaMaisCaracteres);
-/* Escondendo/Mostrando Div dependendo do gênero escolhido */
 function mostraChildUndefined() {
   const valorRadio = document.querySelector('input[name=genero]:checked');
   const valor = parseInt(valorRadio.value, 10);
@@ -176,7 +166,6 @@ function changeRadio(item) {
   item.addEventListener('change', mostraChildUndefined);
 }
 arrRadios.forEach(changeRadio);
-/* Verificar campos vazios e remover placeholder personalizado */
 function verificaVazioLimpaPlaceholder(event) {
   const nomeCampo = event.target.name;
   const escondeLabel = document.querySelector(`label[for=${nomeCampo}]`);
@@ -192,7 +181,6 @@ function escutaCampos(item) {
   item.addEventListener('change', verificaVazioLimpaPlaceholder);
 }
 cpInputForm.forEach(escutaCampos);
-/* Criar Alerts */
 function verificaCamposInputVazios() {
   alertaErro = 'Falhas no cadastro, por favor confira os erros abaixo:';
   alertaOk = 'Cadastro preenchido com sucesso, informações abaixo:';
@@ -250,7 +238,6 @@ function mostraAlerta() {
 }
 botaoEnviar.addEventListener('click', mostraAlerta);
 
-/* Alerta do botão enviar - Requisito 7 */
 
 function entrarAlerta() {
   if (contaErros === 0) {
