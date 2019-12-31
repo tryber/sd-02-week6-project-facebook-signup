@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Facebook - entre ou cadastre-se </title>
+  <link href='https://fonts.googleapis.com/css?family=Rubik|Ubuntu&display=swap' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+  <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css'>
+  <script src='https://cdn.jsdelivr.net/npm/pikaday/pikaday.js'></script>
+
+</head>
+<body>
+  <header>
+    <img class='logo' src='img/logo.png' alt='logo'>
+    <div class='head-container'>
+      <div>
+        <label>Email ou telefone</label>
+        <input type='text' id='phonemailLogin'>
+      </div>
+      <div>
+        <label>Senha</label>
+        <input type='password' id='passwordLogin' pattern='[0-9a-fA-F]'>
+        <p>Esqueceu a conta?</p>
+      </div>
+      <div>
+        <button id='login'>Entrar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class='image'>
+      <div>
+        <p>O Facebook ajuda você a se conectar e <br>
+            compartilhar com as pessoas que fazem parte <br>
+            de sua vida</p>
+        <img src='img/figura.png' alt='escritorio'>
+      </div>
+    </section>
+    <section class='content'>
+      <div>
+        <h2>Abra uma conta</h2>
+        <p>É rápido e facil.</p>
+        <div>
+          <input type='text' placeholder='Nome' id='nome' required>
+          <div></div>
+          <input type='text' placeholder='Sobrenome' id='sobrenome' required>
+        </div>
+        <input type='text' placeholder='Celular ou Email' id='phonemail' required>
+        <input type='password' placeholder='Nova senha' id='password' required pattern='[0-9a-fA-F]'>
+        <div id='date'>
+          <p>Data de nascimento</p>
+            <input type='text' id='datepicker' required>
+        </div>
+        <div>
+          <p>Gênero</p>
+          <label>
+            <input type='radio' name='gender' value='Feminino' id='female'>Feminino
+          </label>
+          <label>
+            <input type='radio' name='gender' value='Masculino' id='male'>Masculino
+          </label>
+          <label>
+            <input type='radio' name='gender' value='Personalizado' id='personalizado'>Personalizado
+          </label>
+        </div>
+        <br><p>
+            Ao clicar em Cadastre-se, você concorda com nossos <br>
+            <span>Termos, Polica de Dados e Política de Cookies.</span> Você pode<br>
+            receber notificações por SMS e pode cancelar isso quando<br>
+            quiser.
+        </p>
+        <button type='button' id='downBtn'>Cadastre-se</button>
+      </div>
+    </section>
+  </main>
+</body>
+<script src='script.js'></script>
+</html>
