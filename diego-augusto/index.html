@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <title>Facebook – entre ou cadastre-se</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="conteudoCabecalho">
+            <img class="logoFacebook" type="image" src="img/logo.svg">
+            <div class="entrada1">
+                <div>
+                    <legend id="labelEmail">Email ou telefone</legend>
+                    <input id="entradaEmail" type="text">
+                </div>
+                <div class="campoSenha">
+                    <legend id="labelSenha">Senha</legend>
+                    <input id="entradaSenha" type="password">
+                    <a id="linkForgot" href="/">Esqueceu a conta?</a>
+                </div>
+                <input type="submit" value="Entrar" id="botaoEntrar" onclick="validarDadosDeEntrada()">
+                </button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="paginaGradiente">
+            <div class="corpoSection">
+                <div class="ladoEsquerdo">
+                    <div class="ladoEsquerdoConteudo">
+                        <div class="textoApresentacao">
+                            <p>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.
+                            </p>
+                        </div>
+                        <img id="imagemApresentacao" src="img/world.png">
+                    </div>
+                </div>
+                <div class="ladoDireito">
+                    <div class="ladoDireitoConteudo">
+                        <div class="textoApresentacaoDireito">
+                            <div class="texto1">
+                                <span>Abra uma conta</span>
+                            </div>
+                            <div class="texto2">
+                                <span>É rápido e fácil.</span>
+                            </div>
+                        </div>
+                        <form class="formulario" action="" method="post">
+                            <div class="inserirDados">
+                                <div class="boxNome small">
+                                    <input type="text" id='inserirNome' name='inserirNome' placeholder="Nome" required="required">
+                                </div>
+                                <div class="boxSobrenome small">
+                                    <input type="text" id='inserirSobrenome' name='inserirSobrenome' placeholder="Sobrenome" required="required">
+                                </div>
+                            </div>
+                            <div class="inserirDados2">
+                                <div class="boxEmailPass big">
+                                    <input type="text" id='inserirEmailSenha' name='inserirEmailSenha' placeholder="Celular ou email" required="required">
+                                    <br>
+                                </div>
+                                <div class="boxNovaSenha big">
+                                    <input type="password" id='inserirSenha' name='inserirSenha' placeholder="Nova senha" required="required">
+                                </div>
+                            </div>
+                            <div class="boxCalendario big">
+                                <div class="textoCalendario">
+                                    <span>Data de nascimento</span>
+                                </div>
+                                <input placeholder="dd/mm/aaaa" type="text" id="calendario" required="required" />
+                            </div>
+                            <div class="labelGenero">
+                                <span>Gênero</span>
+                            </div>
+                            <div class="genero" name="genero" required="required">
+                                <div class="radioFeminino">
+                                    <input id='feminino' class="radio" type='radio' value='Feminino' name="radio" />
+                                    <label for='feminino'>Feminino</label>
+                                </div>
+                                <div class="radioMasculino">
+                                    <input id='masculino' class="radio" type='radio' value='Masculino' name="radio" />
+                                    <label for='masculino'>Masculino</label>
+                                </div>
+                                <div class="radioPersonalizado">
+                                    <input id='personalizado' class="radio" type='radio' value='Personalizado' name="radio" />
+                                    <label for='personalizado'>Personalizado</label>
+                                </div>
+                                <br>
+                                <input id="iconeAjuda" type="button" value="?" class="question" href="#">
+                                </button>
+                            </div>
+                            <div class="labelTermos">
+                                <span>
+                                        Ao clicar em Cadastre-se, você concorda com nossos
+                                        <a href="/" target="_blank" rel="nofollow">
+                                            Termos
+                                        </a>
+                                        ,
+                                        <a href="/" target="_blank" rel="nofollow">
+                                            Política de Dados
+                                        </a>
+                                        e
+                                        <a href="/" target="_blank" rel="nofollow">
+                                            Política de Cookies
+                                        </a>
+                                        . Você pode receber notificações por SMS e pode cancelar isso
+                                        quando quiser.
+                                    </span>
+                            </div>
+                            <div class="apresentacaoBotao">
+                                <input value="Cadastre-se" type="button" id="botaoEnviar" onclick="validarDadosCadastro()">
+                            </div>
+                        </form>
+                        <div id="textoCriarPage">
+                            <span>
+                                    <a href="https://www.facebook.com/pages/creation/?ref_type=registration_form" target="_blank" rel="nofollow">
+                                        Criar uma Página
+                                    </a>
+                                    para uma celebridade, banda ou empresa.
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="rodape">
+            <div id="rodapeLista">
+                <ul>
+                    <li>Português (Brasil)</li>
+                    <li><a href="#" class="link1">English (US)</a></li>
+                    <li><a href="#" class="link2">Español</a></li>
+                    <li><a href="#" class="link3">Français (France)</a></li>
+                    <li><a href="#" class="link4">Italiano</a></li>
+                    <li><a href="#" class="link5">Deutsch</a></li>
+                    <li><a href="#" class="link6">العربية</a></li>
+                    <li><a href="#" class="link7">हिन्दी</a></li>
+                    <li><a href="#" class="link8">中文(简体)</a></li>
+                    <li><a href="#" class="link9">日本語</a></li>
+                </ul>
+            </div>
+            <div id="linhaDivisao"></div>
+            <ul class="ordemListasFacebook">
+                <li><a href="" class="links">Cadastre-se</a></li>
+                <li><a href="" class="links2">Entrar</a></li>
+                <li><a href="" class="links3">Messenger</a></li>
+                <li><a href="" class="links4">Facebook Lite</a></li>
+                <li><a href="" class="links5">Watch</a></li>
+                <li><a href="" class="links6">Pessoas</a></li>
+                <li><a href="" class="links7">Páginas</a></li>
+                <li><a href="" class="links8">Categorias de Página</a></li>
+                <li><a href="" class="links9">Locais</a></li>
+                <li><a href="" class="links10">Jogos</a></li>
+                <li><a href="" class="links11">Locais</a></li>
+                <li><a href="" class="links12">Marketplace</a></li>
+                <li><a href="" class="links13">Grupos</a></li>
+                <li><a href="" class="links14">Instagram</a></li>
+                <li><a href="" class="links15">Local</a></li>
+                <li><a href="" class="links16">Campanhas de arrecadação de fundos</a></li>
+                <li><a href="" class="links17">Serviços</a></li>
+                <li><a href="" class="links18">Sobre</a></li>
+                <li><a href="" class="links19">Criar anúncio</a></li>
+                <li><a href="" class="links20">Criar Página</a></li>
+                <li><a href="" class="links21">Desenvolvedores</a></li>
+                <li><a href="" class="links22">Carreiras</a></li>
+                <li><a href="" class="links23">Privacidade</a></li>
+                <li><a href="" class="links24">Cookies</a></li>
+                <li><a href="" class="links25">Opções de anúncio<i class="img"></i></a></li>
+                <li><a href="" class="links26">Termos</a></li>
+                <li><a href="" class="links27">Ajuda</a></li>
+                <li><a href="" class="links28">Configurações</a></li>
+                <li><a href="" class="links29">Registro de Atividades</a></li>
+            </ul>
+            <div id="github">
+                <br>Fake Facebook template por Diego August, clique e <a href="http://diaugust.github.io/"> conheça meu portifólio</a>.
+            </div>
+        </footer>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
